@@ -1,3 +1,5 @@
 tile.alloycraft_BlockCookie.name=Cookie Block
-tile.alloycraft_AlloySmelter.name=Alloy Furnace
+tile.alloycraft_BlockYttriumOre.name=Yttrium Ore
+tile.alloycraft_alloyfurnace.name=Alloy Furnace
 item.alloycraft_CookieIngot.name=Cookie Ingot
+item.alloycraft_YttriumIngot.name=Yttrium Ingot

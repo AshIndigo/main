@@ -2,6 +2,7 @@ package com.alloycraft.exxo;
 
 import com.alloycraft.exxo.blocks.*;
 import com.alloycraft.exxo.items.ItemCookieIngot;
+import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.*;
 
 import net.minecraft.block.Block;
@@ -24,7 +25,9 @@ public class Alloycraft
 	//Items and Blocks
     public static Block cookieblock;
     public static Block alloysmelter;
+    public static Block yttriumore;
     public static Item cookieingot;
+    public static Item yttriumingot;
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -38,9 +41,14 @@ public class Alloycraft
     	//Registry
     	cookieblock = new BlockCookie();
     	alloysmelter = new AlloySmelter();
+    	yttriumore = new BlockYttriumOre();
     	cookieingot = new ItemCookieIngot();
+    	yttriumingot = new ItemYttriumIngot();
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
+    	GameRegistry.registerBlock(alloysmelter, "AlloyFurnace");
+    	GameRegistry.registerBlock(yttriumore, "YttriumOre");
     	GameRegistry.registerItem(cookieingot, "ItemCookieIngot");
+    	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	
@@ -52,6 +60,7 @@ public class Alloycraft
         	'A', Items.cookie
     });
     	GameRegistry.addSmelting(new ItemStack(Alloycraft.cookieblock, 1), new ItemStack(Alloycraft.cookieingot, 1), 0.1F);
+    	GameRegistry.addSmelting(new ItemStack(Alloycraft.yttriumore, 1), new ItemStack(Alloycraft.yttriumingot, 1), 0.1F);
     }
     public void init(FMLInitializationEvent event){
     	proxy.registerTileEntities();
