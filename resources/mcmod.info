@@ -1,0 +1,16 @@
+[
+{
+  "modid": "alloycraft",
+  "name": "Alloy Craft",
+  "description": "It's Alloycrafr",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Ash Indigo"],
+  "credits": "The Forge and FML guys",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
