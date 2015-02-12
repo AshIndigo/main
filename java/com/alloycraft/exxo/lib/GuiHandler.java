@@ -1,6 +1,7 @@
 package com.alloycraft.exxo.lib;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.containers.ContainerAlloyFurnace;
 import com.alloycraft.exxo.guis.GuiAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
