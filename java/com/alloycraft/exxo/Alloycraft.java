@@ -4,12 +4,15 @@ import com.alloycraft.exxo.blocks.*;
 import com.alloycraft.exxo.items.ItemCookieIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.*;
+import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.nealecraft.mod.blocks.IngotMasher;
+import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -28,6 +31,7 @@ public class Alloycraft
     public static Block yttriumore;
     public static Item cookieingot;
     public static Item yttriumingot;
+    public static final int guiIDAlloyFurnace = 1;
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -40,7 +44,7 @@ public class Alloycraft
     {
     	//Registry
     	cookieblock = new BlockCookie();
-    	alloysmelter = new AlloySmelter();
+    	alloysmelter = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
     	yttriumore = new BlockYttriumOre();
     	cookieingot = new ItemCookieIngot();
     	yttriumingot = new ItemYttriumIngot();
@@ -51,6 +55,8 @@ public class Alloycraft
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+    	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
+
     	
     	//Recipes
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.cookieblock, 1), new Object[]{
@@ -63,7 +69,7 @@ public class Alloycraft
     	GameRegistry.addSmelting(new ItemStack(Alloycraft.yttriumore, 1), new ItemStack(Alloycraft.yttriumingot, 1), 0.1F);
     }
     public void init(FMLInitializationEvent event){
-    	proxy.registerTileEntities();
+		
         
 }
 }

@@ -1,64 +1,148 @@
 package com.alloycraft.exxo.blocks;
 
+import java.util.Random;
 import com.alloycraft.exxo.Alloycraft;
-import com.alloycraft.exxo.guis.GUIS;
-import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
-
-import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.nealecraft.mod.Nealecraft;
+import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 
-public class AlloySmelter extends Block implements ITileEntityProvider {
+public class AlloySmelter extends BlockContainer {
+	
+	private Random rand;
+	private final boolean isActive;
+	private static boolean keepInventory = true;
+	
+	@SideOnly(Side.CLIENT)
+	private IIcon iconFront;
 
-    public static String name = "alloyfurnace";
-    private String privateName = "alloyfurnace";
-    public IIcon[] icons = new IIcon[6];
-
-    public AlloySmelter() {
-        super(Material.rock);
-        setBlockName(Refrences.MODID + "_" + "alloyfurnace");
-        setCreativeTab(CreativeTabs.tabBlock);
-        setBlockTextureName(Refrences.MODID + ":" + "alloyfurnace");
+	public AlloySmelter(boolean blockState) {
+		super(Material.iron);
+		rand = new Random();
+		isActive = blockState;
+		
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		this.blockIcon = iconRegister.registerIcon(Nealecraft.modid + ":" + (this.isActive ? "IngotMasherSideOn" : "IngotMasherSideOff"));
+		this.iconFront = iconRegister.registerIcon(Nealecraft.modid + ":" + (this.isActive ? "IngotMasherFrontOn" : "IngotMasherFrontOff"));
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int metadata) {
+		return metadata == 0 && side == 3 ? this.iconFront : (side == metadata ? this.iconFront : this.blockIcon);
+	}
+	
+	public void onBlockAdded(World world, int x, int y, int z) {
+		super.onBlockAdded(world, x, y, z);
+		this.setDefaultDirection(world, x, y, z);
+	}
+	
+    private void setDefaultDirection(World world, int x, int y, int z)
+    {
+    	if(!world.isRemote){
+			Block block1 = world.getBlock(x, y, z - 1);
+			Block block2 = world.getBlock(x, y, z + 1);
+			Block block3 = world.getBlock(x - 1, y, z);
+			Block block4 = world.getBlock(x + 1, y, z);
+			
+			byte b0 = 3;
+			
+			if(block1.func_149730_j() && !block2.func_149730_j()){
+				b0 = 3;
+			}
+			
+			if(block2.func_149730_j() && !block1.func_149730_j()){
+				b0 = 2;
+			}
+			
+			if(block3.func_149730_j() && !block4.func_149730_j()){
+				b0 = 5;
+			}
+			
+			if(block4.func_149730_j() && !block3.func_149730_j()){
+				b0 = 4;
+			}
+		
+			world.setBlockMetadataWithNotify(x, y, x, b0, 2);
+		}
     }
-    @Override
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float hitX, float hitY, float hitZ) {
-        if (world.isRemote) {
-            if (world.getTileEntity(x, y, z) != null)
-                player.openGui(Alloycraft.instance, GUIS.AlloyFurnace.ordinal(), world, x, y, z);
-            return true;
-        }
-        return true;
+    
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemstack) {
+    	int i = MathHelper.floor_double((double)(entityPlayer.rotationYaw * 4.0F / 360F) + 0.5D) & 3;
+    	
+    	if (i == 0) {
+    		world.setBlockMetadataWithNotify(x, y, z, 2, 2);
+    	}
+    	
+    	if (i == 1) {
+    		world.setBlockMetadataWithNotify(x, y, z, 5, 2);
+    	}
+    	
+    	if (i == 2) {
+    		world.setBlockMetadataWithNotify(x, y, z, 3, 2);
+    	}
+    	
+    	if (i == 3) {
+    		world.setBlockMetadataWithNotify(x, y, z, 4, 2);
+    	}
+    	
+    	if(itemstack.hasDisplayName()) {
+    		//((TileEntityIngotMasher)world.getTileEntity(x, y, z)).setCustomName(itemstack.getDisplayName());
+    	}
     }
-
-
-
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileEntityAlloyFurnace();
+    
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+    	if (world.isRemote) {
+    		return true;
+    	}else if (!player.isSneaking()) {
+    		TileEntityAlloyFurnace entity = (TileEntityAlloyFurnace) world.getTileEntity(x, y, z);
+    		if (entity != null) {
+    			FMLNetworkHandler.openGui(player, Alloycraft.instance, Alloycraft.guiIDAlloyFurnace, world, x, y, z);
+    		}
+    		return true;
+    	}else{
+    		return false;
+    	}
     }
+    
+	@Override
+	public TileEntity createNewTileEntity(World var1, int var2) {
+		return new TileEntityAlloyFurnace();
+	}
 
-    @Override
-    public boolean hasTileEntity(int metadata) {
-        return true;
-    }
-    @Override
-    public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < 6; i ++) {
-            this.icons[i] = reg.registerIcon(this.textureName + "_" + i);
-        }
-        
-    }
-    @Override
-    public IIcon getIcon(int side, int meta) {
-        return this.icons[side];
-    }
+	public static void updateBlockState(boolean issmelting, World world, int xCoord, int yCoord, int zCoord) {
+		
+		int i = world.getBlockMetadata(xCoord, yCoord, zCoord);
+		TileEntity entity = world.getTileEntity(xCoord, yCoord, zCoord);
+		keepInventory = true;
+		
+		if (issmelting) {
+			world.setBlock(xCoord, yCoord, zCoord, Nealecraft.blockIngotMasherActive);
+		}else{
+			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.alloysmelter);
+		}
+		
+		keepInventory = false;
+		world.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, i, 2);
+		
+		if (entity != null) {
+			entity.validate();
+			world.setTileEntity(xCoord, yCoord, zCoord, entity);
+		}
+	}
 }
