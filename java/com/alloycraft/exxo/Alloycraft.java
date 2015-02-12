@@ -85,6 +85,24 @@ public class Alloycraft
         	"AAA",
         	'A', Items.cookie
     });
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironblock, 1), new Object[]{
+        	"AAA",
+        	"AAA",
+        	"AAA",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishblock, 1), new Object[]{
+        	"AAA",
+        	"AAA",
+        	"AAA",
+        	'A', Alloycraft.hellishingot
+    	});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.hellishingot, 9), new Object[]{
+    	new ItemStack(Alloycraft.hellishblock, 1)
+    			});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.goldironingot, 9), new Object[]{
+        	new ItemStack(Alloycraft.goldironblock, 1)
+        			});
     	GameRegistry.addSmelting(new ItemStack(Alloycraft.cookieblock, 1), new ItemStack(Alloycraft.cookieingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(Alloycraft.yttriumore, 1), new ItemStack(Alloycraft.yttriumingot, 1), 0.1F);
     }

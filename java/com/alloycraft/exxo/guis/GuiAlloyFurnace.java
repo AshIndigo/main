@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiAlloyFurnace extends GuiContainer {
 	
-	public ResourceLocation texture = new ResourceLocation(Refrences.MODID + ":" + "/textures/gui/GuiAlloyFurnace2.png");
+	public ResourceLocation texture = new ResourceLocation(Refrences.MODID + ":" + "textures/gui/GuiAlloyFurnace.png");
 	public TileEntityAlloyFurnace AlloyFurnace;
 
 	public GuiAlloyFurnace(InventoryPlayer invPlayer, TileEntityAlloyFurnace teAlloyFurnace) {
