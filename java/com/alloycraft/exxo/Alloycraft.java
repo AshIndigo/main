@@ -58,7 +58,7 @@ public class Alloycraft
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
     	yttriumore = new BlockYttriumOre();
-    	cookieingot = new ItemCookieIngot();
+    	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	yttriumingot = new ItemYttriumIngot();
     	hellishingot = new ItemHellishIngot();
     	goldironingot = new ItemGoldIronIngot();
