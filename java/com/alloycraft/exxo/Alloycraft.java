@@ -11,6 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.nealecraft.mod.blocks.AlabasterOven;
 import net.nealecraft.mod.blocks.IngotMasher;
 import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 import cpw.mods.fml.common.IWorldGenerator;
@@ -27,11 +28,12 @@ public class Alloycraft
 {
 	//Items and Blocks
     public static Block cookieblock;
-    public static Block alloysmelter;
+    public static Block alloysmelteridle;
+    public static Block alloysmelteractive;
     public static Block yttriumore;
     public static Item cookieingot;
     public static Item yttriumingot;
-    public static final int guiIDAlloyFurnace = 1;
+    public static final int guiIDAlloyFurnace = 5;
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -44,13 +46,15 @@ public class Alloycraft
     {
     	//Registry
     	cookieblock = new BlockCookie();
-    	alloysmelter = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
+    	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
+    	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
     	yttriumore = new BlockYttriumOre();
     	cookieingot = new ItemCookieIngot();
     	yttriumingot = new ItemYttriumIngot();
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
-    	GameRegistry.registerBlock(alloysmelter, "AlloyFurnace");
     	GameRegistry.registerBlock(yttriumore, "YttriumOre");
+    	GameRegistry.registerBlock(alloysmelteridle, "AlloyFurnaceIdle");
+    	GameRegistry.registerBlock(alloysmelteractive, "AlloyFurnaceActive");
     	GameRegistry.registerItem(cookieingot, "ItemCookieIngot");
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);

@@ -1,8 +1,10 @@
 package com.alloycraft.exxo.blocks;
 
 import java.util.Random;
+
 import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
+
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -18,7 +21,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.nealecraft.mod.Nealecraft;
-import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 
 public class AlloySmelter extends BlockContainer {
 	
@@ -33,6 +35,7 @@ public class AlloySmelter extends BlockContainer {
 		super(Material.iron);
 		rand = new Random();
 		isActive = blockState;
+		setCreativeTab(CreativeTabs.tabBlock);
 		
 	}
 	
@@ -102,7 +105,7 @@ public class AlloySmelter extends BlockContainer {
     	}
     	
     	if(itemstack.hasDisplayName()) {
-    		//((TileEntityIngotMasher)world.getTileEntity(x, y, z)).setCustomName(itemstack.getDisplayName());
+    		//((TileEntityAlloyFurnace)world.getTileEntity(x, y, z)).setCustomName(itemstack.getDisplayName());
     	}
     }
     
@@ -132,9 +135,9 @@ public class AlloySmelter extends BlockContainer {
 		keepInventory = true;
 		
 		if (issmelting) {
-			world.setBlock(xCoord, yCoord, zCoord, Nealecraft.blockIngotMasherActive);
+			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.alloysmelteridle);
 		}else{
-			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.alloysmelter);
+			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.alloysmelteractive);
 		}
 		
 		keepInventory = false;

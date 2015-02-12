@@ -3,6 +3,8 @@ package com.alloycraft.exxo.guis;
 import org.lwjgl.opengl.GL11;
 
 import com.alloycraft.exxo.containers.ContainerAlloyFurnace;
+import com.alloycraft.exxo.lib.Refrences;
+import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -15,12 +17,12 @@ import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 
 public class GuiAlloyFurnace extends GuiContainer {
 	
-	public ResourceLocation texture = new ResourceLocation(Nealecraft.modid + ":" + "/textures/gui/IngotMasherGui.png");
-	public TileEntityIngotMasher AlloyFurnace;
+	public ResourceLocation texture = new ResourceLocation(Refrences.MODID + ":" + "/textures/gui/GuiAlloyFurnace2.png");
+	public TileEntityAlloyFurnace AlloyFurnace;
 
-	public GuiAlloyFurnace(InventoryPlayer invPlayer, TileEntityIngotMasher teIngotMasher) {
-		super(new ContainerAlloyFurnace(invPlayer, teIngotMasher));
-		AlloyFurnace = teIngotMasher;
+	public GuiAlloyFurnace(InventoryPlayer invPlayer, TileEntityAlloyFurnace teAlloyFurnace) {
+		super(new ContainerAlloyFurnace(invPlayer, teAlloyFurnace));
+		AlloyFurnace = teAlloyFurnace;
 		
 		this.xSize = 176;
 		this.ySize = 166;
@@ -46,7 +48,7 @@ public class GuiAlloyFurnace extends GuiContainer {
             drawTexturedModalRect(guiLeft + 8, guiTop + 53 - i1, 176, 62 - i1, 16, i1);
         }
 
-        int i1 = AlloyFurnace.getMasherProgressScaled(24);
+        int i1 = AlloyFurnace.getSmeltingProgressScaled(24);
         drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 0, i1 + 1, 16);
     }
 

@@ -1,5 +1,6 @@
 package com.alloycraft.exxo.containers;
 
+import com.alloycraft.exxo.slots.SlotAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,8 +11,6 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.tileentity.TileEntityFurnace;
-import net.nealecraft.mod.slot.SlotIngotMasher;
-import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 
 public class ContainerAlloyFurnace extends Container {
 
@@ -20,17 +19,17 @@ public class ContainerAlloyFurnace extends Container {
 	private int dualPower;
 	private int lastItemBurnTime;
 	
-	public ContainerAlloyFurnace(InventoryPlayer invPlayer, TileEntityAlloyFurnace teIngotMasher) {
+	public ContainerAlloyFurnace(InventoryPlayer invPlayer, TileEntityAlloyFurnace teAlloyFurnace) {
 		dualCookTime = 0;
 		dualPower = 0;
 		lastItemBurnTime = 0;
 		
-		alloyfurnace = teIngotMasher;
+		alloyfurnace = teAlloyFurnace;
 		
-		this.addSlotToContainer(new Slot(teIngotMasher, 0, 45, 17));
-		this.addSlotToContainer(new Slot(teIngotMasher, 1, 45, 49));
-		this.addSlotToContainer(new Slot(teIngotMasher, 2, 8, 56));
-		this.addSlotToContainer(new SlotIngotMasher(invPlayer.player, teIngotMasher, 3, 113, 33));
+		this.addSlotToContainer(new Slot(teAlloyFurnace, 0, 45, 17));
+		this.addSlotToContainer(new Slot(teAlloyFurnace, 1, 45, 49));
+		this.addSlotToContainer(new Slot(teAlloyFurnace, 2, 8, 56));
+		this.addSlotToContainer(new SlotAlloyFurnace(invPlayer.player, teAlloyFurnace, 3, 113, 33));
 		
 		//Inventory
 		for(int i = 0; i < 3; i++) {
@@ -125,6 +124,6 @@ public class ContainerAlloyFurnace extends Container {
 
 	@Override
 	public boolean canInteractWith(EntityPlayer player) {
-		return masher.isUseableByPlayer(player);
+		return alloyfurnace.isUseableByPlayer(player);
 	}
 }
