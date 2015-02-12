@@ -2,7 +2,9 @@ package com.alloycraft.exxo.tileenties;
 
 import com.alloycraft.exxo.blocks.AlloySmelter;
 import com.alloycraft.exxo.recipes.AlloyFurnaceRecipes;
+
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
@@ -10,9 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.nealecraft.mod.Nealecraft;
-import net.nealecraft.mod.blocks.IngotMasher;
-import net.nealecraft.mod.crafting.IngotMasherRecipes;
 
 public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventory {
 

@@ -5,7 +5,6 @@ import com.alloycraft.exxo.Alloycraft;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.nealecraft.mod.Nealecraft;
 
 public class AlloyFurnaceRecipes {
 

@@ -3,6 +3,7 @@ package com.alloycraft.exxo.blocks;
 import java.util.Random;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
@@ -20,7 +21,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.nealecraft.mod.Nealecraft;
 
 public class AlloySmelter extends BlockContainer {
 	
@@ -41,8 +41,8 @@ public class AlloySmelter extends BlockContainer {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(Nealecraft.modid + ":" + (this.isActive ? "IngotMasherSideOn" : "IngotMasherSideOff"));
-		this.iconFront = iconRegister.registerIcon(Nealecraft.modid + ":" + (this.isActive ? "IngotMasherFrontOn" : "IngotMasherFrontOff"));
+		this.blockIcon = iconRegister.registerIcon(Refrences.MODID + ":" + (this.isActive ? "AlloyFurnaceSideOn" : "AlloyFurnaceSideOff"));
+		this.iconFront = iconRegister.registerIcon(Refrences.MODID + ":" + (this.isActive ? "AlloyFurnaceFrontOn" : "AlloyFurnaceFrontOff"));
 	}
 	
 	@SideOnly(Side.CLIENT)

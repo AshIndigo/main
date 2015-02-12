@@ -5,15 +5,11 @@ import org.lwjgl.opengl.GL11;
 import com.alloycraft.exxo.containers.ContainerAlloyFurnace;
 import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import net.nealecraft.mod.Nealecraft;
-import net.nealecraft.mod.container.ContainerIngotMasher;
-import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 
 public class GuiAlloyFurnace extends GuiContainer {
 	

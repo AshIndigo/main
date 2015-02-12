@@ -7,13 +7,11 @@ import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.nealecraft.mod.blocks.AlabasterOven;
-import net.nealecraft.mod.blocks.IngotMasher;
-import net.nealecraft.mod.tileentity.TileEntityIngotMasher;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -34,6 +32,7 @@ public class Alloycraft
     public static Item cookieingot;
     public static Item yttriumingot;
     public static final int guiIDAlloyFurnace = 5;
+    public static CreativeTabs tabMyMod = new CreativeTabsAlloycraft("Alloycraft");
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -45,6 +44,7 @@ public class Alloycraft
     public void preinit(FMLPreInitializationEvent event)
     {
     	//Registry
+    	
     	cookieblock = new BlockCookie();
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
