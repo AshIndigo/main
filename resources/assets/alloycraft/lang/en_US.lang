@@ -1,5 +1,11 @@
 tile.alloycraft_BlockCookie.name=Cookie Block
 tile.alloycraft_BlockYttriumOre.name=Yttrium Ore
-tile.alloycraft_AlloyFurnaceIdle.name=Alloy Furnace
+tile.AlloyFurnaceIdle.name=Alloy Furnace
+tile.AlloyFurnaceActive.name=Alloy Furnace Active
+tile.alloycraft_BlockWHATTHEHELL.name=What The Hell Block!!!!
+tile.alloycraft_BlockGoldIron.name=Gold-Iron Alloy Block
+tile.alloycraft_BlockHellish.name=Hellish Block
 item.alloycraft_CookieIngot.name=Cookie Ingot
+item.alloycraft_HellishIngot.name=Hellish Alloy Ingot
+item.alloycraft_GoldIronIngot.name=Gold-Iron Alloy Ingot
 item.alloycraft_YttriumIngot.name=Yttrium Ingot

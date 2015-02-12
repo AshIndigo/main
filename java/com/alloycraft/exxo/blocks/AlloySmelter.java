@@ -35,7 +35,7 @@ public class AlloySmelter extends BlockContainer {
 		super(Material.iron);
 		rand = new Random();
 		isActive = blockState;
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Alloycraft.taballoycraft);
 		
 	}
 	

@@ -2,6 +2,8 @@ package com.alloycraft.exxo;
 
 import com.alloycraft.exxo.blocks.*;
 import com.alloycraft.exxo.items.ItemCookieIngot;
+import com.alloycraft.exxo.items.ItemGoldIronIngot;
+import com.alloycraft.exxo.items.ItemHellishIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
@@ -26,13 +28,18 @@ public class Alloycraft
 {
 	//Items and Blocks
     public static Block cookieblock;
+    public static Block hellishblock;
+    public static Block goldironblock;
+    public static Block whatthehellblock;
     public static Block alloysmelteridle;
     public static Block alloysmelteractive;
     public static Block yttriumore;
     public static Item cookieingot;
+    public static Item hellishingot;
+    public static Item goldironingot;
     public static Item yttriumingot;
     public static final int guiIDAlloyFurnace = 5;
-    public static CreativeTabs tabMyMod = new CreativeTabsAlloycraft("Alloycraft");
+    public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -44,19 +51,28 @@ public class Alloycraft
     public void preinit(FMLPreInitializationEvent event)
     {
     	//Registry
-    	
     	cookieblock = new BlockCookie();
+    	whatthehellblock = new BlockWhatTheHell();
+    	goldironblock = new BlockGoldIron();
+    	hellishblock = new BlockHellish();
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
     	yttriumore = new BlockYttriumOre();
     	cookieingot = new ItemCookieIngot();
     	yttriumingot = new ItemYttriumIngot();
+    	hellishingot = new ItemHellishIngot();
+    	goldironingot = new ItemGoldIronIngot();
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
+    	GameRegistry.registerBlock(hellishblock, "BlockHellish");
     	GameRegistry.registerBlock(yttriumore, "YttriumOre");
+    	GameRegistry.registerBlock(whatthehellblock, "BlockWHATTHEHELL");
+    	GameRegistry.registerBlock(goldironblock, "BlockGoldIron");
     	GameRegistry.registerBlock(alloysmelteridle, "AlloyFurnaceIdle");
     	GameRegistry.registerBlock(alloysmelteractive, "AlloyFurnaceActive");
     	GameRegistry.registerItem(cookieingot, "ItemCookieIngot");
+    	GameRegistry.registerItem(hellishingot, "ItemHellishIngot");
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
+    	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");

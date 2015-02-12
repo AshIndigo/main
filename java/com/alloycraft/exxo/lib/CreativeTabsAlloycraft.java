@@ -8,9 +8,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CreativeTabsAlloycraft extends CreativeTabs {
 
-public CreativeTabsAlloycraft(String tabLabel)
+public CreativeTabsAlloycraft(String Alloycraft)
 {
-super(tabLabel);
+super(Alloycraft);
 }
 
 @Override

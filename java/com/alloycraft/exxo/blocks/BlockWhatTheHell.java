@@ -7,13 +7,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
  
-public class BlockCookie extends Block
+public class BlockWhatTheHell extends Block
 {
-	public BlockCookie()
+	public BlockWhatTheHell()
 	{
 		super(Material.rock);
-		setBlockName(Refrences.MODID + "_" + "BlockCookie");
+		setBlockName(Refrences.MODID + "_" + "BlockWHATTHEHELL");
 		setCreativeTab(Alloycraft.taballoycraft);
-		setBlockTextureName(Refrences.MODID + ":" + "BlockCookie");
+		setBlockTextureName(Refrences.MODID + ":" + "BlockWHATTHEHELL");
 	}
 }
