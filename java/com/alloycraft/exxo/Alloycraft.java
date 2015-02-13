@@ -9,6 +9,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.util.EnumHelper;
 
 import com.alloycraft.exxo.blocks.AlloySmelter;
 import com.alloycraft.exxo.blocks.BlockCookie;
@@ -18,6 +19,7 @@ import com.alloycraft.exxo.blocks.BlockWhatTheHell;
 import com.alloycraft.exxo.blocks.BlockYttriumOre;
 import com.alloycraft.exxo.entities.EntityProjectXBolt;
 import com.alloycraft.exxo.items.ItemCookieIngot;
+import com.alloycraft.exxo.items.ItemGoldIronAxe;
 import com.alloycraft.exxo.items.ItemGoldIronHoe;
 import com.alloycraft.exxo.items.ItemGoldIronIngot;
 import com.alloycraft.exxo.items.ItemGoldIronPick;
@@ -33,7 +35,6 @@ import com.alloycraft.exxo.lib.EventManager;
 import com.alloycraft.exxo.lib.GuiHandler;
 import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
-import com.alloycraft.exxo.toolenums.copy.GoldIronEnumHelper;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -72,7 +73,7 @@ public class Alloycraft
     public static final int guiIDAlloyFurnace = 5;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     //public static AchievementPage AlloycraftPage;
-    public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
+    public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 3, 1000, 15.0F, 4.0F, 30);
 
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -96,11 +97,11 @@ public class Alloycraft
     	whatthehellingot = new ItemWhatTheHellIngot();
     	hellishingot = new ItemHellishIngot();
     	goldironingot = new ItemGoldIronIngot();
-    	goldironsword = new ItemGoldIronSword();
-    	goldironpick = new ItemGoldIronPick();
-    	goldironspade = new ItemGoldIronSpade();
-    	goldironhoe = new ItemGoldIronHoe();
-    	goldironaxe = new ItemGoldIronAxe();
+    	goldironsword = new ItemGoldIronSword(null);
+    	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron), "GoldIronPick")
+    	goldironspade = new ItemGoldIronSpade(null);
+    	goldironhoe = new ItemGoldIronHoe(null);
+    	goldironaxe = new ItemGoldIronAxe(null);
     	projectx = new ItemProjectX();
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(hellishblock, "BlockHellish");

@@ -1,7 +1,17 @@
 package com.alloycraft.exxo.items;
 
-import net.minecraft.item.Item;
+import com.alloycraft.exxo.lib.Refrences;
 
-public class ItemGoldIronSword extends Item {
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemSword;
+import net.minecraft.item.Item.ToolMaterial;
+
+public class ItemGoldIronSword extends ItemSword {
+
+	public ItemGoldIronSword(String unlocalizedName, ToolMaterial material) {
+        super(material);
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(Refrences.MODID + ":" + unlocalizedName);
+	}
 
 }
