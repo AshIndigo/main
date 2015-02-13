@@ -97,11 +97,11 @@ public class Alloycraft
     	whatthehellingot = new ItemWhatTheHellIngot();
     	hellishingot = new ItemHellishIngot();
     	goldironingot = new ItemGoldIronIngot();
-    	goldironsword = new ItemGoldIronSword(null);
-    	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron), "GoldIronPick")
-    	goldironspade = new ItemGoldIronSpade(null);
-    	goldironhoe = new ItemGoldIronHoe(null);
-    	goldironaxe = new ItemGoldIronAxe(null);
+    	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
+    	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
+    	goldironspade = new ItemGoldIronSpade("GoldIronSpade", GoldIron);
+    	goldironhoe = new ItemGoldIronHoe("GoldIronHoe", GoldIron);
+    	goldironaxe = new ItemGoldIronAxe("GoldIronAxe", GoldIron);
     	projectx = new ItemProjectX();
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(hellishblock, "BlockHellish");

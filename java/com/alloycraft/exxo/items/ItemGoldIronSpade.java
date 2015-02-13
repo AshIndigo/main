@@ -7,10 +7,12 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.Item.ToolMaterial;
 
 public class ItemGoldIronSpade extends ItemSpade {
+
 		public ItemGoldIronSpade(String unlocalizedName, ToolMaterial material) {
 	        super(material);
 	        this.setUnlocalizedName(unlocalizedName);
 	        this.setTextureName(Refrences.MODID + ":" + unlocalizedName);
 	        
 
+}
 }
