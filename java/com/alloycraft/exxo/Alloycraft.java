@@ -90,7 +90,7 @@ public class Alloycraft
     	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	CookieIngot = new Achievement("", "CookieIngot", 0, 0, Alloycraft.cookieingot, null);
-    	YttriumIngot = new Achievement("", "YttriumIngot", 0, 0, Alloycraft.yttriumingot, null);
+    	YttriumIngot = new Achievement("", "YttriumIngot", 2, 2, Alloycraft.yttriumingot, null);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
     	AlloycraftPage = new AchievementPage("Alloycraft Achievements", CookieIngot, YttriumIngot);

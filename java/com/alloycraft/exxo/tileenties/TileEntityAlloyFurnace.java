@@ -166,7 +166,7 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
 
 	@Override
 	public String getInventoryName() {
-		return "container.alloyfurnace";
+		return "Alloy Furnace";
 	}
 
 	@Override
