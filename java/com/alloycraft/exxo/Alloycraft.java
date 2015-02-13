@@ -1,6 +1,7 @@
 package com.alloycraft.exxo;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -14,18 +15,20 @@ import com.alloycraft.exxo.blocks.BlockGoldIron;
 import com.alloycraft.exxo.blocks.BlockHellish;
 import com.alloycraft.exxo.blocks.BlockWhatTheHell;
 import com.alloycraft.exxo.blocks.BlockYttriumOre;
+import com.alloycraft.exxo.entities.EntityProjectXBolt;
 import com.alloycraft.exxo.items.ItemCookieIngot;
 import com.alloycraft.exxo.items.ItemGoldIronIngot;
 import com.alloycraft.exxo.items.ItemHellishIngot;
+import com.alloycraft.exxo.items.ItemProjectX;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.CommonProxy;
 import com.alloycraft.exxo.lib.CreativeTabsAlloycraft;
 import com.alloycraft.exxo.lib.EventManager;
 import com.alloycraft.exxo.lib.GuiHandler;
 import com.alloycraft.exxo.lib.Refrences;
-import com.alloycraft.exxo.libs.EventListener;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -50,11 +53,12 @@ public class Alloycraft
     public static Item hellishingot;
     public static Item goldironingot;
     public static Item yttriumingot;
-    public static Achievement CookieIngot;
-    public static Achievement YttriumIngot;
+    public static Item projectx;
+    //public static Achievement CookieIngot;
+    //public static Achievement YttriumIngot;
     public static final int guiIDAlloyFurnace = 5;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
-    public static AchievementPage AlloycraftPage;
+    //public static AchievementPage AlloycraftPage;
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -66,17 +70,18 @@ public class Alloycraft
     public void preinit(FMLPreInitializationEvent event)
     {
     	//Registry
-    	cookieblock = new BlockCookie();
+    	cookieblock = new BlockCookie().setHardness(3.0F);
     	whatthehellblock = new BlockWhatTheHell();
-    	goldironblock = new BlockGoldIron();
-    	hellishblock = new BlockHellish();
+    	goldironblock = new BlockGoldIron().setHardness(3.0F);
+    	hellishblock = new BlockHellish().setHardness(3.0F);
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
-    	yttriumore = new BlockYttriumOre();
+    	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	yttriumingot = new ItemYttriumIngot();
     	hellishingot = new ItemHellishIngot();
     	goldironingot = new ItemGoldIronIngot();
+    	projectx = new ItemProjectX();
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(hellishblock, "BlockHellish");
     	GameRegistry.registerBlock(yttriumore, "YttriumOre");
@@ -88,14 +93,15 @@ public class Alloycraft
     	GameRegistry.registerItem(hellishingot, "ItemHellishIngot");
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
     	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
+    	GameRegistry.registerItem(projectx, "ItemProjectX");
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
-    	CookieIngot = new Achievement("", "CookieIngot", 0, 0, Alloycraft.cookieingot, null);
-    	YttriumIngot = new Achievement("", "YttriumIngot", 2, 2, Alloycraft.yttriumingot, null);
+    	//CookieIngot = new Achievement("", "CookieIngot", 0, 0, Alloycraft.cookieingot, null);
+    	//YttriumIngot = new Achievement("", "YttriumIngot", 2, 2, Alloycraft.yttriumingot, null);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
-    	AlloycraftPage = new AchievementPage("Alloycraft Achievements", CookieIngot, YttriumIngot);
-    	AchievementPage.registerAchievementPage(AlloycraftPage);
-    	FMLCommonHandler.instance().bus().register(new EventListener());
+    	//AlloycraftPage = new AchievementPage("Alloycraft Achievements", CookieIngot, YttriumIngot);
+    	//AchievementPage.registerAchievementPage(AlloycraftPage);
+    	//FMLCommonHandler.instance().bus().register(new EventListener());
     	
     	//Recipes
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.cookieblock, 1), new Object[]{
@@ -126,7 +132,7 @@ public class Alloycraft
     	GameRegistry.addSmelting(new ItemStack(Alloycraft.yttriumore, 1), new ItemStack(Alloycraft.yttriumingot, 1), 0.1F);
     }
     public void init(FMLInitializationEvent event){
-		
+    	
         
 }
 }
