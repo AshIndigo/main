@@ -9,3 +9,7 @@ item.alloycraft_CookieIngot.name=Cookie Ingot
 item.alloycraft_HellishIngot.name=Hellish Alloy Ingot
 item.alloycraft_GoldIronIngot.name=Gold-Iron Alloy Ingot
 item.alloycraft_YttriumIngot.name=Yttrium Ingot
+achievement.CookieIngot=Cookie Ingots!
+achievement.CookieIngot.desc=Made some Cookie Ingots!
+achievement.YttriumIngot=Yttrium Ingots!
+achievement.YttriumIngot.desc=Made some Yttrium Ingots!
