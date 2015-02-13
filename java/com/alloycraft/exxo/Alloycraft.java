@@ -73,7 +73,7 @@ public class Alloycraft
     public static final int guiIDAlloyFurnace = 5;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     //public static AchievementPage AlloycraftPage;
-    public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 3, 1000, 15.0F, 4.0F, 30);
+    public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
 
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
