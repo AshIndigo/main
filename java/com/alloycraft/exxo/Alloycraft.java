@@ -3,6 +3,7 @@ package com.alloycraft.exxo;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -167,6 +168,84 @@ public class Alloycraft
         	"AAA",
         	"AAA",
         	'A', Alloycraft.whatthehellingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.whatthehellblock, 1), new Object[]{
+        	"AAA",
+        	"AAA",
+        	"AAA",
+        	'A', Alloycraft.whatthehellingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.alloysmelteridle, 1), new Object[]{
+        	"AAA",
+        	"ABA",
+        	"AAA",
+        	'A', Alloycraft.yttriumingot, 'B', Blocks.furnace
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironsword, 1), new Object[]{
+        	" A ",
+        	" A ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironpick, 1), new Object[]{
+        	"AAA",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironspade, 1), new Object[]{
+        	" A ",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhoe, 1), new Object[]{
+        	"AA ",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhoe, 1), new Object[]{
+        	" AA",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironaxe, 1), new Object[]{
+        	"AA ",
+        	"AB ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironaxe, 1), new Object[]{
+        	" AA ",
+        	" BA",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironchestplate, 1), new Object[]{
+        	"A A",
+        	"AAA",
+        	"AAA",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironboots, 1), new Object[]{
+        	"   ",
+        	"A A",
+        	"A A",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironleggings, 1), new Object[]{
+        	"AAA",
+        	"A A",
+        	"A A",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhelmet, 1), new Object[]{
+        	"AAA",
+        	"A A",
+        	"  ",
+        	'A', Alloycraft.goldironingot
     	});
     	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.hellishingot, 9), new Object[]{
     	new ItemStack(Alloycraft.hellishblock, 1)
