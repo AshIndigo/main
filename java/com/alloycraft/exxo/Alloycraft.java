@@ -31,11 +31,11 @@ import com.alloycraft.exxo.items.ItemGoldIronSword;
 import com.alloycraft.exxo.items.ItemHellishIngot;
 import com.alloycraft.exxo.items.ItemLapisLavonium;
 import com.alloycraft.exxo.items.ItemProjectX;
+import com.alloycraft.exxo.items.ItemProjectXAmmo;
 import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.CommonProxy;
 import com.alloycraft.exxo.lib.CreativeTabsAlloycraft;
-import com.alloycraft.exxo.lib.EventListener;
 import com.alloycraft.exxo.lib.EventManager;
 import com.alloycraft.exxo.lib.GuiHandler;
 import com.alloycraft.exxo.lib.Refrences;
@@ -63,6 +63,7 @@ public class Alloycraft
     public static Block alloysmelteractive;
     public static Block yttriumore;
     public static Item cookieingot;
+    public static Item projectxammo;
     public static Item whatthehellingot;
     public static Item hellishingot;
     public static Item goldironingot;
@@ -78,8 +79,6 @@ public class Alloycraft
     public static Item goldironchestplate;
     public static Item goldironleggings;
     public static Item goldironboots;
-    public static Achievement CookieIngot;
-    public static Achievement YttriumIngot;
     public static final int guiIDAlloyFurnace = 5;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static AchievementPage AlloycraftPage;
@@ -100,7 +99,7 @@ public class Alloycraft
     	whatthehellblock = new BlockWhatTheHell();
     	goldironblock = new BlockGoldIron().setHardness(3.0F);
     	hellishblock = new BlockHellish().setHardness(3.0F);
-    	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F);
+    	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
@@ -109,6 +108,7 @@ public class Alloycraft
     	hellishingot = new ItemHellishIngot();
     	lapislavonium = new ItemLapisLavonium();
     	goldironingot = new ItemGoldIronIngot();
+    	projectxammo = new ItemProjectXAmmo();
     	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
     	goldironspade = new ItemGoldIronSpade("GoldIronSpade", GoldIron);
@@ -133,6 +133,7 @@ public class Alloycraft
     	GameRegistry.registerItem(goldironaxe, "ItemGoldIronAxe");
     	GameRegistry.registerItem(goldironspade, "ItemGoldIronSpade");
     	GameRegistry.registerItem(goldironhoe, "ItemGoldIronHoe");
+    	GameRegistry.registerItem(projectxammo, "ItemProjectXAmmo");
     	GameRegistry.registerItem(whatthehellingot, "ItemWhatTheHellIngot");
     	GameRegistry.registerItem(goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMOR, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
     	GameRegistry.registerItem(goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMOR, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
@@ -141,8 +142,6 @@ public class Alloycraft
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
-    	FMLCommonHandler.instance().bus().register(new EventListener());
-    	
     	
     	//Recipes
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.cookieblock, 1), new Object[]{
@@ -247,6 +246,18 @@ public class Alloycraft
         	"  ",
         	'A', Alloycraft.goldironingot
     	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.projectxammo, 64), new Object[]{
+        	"DCD",
+        	"ABA",
+        	"AAA",
+        	'A', Alloycraft.goldironingot, 'C', Items.redstone, 'B', Items.gunpowder, 'D', Blocks.obsidian
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.projectx, 1), new Object[]{
+        	"AA ",
+        	"BEA",
+        	"CD ",
+        	'A', Alloycraft.goldironingot, 'C', Items.leather, 'B', Blocks.tnt, 'D', Blocks.obsidian, 'E', Alloycraft.goldironblock
+    	});
     	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.hellishingot, 9), new Object[]{
     	new ItemStack(Alloycraft.hellishblock, 1)
     			});
@@ -261,9 +272,5 @@ public class Alloycraft
     }
     public void init(FMLInitializationEvent event){
     
-    	CookieIngot = new Achievement("", "TutorialAchievement", 0, 0, Items.golden_apple, null);
-		YttriumIngot = new Achievement("", "TutorialSecondAchievement", 2, 0, Items.apple, null);
-		AlloycraftPage = new AchievementPage("Tutorial Achievements", CookieIngot, YttriumIngot);
-		AchievementPage.registerAchievementPage(AlloycraftPage);
 }
 }
