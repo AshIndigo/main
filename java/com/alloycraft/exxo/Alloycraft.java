@@ -12,6 +12,7 @@ import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.util.EnumHelper;
 
+import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.blocks.AlloySmelter;
 import com.alloycraft.exxo.blocks.BlockCookie;
 import com.alloycraft.exxo.blocks.BlockGoldIron;
@@ -27,6 +28,7 @@ import com.alloycraft.exxo.items.ItemGoldIronPick;
 import com.alloycraft.exxo.items.ItemGoldIronSpade;
 import com.alloycraft.exxo.items.ItemGoldIronSword;
 import com.alloycraft.exxo.items.ItemHellishIngot;
+import com.alloycraft.exxo.items.ItemLapisLavonium;
 import com.alloycraft.exxo.items.ItemProjectX;
 import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
@@ -64,11 +66,16 @@ public class Alloycraft
     public static Item goldironingot;
     public static Item yttriumingot;
     public static Item projectx;
+    public static Item lapislavonium;
     public static Item goldironsword;
     public static Item goldironpick;
     public static Item goldironspade;
     public static Item goldironhoe;
     public static Item goldironaxe;
+    public static Item goldironhelmet;
+    public static Item goldironchestplate;
+    public static Item goldironleggings;
+    public static Item goldironboots;
     //public static Achievement CookieIngot;
     //public static Achievement YttriumIngot;
     public static final int guiIDAlloyFurnace = 5;
@@ -98,6 +105,7 @@ public class Alloycraft
     	yttriumingot = new ItemYttriumIngot();
     	whatthehellingot = new ItemWhatTheHellIngot();
     	hellishingot = new ItemHellishIngot();
+    	lapislavonium = new ItemLapisLavonium();
     	goldironingot = new ItemGoldIronIngot();
     	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
@@ -117,12 +125,17 @@ public class Alloycraft
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
     	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
     	GameRegistry.registerItem(projectx, "ItemProjectX");
+    	GameRegistry.registerItem(lapislavonium, "ItemLapisLavonium");
     	GameRegistry.registerItem(goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(goldironpick, "ItemGoldIronPick");
     	GameRegistry.registerItem(goldironaxe, "ItemGoldIronAxe");
     	GameRegistry.registerItem(goldironspade, "ItemGoldIronSpade");
     	GameRegistry.registerItem(goldironhoe, "ItemGoldIronHoe");
     	GameRegistry.registerItem(whatthehellingot, "ItemWhatTheHellIngot");
+    	GameRegistry.registerItem(goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMOR, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
+    	GameRegistry.registerItem(goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMOR, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMOR, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMOR, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	//CookieIngot = new Achievement("", "CookieIngot", 0, 0, Alloycraft.cookieingot, null);
     	//YttriumIngot = new Achievement("", "YttriumIngot", 2, 2, Alloycraft.yttriumingot, null);
