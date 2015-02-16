@@ -34,6 +34,7 @@ import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.CommonProxy;
 import com.alloycraft.exxo.lib.CreativeTabsAlloycraft;
+import com.alloycraft.exxo.lib.EventListener;
 import com.alloycraft.exxo.lib.EventManager;
 import com.alloycraft.exxo.lib.GuiHandler;
 import com.alloycraft.exxo.lib.Refrences;
@@ -76,11 +77,11 @@ public class Alloycraft
     public static Item goldironchestplate;
     public static Item goldironleggings;
     public static Item goldironboots;
-    //public static Achievement CookieIngot;
-    //public static Achievement YttriumIngot;
+    public static Achievement CookieIngot;
+    public static Achievement YttriumIngot;
     public static final int guiIDAlloyFurnace = 5;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
-    //public static AchievementPage AlloycraftPage;
+    public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
     public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 20);
 
@@ -137,13 +138,10 @@ public class Alloycraft
     	GameRegistry.registerItem(goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMOR, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
     	GameRegistry.registerItem(goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMOR, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
-    	//CookieIngot = new Achievement("", "CookieIngot", 0, 0, Alloycraft.cookieingot, null);
-    	//YttriumIngot = new Achievement("", "YttriumIngot", 2, 2, Alloycraft.yttriumingot, null);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
-    	//AlloycraftPage = new AchievementPage("Alloycraft Achievements", CookieIngot, YttriumIngot);
-    	//AchievementPage.registerAchievementPage(AlloycraftPage);
-    	//FMLCommonHandler.instance().bus().register(new EventListener());
+    	FMLCommonHandler.instance().bus().register(new EventListener());
+    	
     	
     	//Recipes
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.cookieblock, 1), new Object[]{
@@ -183,7 +181,10 @@ public class Alloycraft
     	GameRegistry.addSmelting(new ItemStack(Alloycraft.yttriumore, 1), new ItemStack(Alloycraft.yttriumingot, 1), 0.1F);
     }
     public void init(FMLInitializationEvent event){
-    	
-        
+    
+    	CookieIngot = new Achievement("", "TutorialAchievement", 0, 0, Items.golden_apple, null);
+		YttriumIngot = new Achievement("", "TutorialSecondAchievement", 2, 0, Items.apple, null);
+		AlloycraftPage = new AchievementPage("Tutorial Achievements", CookieIngot, YttriumIngot);
+		AchievementPage.registerAchievementPage(AlloycraftPage);
 }
 }
