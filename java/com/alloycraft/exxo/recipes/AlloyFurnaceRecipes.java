@@ -1,7 +1,6 @@
 package com.alloycraft.exxo.recipes;
 
 import com.alloycraft.exxo.Alloycraft;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
