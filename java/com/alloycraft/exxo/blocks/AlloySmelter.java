@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -27,6 +28,10 @@ public class AlloySmelter extends BlockContainer {
 	private Random rand;
 	private final boolean isActive;
 	private static boolean keepInventory = true;
+	private Block drop;
+	private int meta;
+	private int least_quantity;
+	private int most_quantity;
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon iconFront;
@@ -147,5 +152,20 @@ public class AlloySmelter extends BlockContainer {
 			entity.validate();
 			world.setTileEntity(xCoord, yCoord, zCoord, entity);
 		}
+	}
+	public Block getBlockDropped(int meta, Random random, int fortune) {
+	    return this.drop;
+	}
+
+	@Override
+	public int damageDropped(int metadata) {
+	    return this.meta;
+	}
+
+	@Override
+	public int quantityDropped(int meta, int fortune, Random random) {
+	    if (this.least_quantity >= this.most_quantity)
+	        return this.least_quantity;
+	    return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
 	}
 }

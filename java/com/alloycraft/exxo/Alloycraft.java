@@ -13,33 +13,13 @@ import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.util.EnumHelper;
 
-import com.alloycraft.exxo.armor.ItemGoldIronArmor;
-import com.alloycraft.exxo.blocks.AlloySmelter;
-import com.alloycraft.exxo.blocks.BlockCookie;
-import com.alloycraft.exxo.blocks.BlockGoldIron;
-import com.alloycraft.exxo.blocks.BlockHellish;
-import com.alloycraft.exxo.blocks.BlockWhatTheHell;
-import com.alloycraft.exxo.blocks.BlockYttriumOre;
-import com.alloycraft.exxo.entities.EntityProjectXBolt;
-import com.alloycraft.exxo.items.ItemCookieIngot;
-import com.alloycraft.exxo.items.ItemGoldIronAxe;
-import com.alloycraft.exxo.items.ItemGoldIronHoe;
-import com.alloycraft.exxo.items.ItemGoldIronIngot;
-import com.alloycraft.exxo.items.ItemGoldIronPick;
-import com.alloycraft.exxo.items.ItemGoldIronSpade;
-import com.alloycraft.exxo.items.ItemGoldIronSword;
-import com.alloycraft.exxo.items.ItemHellishIngot;
-import com.alloycraft.exxo.items.ItemLapisLavonium;
-import com.alloycraft.exxo.items.ItemProjectX;
-import com.alloycraft.exxo.items.ItemProjectXAmmo;
-import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
-import com.alloycraft.exxo.items.ItemYttriumIngot;
-import com.alloycraft.exxo.lib.CommonProxy;
-import com.alloycraft.exxo.lib.CreativeTabsAlloycraft;
-import com.alloycraft.exxo.lib.EventManager;
-import com.alloycraft.exxo.lib.GuiHandler;
-import com.alloycraft.exxo.lib.Refrences;
-import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
+import com.alloycraft.exxo.*;
+import com.alloycraft.exxo.lib.*;
+import com.alloycraft.exxo.blocks.*;
+import com.alloycraft.exxo.items.*;
+import com.alloycraft.exxo.armor.*;
+import com.alloycraft.exxo.containers.*;
+import com.alloycraft.exxo.tileenties.*;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -79,7 +59,9 @@ public class Alloycraft
     public static Item goldironchestplate;
     public static Item goldironleggings;
     public static Item goldironboots;
+    public static Item lunchbox;
     public static final int guiIDAlloyFurnace = 5;
+    public static final int guiIDLunchBox = 6;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
@@ -108,6 +90,7 @@ public class Alloycraft
     	hellishingot = new ItemHellishIngot();
     	lapislavonium = new ItemLapisLavonium();
     	goldironingot = new ItemGoldIronIngot();
+    	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
     	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
@@ -143,132 +126,7 @@ public class Alloycraft
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
     	
-    	//Recipes
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.cookieblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', Items.cookie
-    });
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', Alloycraft.goldironingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', Alloycraft.hellishingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.whatthehellblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', Alloycraft.whatthehellingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.whatthehellblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', Alloycraft.whatthehellingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.alloysmelteridle, 1), new Object[]{
-        	"AAA",
-        	"ABA",
-        	"AAA",
-        	'A', Alloycraft.yttriumingot, 'B', Blocks.furnace
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironsword, 1), new Object[]{
-        	" A ",
-        	" A ",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironpick, 1), new Object[]{
-        	"AAA",
-        	" B ",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironspade, 1), new Object[]{
-        	" A ",
-        	" B ",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhoe, 1), new Object[]{
-        	"AA ",
-        	" B ",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhoe, 1), new Object[]{
-        	" AA",
-        	" B ",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironaxe, 1), new Object[]{
-        	"AA ",
-        	"AB ",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironaxe, 1), new Object[]{
-        	" AA ",
-        	" BA",
-        	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironchestplate, 1), new Object[]{
-        	"A A",
-        	"AAA",
-        	"AAA",
-        	'A', Alloycraft.goldironingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironboots, 1), new Object[]{
-        	"   ",
-        	"A A",
-        	"A A",
-        	'A', Alloycraft.goldironingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironleggings, 1), new Object[]{
-        	"AAA",
-        	"A A",
-        	"A A",
-        	'A', Alloycraft.goldironingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhelmet, 1), new Object[]{
-        	"AAA",
-        	"A A",
-        	"  ",
-        	'A', Alloycraft.goldironingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.projectxammo, 64), new Object[]{
-        	"DCD",
-        	"ABA",
-        	"AAA",
-        	'A', Alloycraft.goldironingot, 'C', Items.redstone, 'B', Items.gunpowder, 'D', Blocks.obsidian
-    	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.projectx, 1), new Object[]{
-        	"AA ",
-        	"BEA",
-        	"CD ",
-        	'A', Alloycraft.goldironingot, 'C', Items.leather, 'B', Blocks.tnt, 'D', Blocks.obsidian, 'E', Alloycraft.goldironblock
-    	});
-    	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.hellishingot, 9), new Object[]{
-    	new ItemStack(Alloycraft.hellishblock, 1)
-    			});
-    	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.goldironingot, 9), new Object[]{
-        	new ItemStack(Alloycraft.goldironblock, 1)
-        			});
-    	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.whatthehellingot, 9), new Object[]{
-        	new ItemStack(Alloycraft.whatthehellblock, 1)
-        			});
-    	GameRegistry.addSmelting(new ItemStack(Alloycraft.cookieblock, 1), new ItemStack(Alloycraft.cookieingot, 1), 0.1F);
-    	GameRegistry.addSmelting(new ItemStack(Alloycraft.yttriumore, 1), new ItemStack(Alloycraft.yttriumingot, 1), 0.1F);
+    	Recipes.registerRecipes();
     }
     public void init(FMLInitializationEvent event){
     
