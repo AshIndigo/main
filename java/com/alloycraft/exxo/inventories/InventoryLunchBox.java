@@ -1,11 +1,13 @@
 package com.alloycraft.exxo.inventories;
 
 import com.alloycraft.exxo.items.ItemLunchBox;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.util.Constants;
 
 public class InventoryLunchBox implements IInventory
 {
@@ -137,7 +139,7 @@ public void readFromNBT(NBTTagCompound tagcompound)
 {
 // Gets the custom taglist we wrote to this compound, if any
 // 1.7.2 change to compound.getTagList("ItemInventory", Constants.NBT.TAG_COMPOUND);
-	NBTTagList items = compound.getTagList("ItemInventory", Constants.NBT.TAG_COMPOUND);
+	NBTTagList items = tagcompound.getTagList("ItemLunchBox", Constants.NBT.TAG_COMPOUND);
 
 for (int i = 0; i < items.tagCount(); ++i)
 {

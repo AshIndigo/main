@@ -110,6 +110,7 @@ public class Alloycraft
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
     	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
     	GameRegistry.registerItem(projectx, "ItemProjectX");
+    	//GameRegistry.registerItem(lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(lapislavonium, "ItemLapisLavonium");
     	GameRegistry.registerItem(goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(goldironpick, "ItemGoldIronPick");
@@ -125,7 +126,6 @@ public class Alloycraft
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
-    	
     	Recipes.registerRecipes();
     }
     public void init(FMLInitializationEvent event){

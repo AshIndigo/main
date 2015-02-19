@@ -6,6 +6,7 @@ import com.alloycraft.exxo.inventories.InventoryLunchBox;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -16,6 +17,7 @@ public class ItemLunchBox extends Item
 {
 public ItemLunchBox()
 {
+	setCreativeTab(CreativeTabs.tabMisc);
 //ItemStacks that store an NBT Tag Compound are limited to stack size of 1
 setMaxStackSize(1);
 }
@@ -40,12 +42,5 @@ new InventoryLunchBox(player.getHeldItem()).setInventorySlotContents(0, new Item
 }
 }
 return stack;
-}
-
-@Override
-@SideOnly(Side.CLIENT)
-public void registerIcons(IIconRegister iconRegister)
-{
-itemIcon = iconRegister.registerIcon("inventoryitemmod:" + getUnlocalizedName().substring(5));
 }
 }

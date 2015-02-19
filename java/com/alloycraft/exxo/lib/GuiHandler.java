@@ -40,10 +40,16 @@ public class GuiHandler implements IGuiHandler {
 					return new GuiAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
 				}
 				return null;
+		
+			case Alloycraft.guiIDLunchBox:
+				if (entity instanceof TileEntityAlloyFurnace) {
+					return new GuiAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
+				}
+				return null;
 			}
+			
 		}
 		
 		return null;
 	}
-
 }

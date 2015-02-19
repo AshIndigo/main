@@ -5,7 +5,9 @@ import org.lwjgl.opengl.GL12;
 
 import com.alloycraft.exxo.containers.ContainerLunchBox;
 import com.alloycraft.exxo.inventories.InventoryLunchBox;
+import com.alloycraft.exxo.lib.Refrences;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
@@ -20,7 +22,7 @@ public class GuiLunchBox extends GuiContainer
 private float xSize_lo;
 private float ySize_lo;
 
-private static final ResourceLocation iconLocation = new ResourceLocation("inventoryitemmod", "textures/gui/inventoryitem.png");
+public ResourceLocation texture = new ResourceLocation(Refrences.MODID + ":" + "textures/gui/GuiAlloyFurnace.png");
 
 private final InventoryLunchBox inventory;
 
@@ -53,7 +55,7 @@ this.fontRendererObj.drawString(I18n.format("Lunch Box"), 26, this.ySize - 96 + 
 protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
 {
 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-this.mc.getTextureManager().bindTexture(iconLocation);
+Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 int k = (this.width - this.xSize) / 2;
 int l = (this.height - this.ySize) / 2;
 this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);

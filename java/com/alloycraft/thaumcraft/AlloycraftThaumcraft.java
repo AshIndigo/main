@@ -1,3 +1,4 @@
+/*
 package com.alloycraft.thaumcraft;
 
 import com.alloycraft.exxo.items.ItemProjectXAmmo;
@@ -24,3 +25,4 @@ public class AlloycraftThaumcraft {
 			
 		}
 }
+*/
