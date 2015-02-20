@@ -8,7 +8,6 @@ import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.recipes.*;
 
 public class Recipes {
-
 	public static AlloyFurnaceRecipes AlloyFurnaceRecipes;
 	public static ItemStack loadRecipes(Item item, Item item2) {
 		AlloyFurnaceRecipes.getOutput(item, item2);{

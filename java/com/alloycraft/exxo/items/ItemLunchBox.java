@@ -18,26 +18,21 @@ public class ItemLunchBox extends Item
 public ItemLunchBox()
 {
 	setCreativeTab(CreativeTabs.tabMisc);
-//ItemStacks that store an NBT Tag Compound are limited to stack size of 1
 setMaxStackSize(1);
 }
 
-//Without this method, your inventory will NOT work!!!
+
 @Override
 public int getMaxItemUseDuration(ItemStack stack) {
-return 1; // return any value greater than zero
+return 1;
 }
 
 @Override
 public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-//only want to check on server - the client gui will be opened automatically by the gui handler
 if (!world.isRemote) {
-//you may or may not want to check if the player is sneaking - up to you
 if (!player.isSneaking()) {
-//open the inventory:
 player.openGui(Alloycraft.instance, Alloycraft.guiIDLunchBox, player.worldObj, (int) player.posX, (int) player.posY, (int) player.posZ);
 } else {
-//if you're sneaky, I'll throw some diamonds in your back for you, but only in the first slot!
 new InventoryLunchBox(player.getHeldItem()).setInventorySlotContents(0, new ItemStack(Items.diamond, 4));
 }
 }

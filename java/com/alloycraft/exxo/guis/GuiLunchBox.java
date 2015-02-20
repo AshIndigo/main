@@ -31,10 +31,6 @@ public GuiLunchBox(ContainerLunchBox containerItem)
 super(containerItem);
 this.inventory = containerItem.inventory;
 }
-
-/**
-* Draws the screen and all the components in it.
-*/
 public void drawScreen(int par1, int par2, float par3)
 {
 super.drawScreen(par1, par2, par3);
@@ -48,10 +44,6 @@ String s = this.inventory.hasCustomInventoryName() ? this.inventory. getInventor
 this.fontRendererObj.drawString(s, this.xSize / 2 - this.fontRendererObj.getStringWidth(s) / 2, 0, 4210752);
 this.fontRendererObj.drawString(I18n.format("Lunch Box"), 26, this.ySize - 96 + 4, 4210752);
 }
-
-/**
-* Draw the background layer for the GuiContainer (everything behind the items)
-*/
 protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
 {
 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -62,11 +54,6 @@ this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
 int i1;
 drawPlayerModel(k + 51, l + 75, 30, (float)(k + 51) - this.xSize_lo, (float)(l + 75 - 50) - this.ySize_lo, this.mc.thePlayer);
 }
-
-/**
-* This renders the player model in standard inventory position;
-* copied straight from vanilla code but with renamed method parameters
-*/
 public static void drawPlayerModel(int x, int y, int scale, float yaw, float pitch, EntityLivingBase entity) {
 GL11.glEnable(GL11.GL_COLOR_MATERIAL);
 GL11.glPushMatrix();

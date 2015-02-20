@@ -59,13 +59,19 @@ public class Alloycraft
     public static Item goldironchestplate;
     public static Item goldironleggings;
     public static Item goldironboots;
+    public static Item hellishhelmet;
+    public static Item hellishchestplate;
+    public static Item hellishleggings;
+    public static Item hellishboots;
     public static Item lunchbox;
     public static final int guiIDAlloyFurnace = 5;
     public static final int guiIDLunchBox = 6;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
-    public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 20);
+    public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
+    public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 20);
+    public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 14, new int[] {2, 6, 4, 2}, 20);
 
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -119,10 +125,14 @@ public class Alloycraft
     	GameRegistry.registerItem(goldironhoe, "ItemGoldIronHoe");
     	GameRegistry.registerItem(projectxammo, "ItemProjectXAmmo");
     	GameRegistry.registerItem(whatthehellingot, "ItemWhatTheHellIngot");
-    	GameRegistry.registerItem(goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMOR, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
-    	GameRegistry.registerItem(goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMOR, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMOR, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMOR, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
+    	GameRegistry.registerItem(goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
+    	GameRegistry.registerItem(goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
+    	GameRegistry.registerItem(hellishhelmet = new ItemHellishArmor("HellishHelmet", ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
+    	GameRegistry.registerItem(hellishchestplate = new ItemHellishArmor("HellishChestplate", ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(hellishleggings = new ItemHellishArmor("HellishLeggings", ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(hellishboots = new ItemHellishArmor("HellishBoots", ARMORHELLISH, "Hellish", 3), "HellishBoots"); // 3 for boots
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");

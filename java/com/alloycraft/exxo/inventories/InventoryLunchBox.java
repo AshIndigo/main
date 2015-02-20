@@ -78,18 +78,14 @@ if (itemstack != null && itemstack.stackSize > this.getInventoryStackLimit())
 itemstack.stackSize = this.getInventoryStackLimit();
 }
 
-// 1.7.2 change to markDirty()
 markDirty();
 }
 
-// 1.7.2 change to getInventoryName
 @Override
 public String getInventoryName()
 {
 return name;
 }
-
-// 1.7.2 change to hasCustomInventoryName
 @Override
 public boolean  hasCustomInventoryName()
 {
@@ -132,13 +128,8 @@ public boolean isItemValidForSlot(int slot, ItemStack itemstack)
 return !(itemstack.getItem() instanceof ItemLunchBox);
 }
 
-/**
-* A custom method to read our inventory from an ItemStack's NBT compound
-*/
 public void readFromNBT(NBTTagCompound tagcompound)
 {
-// Gets the custom taglist we wrote to this compound, if any
-// 1.7.2 change to compound.getTagList("ItemInventory", Constants.NBT.TAG_COMPOUND);
 	NBTTagList items = tagcompound.getTagList("ItemLunchBox", Constants.NBT.TAG_COMPOUND);
 
 for (int i = 0; i < items.tagCount(); ++i)
@@ -153,9 +144,6 @@ inventory[slot] = ItemStack.loadItemStackFromNBT(item);
 }
 }
 
-/**
-* A custom method to write our inventory to an ItemStack's NBT compound
-*/
 public void writeToNBT(NBTTagCompound tagcompound)
 {
 
