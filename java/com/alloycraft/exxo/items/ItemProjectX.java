@@ -15,7 +15,7 @@ public class ItemProjectX extends Item {
 
   public ItemProjectX() {
 	  	setUnlocalizedName(Refrences.MODID + "_" + "ProjectX");
-		setCreativeTab(Alloycraft.taballoycraft);
+		setCreativeTab(Alloycraft.taballoycrafttools);
 		setTextureName(Refrences.MODID + ":" + "ProjectX");
   }
   

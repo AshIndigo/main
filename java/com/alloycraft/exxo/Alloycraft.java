@@ -12,7 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.util.EnumHelper;
-
 import com.alloycraft.exxo.*;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
@@ -20,7 +19,6 @@ import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
 import com.alloycraft.exxo.tileenties.*;
-
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -55,6 +53,11 @@ public class Alloycraft
     public static Item goldironspade;
     public static Item goldironhoe;
     public static Item goldironaxe;
+    public static Item hellishsword;
+    public static Item hellishpick;
+    public static Item hellishspade;
+    public static Item hellishhoe;
+    public static Item hellishaxe;
     public static Item goldironhelmet;
     public static Item goldironchestplate;
     public static Item goldironleggings;
@@ -67,6 +70,7 @@ public class Alloycraft
     public static final int guiIDAlloyFurnace = 5;
     public static final int guiIDLunchBox = 6;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
+    public static CreativeTabs taballoycrafttools = new CreativeTabsAlloycraftTools("AlloycraftTools");
     public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
@@ -82,7 +86,7 @@ public class Alloycraft
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
     {
-    	//Registry
+    	//Blocks
     	cookieblock = new BlockCookie().setHardness(3.0F);
     	whatthehellblock = new BlockWhatTheHell();
     	goldironblock = new BlockGoldIron().setHardness(3.0F);
@@ -90,6 +94,7 @@ public class Alloycraft
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
+    	//Items
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	yttriumingot = new ItemYttriumIngot();
     	whatthehellingot = new ItemWhatTheHellIngot();
@@ -98,12 +103,20 @@ public class Alloycraft
     	goldironingot = new ItemGoldIronIngot();
     	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
+    	//Gold-Iron Tools
     	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
     	goldironspade = new ItemGoldIronSpade("GoldIronSpade", GoldIron);
     	goldironhoe = new ItemGoldIronHoe("GoldIronHoe", GoldIron);
     	goldironaxe = new ItemGoldIronAxe("GoldIronAxe", GoldIron);
+    	//Hellish Tools
+    	hellishsword = new ItemHellishSword("HellishSword", Hellish);
+    	hellishpick = new ItemHellishPick("HellishPick", Hellish);
+    	hellishspade = new ItemHellishSpade("HellishSpade", Hellish);
+    	hellishhoe = new ItemHellishHoe("HellishHoe", Hellish);
+    	hellishaxe = new ItemHellishAxe("HellishAxe", Hellish);
     	projectx = new ItemProjectX();
+    	//Blocks
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(hellishblock, "BlockHellish");
     	GameRegistry.registerBlock(yttriumore, "YttriumOre");
@@ -118,17 +131,26 @@ public class Alloycraft
     	GameRegistry.registerItem(projectx, "ItemProjectX");
     	//GameRegistry.registerItem(lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(lapislavonium, "ItemLapisLavonium");
+    	//Gold-Iron Set
     	GameRegistry.registerItem(goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(goldironpick, "ItemGoldIronPick");
     	GameRegistry.registerItem(goldironaxe, "ItemGoldIronAxe");
     	GameRegistry.registerItem(goldironspade, "ItemGoldIronSpade");
     	GameRegistry.registerItem(goldironhoe, "ItemGoldIronHoe");
+    	//Hellish Set
+    	GameRegistry.registerItem(hellishsword, "ItemHellishSword");
+    	GameRegistry.registerItem(hellishpick, "ItemHellishPick");
+    	GameRegistry.registerItem(hellishaxe, "ItemHellishAxe");
+    	GameRegistry.registerItem(hellishspade, "ItemHellishSpade");
+    	GameRegistry.registerItem(hellishhoe, "ItemHellishHoe");
     	GameRegistry.registerItem(projectxammo, "ItemProjectXAmmo");
     	GameRegistry.registerItem(whatthehellingot, "ItemWhatTheHellIngot");
+    	//Gold-Iron Armor
     	GameRegistry.registerItem(goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
     	GameRegistry.registerItem(goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
     	GameRegistry.registerItem(goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
     	GameRegistry.registerItem(goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
+    	//Hellish Armor
     	GameRegistry.registerItem(hellishhelmet = new ItemHellishArmor("HellishHelmet", ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
     	GameRegistry.registerItem(hellishchestplate = new ItemHellishArmor("HellishChestplate", ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
     	GameRegistry.registerItem(hellishleggings = new ItemHellishArmor("HellishLeggings", ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
@@ -139,6 +161,7 @@ public class Alloycraft
     	Recipes.registerRecipes();
     }
     public void init(FMLInitializationEvent event){
+    	
     
 }
 }

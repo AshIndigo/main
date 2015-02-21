@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
 
-public class ItemGoldIronSword extends ItemSword {
+public class ItemHellishSword extends ItemSword {
 
-	public ItemGoldIronSword(String unlocalizedName, ToolMaterial material) {
+	public ItemHellishSword(String unlocalizedName, ToolMaterial material) {
         super(material);
         this.setUnlocalizedName(unlocalizedName);
         this.setTextureName(Refrences.MODID + ":" + unlocalizedName);

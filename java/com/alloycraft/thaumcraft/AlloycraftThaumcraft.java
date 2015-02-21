@@ -1,4 +1,6 @@
 /*
+Coding is evil
+
 package com.alloycraft.thaumcraft;
 
 import com.alloycraft.exxo.Alloycraft;
@@ -34,6 +36,7 @@ public class AlloycraftThaumcraft {
 			
 		}
 			return null;
+		
 }
 	}
 */

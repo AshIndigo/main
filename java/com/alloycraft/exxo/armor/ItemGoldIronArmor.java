@@ -1,5 +1,6 @@
 package com.alloycraft.exxo.armor;
 
+import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.lib.Refrences;
 
 import net.minecraft.entity.Entity;
@@ -16,6 +17,7 @@ public class ItemGoldIronArmor extends ItemArmor {
 	    this.textureName = textureName;
 	    this.setUnlocalizedName(unlocalizedName);
 	    this.setTextureName(Refrences.MODID + ":" + unlocalizedName);
+	    setCreativeTab(Alloycraft.taballoycrafttools);
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)

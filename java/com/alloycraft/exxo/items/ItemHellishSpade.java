@@ -7,13 +7,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.Item.ToolMaterial;
 
-public class ItemGoldIronSpade extends ItemSpade {
+public class ItemHellishSpade extends ItemSpade {
 
-		public ItemGoldIronSpade(String unlocalizedName, ToolMaterial material) {
+		public ItemHellishSpade(String unlocalizedName, ToolMaterial material) {
 	        super(material);
 	        this.setUnlocalizedName(unlocalizedName);
 	        this.setTextureName(Refrences.MODID + ":" + unlocalizedName);
 	        setCreativeTab(Alloycraft.taballoycrafttools);
+	        
 
 }
 }

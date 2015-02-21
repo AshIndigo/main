@@ -37,18 +37,13 @@ public class Recipes {
         	"AAA",
         	'A', Alloycraft.whatthehellingot
     	});
-    	GameRegistry.addRecipe(new ItemStack(Alloycraft.whatthehellblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', Alloycraft.whatthehellingot
-    	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.alloysmelteridle, 1), new Object[]{
         	"AAA",
         	"ABA",
         	"AAA",
         	'A', Alloycraft.yttriumingot, 'B', Blocks.furnace
     	});
+    	//Gold-Iron Set
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironsword, 1), new Object[]{
         	" A ",
         	" A ",
@@ -110,6 +105,73 @@ public class Recipes {
         	'A', Alloycraft.goldironingot
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhelmet, 1), new Object[]{
+        	"AAA",
+        	"A A",
+        	"  ",
+        	'A', Alloycraft.goldironingot
+    	});
+    	//Hellish Set
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishsword, 1), new Object[]{
+        	" A ",
+        	" A ",
+        	" B ",
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishpick, 1), new Object[]{
+        	"AAA",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishspade, 1), new Object[]{
+        	" A ",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.goldironingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishhoe, 1), new Object[]{
+        	"AA ",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishhoe, 1), new Object[]{
+        	" AA",
+        	" B ",
+        	" B ",
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishaxe, 1), new Object[]{
+        	"AA ",
+        	"AB ",
+        	" B ",
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishaxe, 1), new Object[]{
+        	" AA ",
+        	" BA",
+        	" B ",
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishchestplate, 1), new Object[]{
+        	"A A",
+        	"AAA",
+        	"AAA",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishboots, 1), new Object[]{
+        	"   ",
+        	"A A",
+        	"A A",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishleggings, 1), new Object[]{
+        	"AAA",
+        	"A A",
+        	"A A",
+        	'A', Alloycraft.goldironingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishhelmet, 1), new Object[]{
         	"AAA",
         	"A A",
         	"  ",
