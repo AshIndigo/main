@@ -103,6 +103,7 @@ public class Alloycraft
     	goldironingot = new ItemGoldIronIngot();
     	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
+    	projectx = new ItemProjectX();
     	//Gold-Iron Tools
     	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
@@ -115,7 +116,6 @@ public class Alloycraft
     	hellishspade = new ItemHellishSpade("HellishSpade", Hellish);
     	hellishhoe = new ItemHellishHoe("HellishHoe", Hellish);
     	hellishaxe = new ItemHellishAxe("HellishAxe", Hellish);
-    	projectx = new ItemProjectX();
     	//Blocks
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(hellishblock, "BlockHellish");
