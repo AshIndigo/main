@@ -82,7 +82,7 @@ public class Recipes {
         	'A', Alloycraft.goldironingot, 'B', Items.stick
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironaxe, 1), new Object[]{
-        	" AA ",
+        	" AA",
         	" BA",
         	" B ",
         	'A', Alloycraft.goldironingot, 'B', Items.stick
@@ -108,7 +108,7 @@ public class Recipes {
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.goldironhelmet, 1), new Object[]{
         	"AAA",
         	"A A",
-        	"  ",
+        	"   ",
         	'A', Alloycraft.goldironingot
     	});
     	//Hellish Set
@@ -128,7 +128,7 @@ public class Recipes {
         	" A ",
         	" B ",
         	" B ",
-        	'A', Alloycraft.goldironingot, 'B', Items.stick
+        	'A', Alloycraft.hellishingot, 'B', Items.stick
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishhoe, 1), new Object[]{
         	"AA ",
@@ -149,7 +149,7 @@ public class Recipes {
         	'A', Alloycraft.hellishingot, 'B', Items.stick
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishaxe, 1), new Object[]{
-        	" AA ",
+        	" AA",
         	" BA",
         	" B ",
         	'A', Alloycraft.hellishingot, 'B', Items.stick
@@ -158,25 +158,25 @@ public class Recipes {
         	"A A",
         	"AAA",
         	"AAA",
-        	'A', Alloycraft.goldironingot
+        	'A', Alloycraft.hellishingot
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishboots, 1), new Object[]{
         	"   ",
         	"A A",
         	"A A",
-        	'A', Alloycraft.goldironingot
+        	'A', Alloycraft.hellishingot
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishleggings, 1), new Object[]{
         	"AAA",
         	"A A",
         	"A A",
-        	'A', Alloycraft.goldironingot
+        	'A', Alloycraft.hellishingot
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.hellishhelmet, 1), new Object[]{
         	"AAA",
         	"A A",
-        	"  ",
-        	'A', Alloycraft.goldironingot
+        	"   ",
+        	'A', Alloycraft.hellishingot
     	});
     	GameRegistry.addRecipe(new ItemStack(Alloycraft.projectxammo, 64), new Object[]{
         	"DCD",
