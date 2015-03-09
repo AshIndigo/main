@@ -10,8 +10,12 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
+
 import com.alloycraft.exxo.*;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
@@ -19,6 +23,7 @@ import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
 import com.alloycraft.exxo.tileenties.*;
+
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -32,14 +37,20 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = Refrences.MODID, version = Refrences.VERSION)
 public class Alloycraft
 {
-	//Items and Blocks
+	//Blocks
     public static Block cookieblock;
     public static Block hellishblock;
     public static Block goldironblock;
+    public static Block copperblock;
+    public static Block tinblock;
     public static Block whatthehellblock;
     public static Block alloysmelteridle;
     public static Block alloysmelteractive;
+    //Ore
     public static Block yttriumore;
+    public static Block copperore;
+    public static Block tinore;
+    //Items
     public static Item cookieingot;
     public static Item projectxammo;
     public static Item whatthehellingot;
@@ -48,25 +59,32 @@ public class Alloycraft
     public static Item yttriumingot;
     public static Item projectx;
     public static Item lapislavonium;
+    public static Item purecrystal;
+    public static Item copperingot;
+    public static Item tiningot;
+    public static Item lunchbox;
+    //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
     public static Item goldironspade;
     public static Item goldironhoe;
     public static Item goldironaxe;
+    //Hellish Set
     public static Item hellishsword;
     public static Item hellishpick;
     public static Item hellishspade;
     public static Item hellishhoe;
     public static Item hellishaxe;
+    //Gold-Iron Armor
     public static Item goldironhelmet;
     public static Item goldironchestplate;
     public static Item goldironleggings;
     public static Item goldironboots;
+    //Hellish Armor
     public static Item hellishhelmet;
     public static Item hellishchestplate;
     public static Item hellishleggings;
     public static Item hellishboots;
-    public static Item lunchbox;
     public static final int guiIDAlloyFurnace = 5;
     public static final int guiIDLunchBox = 6;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
@@ -89,18 +107,26 @@ public class Alloycraft
     	//Blocks
     	cookieblock = new BlockCookie().setHardness(3.0F);
     	whatthehellblock = new BlockWhatTheHell();
+    	tinblock = new BlockTin();
+    	copperblock = new BlockCopper();
     	goldironblock = new BlockGoldIron().setHardness(3.0F);
     	hellishblock = new BlockHellish().setHardness(3.0F);
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
+    	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
+    	copperore = new BlockCopperOre().setHardness(3.0F);
+    	tinore = new BlockTinOre().setHardness(3.0F);
     	//Items
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
+    	copperingot = new ItemCopperIngot();
     	yttriumingot = new ItemYttriumIngot();
     	whatthehellingot = new ItemWhatTheHellIngot();
     	hellishingot = new ItemHellishIngot();
     	lapislavonium = new ItemLapisLavonium();
     	goldironingot = new ItemGoldIronIngot();
+    	tiningot = new ItemTinIngot();
+    	purecrystal = new ItemPureCrystal();
     	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
     	projectx = new ItemProjectX();
@@ -116,21 +142,30 @@ public class Alloycraft
     	hellishspade = new ItemHellishSpade("HellishSpade", Hellish);
     	hellishhoe = new ItemHellishHoe("HellishHoe", Hellish);
     	hellishaxe = new ItemHellishAxe("HellishAxe", Hellish);
+    	//Ore
+    	GameRegistry.registerBlock(copperore, "CopperOre");
+    	GameRegistry.registerBlock(tinore, "TinOre");
+    	GameRegistry.registerBlock(yttriumore, "YttriumOre");
     	//Blocks
     	GameRegistry.registerBlock(cookieblock, "BlockCookie");
+    	GameRegistry.registerBlock(copperblock, "BlockCopper");
+    	GameRegistry.registerBlock(tinblock, "BlockTin");
     	GameRegistry.registerBlock(hellishblock, "BlockHellish");
-    	GameRegistry.registerBlock(yttriumore, "YttriumOre");
     	GameRegistry.registerBlock(whatthehellblock, "BlockWHATTHEHELL");
     	GameRegistry.registerBlock(goldironblock, "BlockGoldIron");
     	GameRegistry.registerBlock(alloysmelteridle, "AlloyFurnaceIdle");
     	GameRegistry.registerBlock(alloysmelteractive, "AlloyFurnaceActive");
+    	//Items
     	GameRegistry.registerItem(cookieingot, "ItemCookieIngot");
     	GameRegistry.registerItem(hellishingot, "ItemHellishIngot");
     	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
+    	GameRegistry.registerItem(purecrystal, "ItemPureCrystal");
     	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
+    	GameRegistry.registerItem(copperingot, "ItemCopperIngot");
     	GameRegistry.registerItem(projectx, "ItemProjectX");
     	//GameRegistry.registerItem(lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(lapislavonium, "ItemLapisLavonium");
+    	GameRegistry.registerItem(tiningot, "ItemTinIngot");
     	//Gold-Iron Set
     	GameRegistry.registerItem(goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(goldironpick, "ItemGoldIronPick");
@@ -159,6 +194,8 @@ public class Alloycraft
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
     	Recipes.registerRecipes();
+    	Registry.registerOreDictionary();
+    	Registry.registerHooks();
     }
     public void init(FMLInitializationEvent event){
     	

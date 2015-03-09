@@ -38,6 +38,8 @@ public class EventManager implements IWorldGenerator {
 
     	  this.addOreSpawn(Alloycraft.cookieblock, world, random, x, z, 10, 15, 8, 0, 128);
     	  this.addOreSpawn(Alloycraft.yttriumore, world, random, x, z, 10, 15, 10, 0, 128);
+    	  this.addOreSpawn(Alloycraft.copperore, world, random, x, z, 10, 15, 10, 0, 128);
+    	  this.addOreSpawn(Alloycraft.tinore, world, random, x, z, 10, 15, 10, 0, 128);
     }
 
     private void GenerateNether(Random random, int x, int z, World world) {
