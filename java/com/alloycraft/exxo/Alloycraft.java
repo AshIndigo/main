@@ -1,5 +1,7 @@
 package com.alloycraft.exxo;
 
+import java.util.logging.Level;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,8 +13,11 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.client.model.AdvancedModelLoader;
+import net.minecraftforge.client.model.IModelCustom;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -22,6 +27,7 @@ import com.alloycraft.exxo.blocks.*;
 import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
+import com.alloycraft.exxo.render.ProjectXRender;
 import com.alloycraft.exxo.tileenties.*;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -196,6 +202,8 @@ public class Alloycraft
     	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
     	Registry.registerHooks();
+    	ClientProxy.registerItemRenderers();
+    	//IModelCustom model = AdvancedModelLoader.loadModel(ProjectXRender.projectx);
     }
     public void init(FMLInitializationEvent event){
     	

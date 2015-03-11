@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -156,16 +157,9 @@ public class AlloySmelter extends BlockContainer {
 	public Block getBlockDropped(int meta, Random random, int fortune) {
 	    return this.drop;
 	}
-
-	@Override
-	public int damageDropped(int metadata) {
-	    return this.meta;
-	}
-
-	@Override
-	public int quantityDropped(int meta, int fortune, Random random) {
-	    if (this.least_quantity >= this.most_quantity)
-	        return this.least_quantity;
-	    return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
-	}
+	
+	public Item getItemDropped(int meta, Random random, int fortune)
+    {
+        return Item.getItemFromBlock(Alloycraft.alloysmelteridle);
+    }
 }
