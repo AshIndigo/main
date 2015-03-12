@@ -52,6 +52,7 @@ public class Alloycraft
     public static Block whatthehellblock;
     public static Block alloysmelteridle;
     public static Block alloysmelteractive;
+    public static Block rainbowwool;
     //Ore
     public static Block yttriumore;
     public static Block copperore;
@@ -69,6 +70,7 @@ public class Alloycraft
     public static Item copperingot;
     public static Item tiningot;
     public static Item lunchbox;
+    public static Item rainbowdye;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -119,6 +121,7 @@ public class Alloycraft
     	hellishblock = new BlockHellish().setHardness(3.0F);
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
+    	rainbowwool = new BlockRainbowWool();
     	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	copperore = new BlockCopperOre().setHardness(3.0F);
@@ -136,6 +139,7 @@ public class Alloycraft
     	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
     	projectx = new ItemProjectX();
+    	rainbowdye = new ItemRainbowDye();
     	//Gold-Iron Tools
     	goldironsword = new ItemGoldIronSword("GoldIronSword", GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", GoldIron);
@@ -161,6 +165,7 @@ public class Alloycraft
     	GameRegistry.registerBlock(goldironblock, "BlockGoldIron");
     	GameRegistry.registerBlock(alloysmelteridle, "AlloyFurnaceIdle");
     	GameRegistry.registerBlock(alloysmelteractive, "AlloyFurnaceActive");
+       	GameRegistry.registerBlock(rainbowwool, "RainbowWool");
     	//Items
     	GameRegistry.registerItem(cookieingot, "ItemCookieIngot");
     	GameRegistry.registerItem(hellishingot, "ItemHellishIngot");
@@ -172,6 +177,7 @@ public class Alloycraft
     	//GameRegistry.registerItem(lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(lapislavonium, "ItemLapisLavonium");
     	GameRegistry.registerItem(tiningot, "ItemTinIngot");
+    	GameRegistry.registerItem(rainbowdye, "ItemRainbowDye");
     	//Gold-Iron Set
     	GameRegistry.registerItem(goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(goldironpick, "ItemGoldIronPick");
