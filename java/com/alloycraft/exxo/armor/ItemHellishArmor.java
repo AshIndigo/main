@@ -28,4 +28,16 @@ public class ItemHellishArmor extends ItemArmor {
 	{
 	    return Refrences.MODID + ":armor/" + this.textureName + "_" + (this.armorType == 2 ? "2" : "1") + ".png";
 	}
+	@Override
+	public void onArmorTick(World world, EntityPlayer player, ItemStack stack)
+	{
+		if (player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem().equals(Alloycraft.hellishboots) 
+				&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem().equals(Alloycraft.hellishleggings) 
+				&& player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem().equals(Alloycraft.hellishchestplate) 
+				&& player.getCurrentArmor(3) != null && player.getCurrentArmor(3).getItem().equals(Alloycraft.hellishhelmet))
+		{
+			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 20*1));
+		}
+	}
+
 }

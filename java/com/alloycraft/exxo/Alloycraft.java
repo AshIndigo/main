@@ -36,6 +36,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -152,66 +153,21 @@ public class Alloycraft
     	hellishspade = new ItemHellishSpade("HellishSpade", Hellish);
     	hellishhoe = new ItemHellishHoe("HellishHoe", Hellish);
     	hellishaxe = new ItemHellishAxe("HellishAxe", Hellish);
-    	//Ore
-    	GameRegistry.registerBlock(copperore, "CopperOre");
-    	GameRegistry.registerBlock(tinore, "TinOre");
-    	GameRegistry.registerBlock(yttriumore, "YttriumOre");
-    	//Blocks
-    	GameRegistry.registerBlock(cookieblock, "BlockCookie");
-    	GameRegistry.registerBlock(copperblock, "BlockCopper");
-    	GameRegistry.registerBlock(tinblock, "BlockTin");
-    	GameRegistry.registerBlock(hellishblock, "BlockHellish");
-    	GameRegistry.registerBlock(whatthehellblock, "BlockWHATTHEHELL");
-    	GameRegistry.registerBlock(goldironblock, "BlockGoldIron");
-    	GameRegistry.registerBlock(alloysmelteridle, "AlloyFurnaceIdle");
-    	GameRegistry.registerBlock(alloysmelteractive, "AlloyFurnaceActive");
-       	GameRegistry.registerBlock(rainbowwool, "RainbowWool");
-    	//Items
-    	GameRegistry.registerItem(cookieingot, "ItemCookieIngot");
-    	GameRegistry.registerItem(hellishingot, "ItemHellishIngot");
-    	GameRegistry.registerItem(yttriumingot, "ItemYttriumIngot");
-    	GameRegistry.registerItem(purecrystal, "ItemPureCrystal");
-    	GameRegistry.registerItem(goldironingot, "ItemGoldIronIngot");
-    	GameRegistry.registerItem(copperingot, "ItemCopperIngot");
-    	GameRegistry.registerItem(projectx, "ItemProjectX");
-    	//GameRegistry.registerItem(lunchbox, "ItemLunchBox");
-    	GameRegistry.registerItem(lapislavonium, "ItemLapisLavonium");
-    	GameRegistry.registerItem(tiningot, "ItemTinIngot");
-    	GameRegistry.registerItem(rainbowdye, "ItemRainbowDye");
-    	//Gold-Iron Set
-    	GameRegistry.registerItem(goldironsword, "ItemGoldIronSword");
-    	GameRegistry.registerItem(goldironpick, "ItemGoldIronPick");
-    	GameRegistry.registerItem(goldironaxe, "ItemGoldIronAxe");
-    	GameRegistry.registerItem(goldironspade, "ItemGoldIronSpade");
-    	GameRegistry.registerItem(goldironhoe, "ItemGoldIronHoe");
-    	//Hellish Set
-    	GameRegistry.registerItem(hellishsword, "ItemHellishSword");
-    	GameRegistry.registerItem(hellishpick, "ItemHellishPick");
-    	GameRegistry.registerItem(hellishaxe, "ItemHellishAxe");
-    	GameRegistry.registerItem(hellishspade, "ItemHellishSpade");
-    	GameRegistry.registerItem(hellishhoe, "ItemHellishHoe");
-    	GameRegistry.registerItem(projectxammo, "ItemProjectXAmmo");
-    	GameRegistry.registerItem(whatthehellingot, "ItemWhatTheHellIngot");
-    	//Gold-Iron Armor
-    	GameRegistry.registerItem(goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
-    	GameRegistry.registerItem(goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
-    	//Hellish Armor
-    	GameRegistry.registerItem(hellishhelmet = new ItemHellishArmor("HellishHelmet", ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
-    	GameRegistry.registerItem(hellishchestplate = new ItemHellishArmor("HellishChestplate", ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(hellishleggings = new ItemHellishArmor("HellishLeggings", ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(hellishboots = new ItemHellishArmor("HellishBoots", ARMORHELLISH, "Hellish", 3), "HellishBoots"); // 3 for boots
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
     	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
     	Registry.registerHooks();
+    	Registry.registerItems();
+    	Registry.registerBlocks();
     	//IModelCustom model = AdvancedModelLoader.loadModel(ProjectXRender.projectx);
     }
     public void init(FMLInitializationEvent event){
     	
-    
+    }
+    public void postinit(FMLPostInitializationEvent event){
+    	
+    }
 }
-}
+    	

@@ -23,7 +23,11 @@ public class EntityProjectXBolt extends EntityThrowable {
 	public EntityProjectXBolt(World par1World, EntityLivingBase arg1EntityLivingBase) {
 		super(par1World, arg1EntityLivingBase);
 	}
-
+	
+	protected void setEntityTexture()
+    {
+        ResourceLocation serpentTexture = new ResourceLocation(Refrences.MODID+":textures/entity/projectx.png");
+    }
 	@Override
 	protected void onImpact(MovingObjectPosition par1MovingObjectPosition) {
 		this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius, true);

@@ -1,15 +1,13 @@
 package com.alloycraft.exxo.items;
 
-import com.alloycraft.exxo.Alloycraft;
-import com.alloycraft.exxo.lib.Refrences;
-
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.Item;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.World;
+
+import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.lib.Refrences;
 
 public class ItemHellishSword extends ItemSword {
 
@@ -19,5 +17,10 @@ public class ItemHellishSword extends ItemSword {
         this.setTextureName(Refrences.MODID + ":" + unlocalizedName);
         setCreativeTab(Alloycraft.taballoycrafttools);
 	}
-
+	
+	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    {
+    par1ItemStack.addEnchantment(Enchantment.fireAspect, 3);
+    
+    }
 }
