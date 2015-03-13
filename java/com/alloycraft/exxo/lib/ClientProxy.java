@@ -9,11 +9,9 @@ import com.alloycraft.exxo.tileenties.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ClientProxy extends CommonProxy {
-	public static void registerItemRenderers(){
-		
-		//MinecraftForgeClient.registerItemRenderer(Alloycraft.projectx, new ProjectXRender());
-
+	
+	
 	}
-    }
+    
 
 

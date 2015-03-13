@@ -2,6 +2,7 @@ package com.alloycraft.exxo.lib;
 
 import com.alloycraft.exxo.Alloycraft;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
@@ -29,5 +30,4 @@ public class Registry {
 		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(Alloycraft.tiningot), 1, 5, 5));
 		
 	}
-
 }

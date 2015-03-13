@@ -208,7 +208,6 @@ public class Alloycraft
     	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
     	Registry.registerHooks();
-    	ClientProxy.registerItemRenderers();
     	//IModelCustom model = AdvancedModelLoader.loadModel(ProjectXRender.projectx);
     }
     public void init(FMLInitializationEvent event){
