@@ -168,7 +168,7 @@ public class Alloycraft
     	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
     	//IModelCustom model = AdvancedModelLoader.loadModel(ProjectXRender.projectx);
-    	System.out.println("Hello?");
+    	System.out.println("Alloycraft Loaded");
     }
     public void init(FMLInitializationEvent event){
     	
