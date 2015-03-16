@@ -80,6 +80,8 @@ public class Registry {
     	GameRegistry.registerBlock(Alloycraft.alloysmelteridle, "AlloyFurnaceIdle");
     	GameRegistry.registerBlock(Alloycraft.alloysmelteractive, "AlloyFurnaceActive");
        	GameRegistry.registerBlock(Alloycraft.rainbowwool, "RainbowWool");
+       	GameRegistry.registerBlock(Alloycraft.crystalizeridle, "CrystalizerIdle");
+       	GameRegistry.registerBlock(Alloycraft.crystalizeractive, "CrystalizerActive");
 	}
 
 	public static void registerHooks() {

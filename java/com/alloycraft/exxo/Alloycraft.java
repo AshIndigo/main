@@ -125,8 +125,8 @@ public class Alloycraft
     	hellishblock = new BlockHellish().setHardness(3.0F);
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
-    	crystalizeridle = new Crystalizer(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
-    	crystalizeractive = new Crystalizer(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
+    	crystalizeridle = new Crystalizer(false).setBlockName("CrystalizerIdle").setHardness(3.5F).setLightLevel(0.02F);
+    	crystalizeractive = new Crystalizer(true).setBlockName("CrystalizerActive").setLightLevel(0.625F).setHardness(3.5F);
     	rainbowwool = new BlockRainbowWool();
     	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
@@ -161,6 +161,7 @@ public class Alloycraft
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
+    	GameRegistry.registerTileEntity(TileEntityCrystalizer.class, "Crystalizer");
     	Registry.registerHooks();
     	Registry.registerItems();
     	Registry.registerBlocks();

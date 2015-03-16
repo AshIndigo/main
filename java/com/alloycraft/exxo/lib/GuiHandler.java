@@ -3,10 +3,15 @@ package com.alloycraft.exxo.lib;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+
 import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.containers.ContainerAlloyFurnace;
-import com.alloycraft.exxo.guis.*;
+import com.alloycraft.exxo.containers.ContainerCrystalizer;
+import com.alloycraft.exxo.guis.GuiAlloyFurnace;
+import com.alloycraft.exxo.guis.GuiCrystalizer;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
+import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
+
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {
@@ -21,8 +26,12 @@ public class GuiHandler implements IGuiHandler {
 				if (entity instanceof TileEntityAlloyFurnace) {
 					return new ContainerAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
 				}
-				return null;
-				
+			case Alloycraft.guiIDCrystalizer:
+				if (entity instanceof TileEntityCrystalizer) {
+					return new ContainerCrystalizer(player.inventory, (TileEntityCrystalizer) entity);
+				}
+				return null;		
+		
 			}
 		}
 		
@@ -38,6 +47,10 @@ public class GuiHandler implements IGuiHandler {
 			case Alloycraft.guiIDAlloyFurnace:
 				if (entity instanceof TileEntityAlloyFurnace) {
 					return new GuiAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
+				}
+			case Alloycraft.guiIDCrystalizer:
+				if (entity instanceof TileEntityCrystalizer) {
+					return new GuiCrystalizer(player.inventory, (TileEntityCrystalizer) entity);
 				}
 				return null;
 			}
