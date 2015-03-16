@@ -156,12 +156,13 @@ public class Alloycraft
     	GameRegistry.registerWorldGenerator(new EventManager(), 1);
     	NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
-    	Recipes.registerRecipes();
-    	Registry.registerOreDictionary();
     	Registry.registerHooks();
     	Registry.registerItems();
     	Registry.registerBlocks();
+    	Recipes.registerRecipes();
+    	Registry.registerOreDictionary();
     	//IModelCustom model = AdvancedModelLoader.loadModel(ProjectXRender.projectx);
+    	System.out.println("Hello?");
     }
     public void init(FMLInitializationEvent event){
     	

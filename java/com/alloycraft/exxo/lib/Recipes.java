@@ -202,8 +202,17 @@ public class Recipes {
         	"CD ",
         	'A', Alloycraft.goldironingot, 'C', Items.leather, 'B', Blocks.tnt, 'D', Blocks.obsidian, 'E', Alloycraft.goldironblock
     	});
+    	GameRegistry.addRecipe(new ItemStack(Alloycraft.rainbowwool, 8), new Object[]{
+        	"AAA",
+        	"ABA",
+        	"AAA",
+        	'A', Blocks.wool, 'B', Alloycraft.rainbowdye
+    	});
     	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.hellishingot, 9), new Object[]{
-    	new ItemStack(Alloycraft.hellishblock, 1)
+    		new ItemStack(Alloycraft.hellishblock, 1)
+    				});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.rainbowwool, 1), new Object[]{
+    		new ItemStack(Blocks.wool), Alloycraft.rainbowdye
     				});
     	GameRegistry.addShapelessRecipe(new ItemStack(Alloycraft.goldironingot, 9), new Object[]{
         	new ItemStack(Alloycraft.goldironblock, 1)
