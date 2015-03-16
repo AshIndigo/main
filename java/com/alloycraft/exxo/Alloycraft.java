@@ -54,6 +54,8 @@ public class Alloycraft
     public static Block alloysmelteridle;
     public static Block alloysmelteractive;
     public static Block rainbowwool;
+    public static Block crystalizeridle;
+    public static Block crystalizeractive;
     //Ore
     public static Block yttriumore;
     public static Block copperore;
@@ -95,7 +97,8 @@ public class Alloycraft
     public static Item hellishleggings;
     public static Item hellishboots;
     public static final int guiIDAlloyFurnace = 5;
-    public static final int guiIDLunchBox = 6;
+    public static final int guiIDCrystalizer = 6;
+    public static final int guiIDLunchBox = 7;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static CreativeTabs taballoycrafttools = new CreativeTabsAlloycraftTools("AlloycraftTools");
     public static AchievementPage AlloycraftPage;
@@ -122,6 +125,8 @@ public class Alloycraft
     	hellishblock = new BlockHellish().setHardness(3.0F);
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
     	alloysmelteractive = new AlloySmelter(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
+    	crystalizeridle = new Crystalizer(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
+    	crystalizeractive = new Crystalizer(true).setBlockName("AlloyFurnaceActive").setLightLevel(0.625F).setHardness(3.5F);
     	rainbowwool = new BlockRainbowWool();
     	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
