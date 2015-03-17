@@ -5,9 +5,12 @@ import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.armor.ItemHellishArmor;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class Registry {
@@ -82,6 +85,8 @@ public class Registry {
        	GameRegistry.registerBlock(Alloycraft.rainbowwool, "RainbowWool");
        	GameRegistry.registerBlock(Alloycraft.crystalizeridle, "CrystalizerIdle");
        	GameRegistry.registerBlock(Alloycraft.crystalizeractive, "CrystalizerActive");
+       	//Fluids
+       	FluidRegistry.registerFluid(Alloycraft.goldironfluid);
 	}
 
 	public static void registerHooks() {

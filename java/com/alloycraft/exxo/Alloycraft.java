@@ -19,11 +19,14 @@ import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.alloycraft.exxo.*;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
+import com.alloycraft.exxo.fluids.GoldIronFluid;
 import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
@@ -96,6 +99,8 @@ public class Alloycraft
     public static Item hellishchestplate;
     public static Item hellishleggings;
     public static Item hellishboots;
+    //Fluids Oh God
+    public static Fluid goldironfluid;
     public static final int guiIDAlloyFurnace = 5;
     public static final int guiIDCrystalizer = 6;
     public static final int guiIDLunchBox = 7;
@@ -132,6 +137,8 @@ public class Alloycraft
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	copperore = new BlockCopperOre().setHardness(3.0F);
     	tinore = new BlockTinOre().setHardness(3.0F);
+    	//Fluids
+    	goldironfluid = new GoldIronFluid("GoldIronFluid");
     	//Items
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	copperingot = new ItemCopperIngot();
@@ -169,6 +176,7 @@ public class Alloycraft
     	Registry.registerOreDictionary();
     	//IModelCustom model = AdvancedModelLoader.loadModel(ProjectXRender.projectx);
     	System.out.println("Alloycraft Loaded");
+    	
     }
     public void init(FMLInitializationEvent event){
     	
