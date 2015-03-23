@@ -28,7 +28,7 @@ public class GuiAlloyFurnace extends GuiContainer {
 		String name = this.AlloyFurnace.hasCustomInventoryName() ? this.AlloyFurnace.getInventoryName() : I18n.format(this.AlloyFurnace.getInventoryName());
 		
 		this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6, 4210752);
-		this.fontRendererObj.drawString(I18n.format("Alloy Furnace"), 8, this.ySize - 96 + 5, 4210752);
+		this.fontRendererObj.drawString(I18n.format("Inventory"), 8, this.ySize - 96 + 5, 4210752);
 	}
 
 	@Override

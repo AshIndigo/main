@@ -11,6 +11,7 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class Registry {
@@ -21,6 +22,7 @@ public class Registry {
 		OreDictionary.registerOre("ingotCopper", new ItemStack(Alloycraft.copperingot));
     	OreDictionary.registerOre("ingotTin", new ItemStack(Alloycraft.tiningot));
     	OreDictionary.registerOre("ingotYtrrium", new ItemStack(Alloycraft.yttriumingot));
+    	OreDictionary.registerOre("ingotBronze", new ItemStack(Alloycraft.bronzeingot));
     	//Ore
     	OreDictionary.registerOre("oreCopper", new ItemStack(Alloycraft.copperore));
     	OreDictionary.registerOre("oreTin", new ItemStack(Alloycraft.tinore));
@@ -36,8 +38,10 @@ public class Registry {
     	GameRegistry.registerItem(Alloycraft.purecrystal, "ItemPureCrystal");
     	GameRegistry.registerItem(Alloycraft.goldironingot, "ItemGoldIronIngot");
     	GameRegistry.registerItem(Alloycraft.copperingot, "ItemCopperIngot");
+    	GameRegistry.registerItem(Alloycraft.bronzeingot, "ItemBronzeIngot");
     	GameRegistry.registerItem(Alloycraft.projectx, "ItemProjectX");
-    	//GameRegistry.registerItem(lunchbox, "ItemLunchBox");
+    	GameRegistry.registerItem(Alloycraft.awesomemusic, "ItemAwesomeRecord");
+    	//GameRegistry.registerItem(Alloycraft.lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(Alloycraft.lapislavonium, "ItemLapisLavonium");
     	GameRegistry.registerItem(Alloycraft.tiningot, "ItemTinIngot");
     	GameRegistry.registerItem(Alloycraft.rainbowdye, "ItemRainbowDye");
@@ -85,8 +89,6 @@ public class Registry {
        	GameRegistry.registerBlock(Alloycraft.rainbowwool, "RainbowWool");
        	GameRegistry.registerBlock(Alloycraft.crystalizeridle, "CrystalizerIdle");
        	GameRegistry.registerBlock(Alloycraft.crystalizeractive, "CrystalizerActive");
-       	//Fluids
-       	FluidRegistry.registerFluid(Alloycraft.goldironfluid);
 	}
 
 	public static void registerHooks() {

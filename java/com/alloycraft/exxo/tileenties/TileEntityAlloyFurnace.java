@@ -102,6 +102,7 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
 			Item item = itemstack.getItem();
 			
 			if (item == Items.coal) return 50;
+			if (item == Item.getItemFromBlock(Blocks.coal_block)) return 450;
 			
 			return 0;
 		}
@@ -166,7 +167,7 @@ public class TileEntityAlloyFurnace extends TileEntity implements ISidedInventor
 
 	@Override
 	public String getInventoryName() {
-		return "Inventory";
+		return "Alloy Furnace";
 	}
 
 	@Override

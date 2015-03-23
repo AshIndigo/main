@@ -1,0 +1,11 @@
+{
+    "records.Awesome": {
+        "category": "record",
+        "sounds": [
+            {
+                "name": "Awesome",
+                "stream": true
+            }
+        ]
+    }
+}

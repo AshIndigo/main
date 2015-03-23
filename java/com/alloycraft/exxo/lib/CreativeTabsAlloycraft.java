@@ -8,16 +8,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CreativeTabsAlloycraft extends CreativeTabs {
 
-public CreativeTabsAlloycraft(String Alloycraft)
-{
-super(Alloycraft);
-}
+	public CreativeTabsAlloycraft(String Alloycraft) {
+		super(Alloycraft);
+	}
 
-@Override
-@SideOnly(Side.CLIENT)
-public Item getTabIconItem()
-{
-return Item.getItemFromBlock(Alloycraft.cookieblock);
-}
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Item getTabIconItem() {
+		return Item.getItemFromBlock(Alloycraft.cookieblock);
+	}
 
 }

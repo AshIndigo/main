@@ -103,6 +103,7 @@ public class TileEntityCrystalizer extends TileEntity implements ISidedInventory
 			Item item = itemstack.getItem();
 			
 			if (item == Items.coal) return 50;
+			if (item == Item.getItemFromBlock(Blocks.coal_block)) return 450;
 			
 			return 0;
 		}
