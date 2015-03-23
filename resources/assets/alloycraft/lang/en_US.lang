@@ -1,4 +1,5 @@
 tile.alloycraft_BlockCookie.name=Cookie Dough
+tile.alloycraft_BlockHyperTorch.name=Hyper Torch
 tile.alloycraft_BlockYttriumOre.name=Yttrium Ore
 tile.alloycraft_BlockTinOre.name=Tin Ore
 tile.alloycraft_BlockCopperOre.name=Copper Ore
@@ -43,6 +44,7 @@ item.alloycraft_CopperIngot.name=Copper Ingot
 item.alloycraft_PureCrystal.name=Pure Crystal
 item.alloycraft_RainbowDye.name=Rainbow Dye
 item.alloycraft_BronzeIngot.name=Bronze Ingot
+item.alloycraft_HyperCoal.name=Hyper Coal
 item.record_Awesome.name=Music Disc
 item.record_Awesome.desc=Ramin Djawadi - Game of Thrones: Main Title
 achievement.CookieIngot=Cookie Ingots!

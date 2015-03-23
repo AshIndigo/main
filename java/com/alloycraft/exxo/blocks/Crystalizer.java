@@ -3,6 +3,7 @@ package com.alloycraft.exxo.blocks;
 import java.util.Random;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.AlloycraftBlocks;
 import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 
@@ -141,9 +142,9 @@ public class Crystalizer extends BlockContainer {
 		keepInventory = true;
 		
 		if (issmelting) {
-			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.crystalizeridle);
+			world.setBlock(xCoord, yCoord, zCoord, AlloycraftBlocks.crystalizeridle);
 		}else{
-			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.crystalizeractive);
+			world.setBlock(xCoord, yCoord, zCoord, AlloycraftBlocks.crystalizeractive);
 		}
 		
 		keepInventory = false;
@@ -160,6 +161,6 @@ public class Crystalizer extends BlockContainer {
 	
 	public Item getItemDropped(int meta, Random random, int fortune)
     {
-        return Item.getItemFromBlock(Alloycraft.crystalizeridle);
+        return Item.getItemFromBlock(AlloycraftBlocks.crystalizeridle);
     }
 }

@@ -1,9 +1,14 @@
 package com.alloycraft.exxo.lib;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.AlloycraftBlocks;
+import com.alloycraft.exxo.AlloycraftItems;
 import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.armor.ItemHellishArmor;
+import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
+import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -19,83 +24,90 @@ public class Registry {
 	public static void registerOreDictionary() {
 		
 		//Ingots
-		OreDictionary.registerOre("ingotCopper", new ItemStack(Alloycraft.copperingot));
-    	OreDictionary.registerOre("ingotTin", new ItemStack(Alloycraft.tiningot));
-    	OreDictionary.registerOre("ingotYtrrium", new ItemStack(Alloycraft.yttriumingot));
-    	OreDictionary.registerOre("ingotBronze", new ItemStack(Alloycraft.bronzeingot));
+		OreDictionary.registerOre("ingotCopper", new ItemStack(AlloycraftItems.copperingot));
+    	OreDictionary.registerOre("ingotTin", new ItemStack(AlloycraftItems.tiningot));
+    	OreDictionary.registerOre("ingotYtrrium", new ItemStack(AlloycraftItems.yttriumingot));
+    	OreDictionary.registerOre("ingotBronze", new ItemStack(AlloycraftItems.bronzeingot));
     	//Ore
-    	OreDictionary.registerOre("oreCopper", new ItemStack(Alloycraft.copperore));
-    	OreDictionary.registerOre("oreTin", new ItemStack(Alloycraft.tinore));
-    	OreDictionary.registerOre("oreYtrrium", new ItemStack(Alloycraft.yttriumore));
+    	OreDictionary.registerOre("oreCopper", new ItemStack(AlloycraftBlocks.copperore));
+    	OreDictionary.registerOre("oreTin", new ItemStack(AlloycraftBlocks.tinore));
+    	OreDictionary.registerOre("oreYtrrium", new ItemStack(AlloycraftBlocks.yttriumore));
 		
 	}
 	
 	public static void registerItems(){
 		
-		GameRegistry.registerItem(Alloycraft.cookieingot, "ItemCookieIngot");
-    	GameRegistry.registerItem(Alloycraft.hellishingot, "ItemHellishIngot");
-    	GameRegistry.registerItem(Alloycraft.yttriumingot, "ItemYttriumIngot");
-    	GameRegistry.registerItem(Alloycraft.purecrystal, "ItemPureCrystal");
-    	GameRegistry.registerItem(Alloycraft.goldironingot, "ItemGoldIronIngot");
-    	GameRegistry.registerItem(Alloycraft.copperingot, "ItemCopperIngot");
-    	GameRegistry.registerItem(Alloycraft.bronzeingot, "ItemBronzeIngot");
-    	GameRegistry.registerItem(Alloycraft.projectx, "ItemProjectX");
-    	GameRegistry.registerItem(Alloycraft.awesomemusic, "ItemAwesomeRecord");
-    	//GameRegistry.registerItem(Alloycraft.lunchbox, "ItemLunchBox");
-    	GameRegistry.registerItem(Alloycraft.lapislavonium, "ItemLapisLavonium");
-    	GameRegistry.registerItem(Alloycraft.tiningot, "ItemTinIngot");
-    	GameRegistry.registerItem(Alloycraft.rainbowdye, "ItemRainbowDye");
+		GameRegistry.registerItem(AlloycraftItems.cookieingot, "ItemCookieIngot");
+    	GameRegistry.registerItem(AlloycraftItems.hellishingot, "ItemHellishIngot");
+    	GameRegistry.registerItem(AlloycraftItems.yttriumingot, "ItemYttriumIngot");
+    	GameRegistry.registerItem(AlloycraftItems.purecrystal, "ItemPureCrystal");
+    	GameRegistry.registerItem(AlloycraftItems.goldironingot, "ItemGoldIronIngot");
+    	GameRegistry.registerItem(AlloycraftItems.copperingot, "ItemCopperIngot");
+    	GameRegistry.registerItem(AlloycraftItems.bronzeingot, "ItemBronzeIngot");
+    	GameRegistry.registerItem(AlloycraftItems.projectx, "ItemProjectX");
+    	GameRegistry.registerItem(AlloycraftItems.awesomemusic, "ItemAwesomeRecord");
+    	//GameRegistry.registerItem(AlloycraftItems.lunchbox, "ItemLunchBox");
+    	GameRegistry.registerItem(AlloycraftItems.lapislavonium, "ItemLapisLavonium");
+    	GameRegistry.registerItem(AlloycraftItems.tiningot, "ItemTinIngot");
+    	GameRegistry.registerItem(AlloycraftItems.rainbowdye, "ItemRainbowDye");
+    	GameRegistry.registerItem(AlloycraftItems.hypercoal, "ItemHyperCoal");
     	//Gold-Iron Set
-    	GameRegistry.registerItem(Alloycraft.goldironsword, "ItemGoldIronSword");
-    	GameRegistry.registerItem(Alloycraft.goldironpick, "ItemGoldIronPick");
-    	GameRegistry.registerItem(Alloycraft.goldironaxe, "ItemGoldIronAxe");
-    	GameRegistry.registerItem(Alloycraft.goldironspade, "ItemGoldIronSpade");
-    	GameRegistry.registerItem(Alloycraft.goldironhoe, "ItemGoldIronHoe");
+    	GameRegistry.registerItem(AlloycraftItems.goldironsword, "ItemGoldIronSword");
+    	GameRegistry.registerItem(AlloycraftItems.goldironpick, "ItemGoldIronPick");
+    	GameRegistry.registerItem(AlloycraftItems.goldironaxe, "ItemGoldIronAxe");
+    	GameRegistry.registerItem(AlloycraftItems.goldironspade, "ItemGoldIronSpade");
+    	GameRegistry.registerItem(AlloycraftItems.goldironhoe, "ItemGoldIronHoe");
     	//Hellish Set
-    	GameRegistry.registerItem(Alloycraft.hellishsword, "ItemHellishSword");
-    	GameRegistry.registerItem(Alloycraft.hellishpick, "ItemHellishPick");
-    	GameRegistry.registerItem(Alloycraft.hellishaxe, "ItemHellishAxe");
-    	GameRegistry.registerItem(Alloycraft.hellishspade, "ItemHellishSpade");
-    	GameRegistry.registerItem(Alloycraft.hellishhoe, "ItemHellishHoe");
-    	GameRegistry.registerItem(Alloycraft.projectxammo, "ItemProjectXAmmo");
-    	GameRegistry.registerItem(Alloycraft.whatthehellingot, "ItemWhatTheHellIngot");
+    	GameRegistry.registerItem(AlloycraftItems.hellishsword, "ItemHellishSword");
+    	GameRegistry.registerItem(AlloycraftItems.hellishpick, "ItemHellishPick");
+    	GameRegistry.registerItem(AlloycraftItems.hellishaxe, "ItemHellishAxe");
+    	GameRegistry.registerItem(AlloycraftItems.hellishspade, "ItemHellishSpade");
+    	GameRegistry.registerItem(AlloycraftItems.hellishhoe, "ItemHellishHoe");
+    	GameRegistry.registerItem(AlloycraftItems.projectxammo, "ItemProjectXAmmo");
+    	GameRegistry.registerItem(AlloycraftItems.whatthehellingot, "ItemWhatTheHellIngot");
     	//Gold-Iron Armor
-    	GameRegistry.registerItem(Alloycraft.goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", Alloycraft.ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
-    	GameRegistry.registerItem(Alloycraft.goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", Alloycraft.ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(Alloycraft.goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", Alloycraft.ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(Alloycraft.goldironboots = new ItemGoldIronArmor("GoldIronBoots", Alloycraft.ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
+    	GameRegistry.registerItem(AlloycraftItems.goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", Alloycraft.ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", Alloycraft.ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", Alloycraft.ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.goldironboots = new ItemGoldIronArmor("GoldIronBoots", Alloycraft.ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
     	//Hellish Armor
-    	GameRegistry.registerItem(Alloycraft.hellishhelmet = new ItemHellishArmor("HellishHelmet", Alloycraft.ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
-    	GameRegistry.registerItem(Alloycraft.hellishchestplate = new ItemHellishArmor("HellishChestplate", Alloycraft.ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(Alloycraft.hellishleggings = new ItemHellishArmor("HellishLeggings", Alloycraft.ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(Alloycraft.hellishboots = new ItemHellishArmor("HellishBoots", Alloycraft.ARMORHELLISH, "Hellish", 3), "HellishBoots"); // 3 for boots
+    	GameRegistry.registerItem(AlloycraftItems.hellishhelmet = new ItemHellishArmor("HellishHelmet", Alloycraft.ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.hellishchestplate = new ItemHellishArmor("HellishChestplate", Alloycraft.ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.hellishleggings = new ItemHellishArmor("HellishLeggings", Alloycraft.ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.hellishboots = new ItemHellishArmor("HellishBoots", Alloycraft.ARMORHELLISH, "Hellish", 3), "HellishBoots"); // 3 for boots
 	}
 	
 	public static void registerBlocks() {
 		
     	//Ore
-    	GameRegistry.registerBlock(Alloycraft.copperore, "CopperOre");
-    	GameRegistry.registerBlock(Alloycraft.tinore, "TinOre");
-    	GameRegistry.registerBlock(Alloycraft.yttriumore, "YttriumOre");
+    	GameRegistry.registerBlock(AlloycraftBlocks.copperore, "CopperOre");
+    	GameRegistry.registerBlock(AlloycraftBlocks.tinore, "TinOre");
+    	GameRegistry.registerBlock(AlloycraftBlocks.yttriumore, "YttriumOre");
     	//Blocks
-    	GameRegistry.registerBlock(Alloycraft.cookieblock, "BlockCookie");
-    	GameRegistry.registerBlock(Alloycraft.copperblock, "BlockCopper");
-    	GameRegistry.registerBlock(Alloycraft.tinblock, "BlockTin");
-    	GameRegistry.registerBlock(Alloycraft.hellishblock, "BlockHellish");
-    	GameRegistry.registerBlock(Alloycraft.whatthehellblock, "BlockWHATTHEHELL");
-    	GameRegistry.registerBlock(Alloycraft.goldironblock, "BlockGoldIron");
-    	GameRegistry.registerBlock(Alloycraft.alloysmelteridle, "AlloyFurnaceIdle");
-    	GameRegistry.registerBlock(Alloycraft.alloysmelteractive, "AlloyFurnaceActive");
-       	GameRegistry.registerBlock(Alloycraft.rainbowwool, "RainbowWool");
-       	GameRegistry.registerBlock(Alloycraft.crystalizeridle, "CrystalizerIdle");
-       	GameRegistry.registerBlock(Alloycraft.crystalizeractive, "CrystalizerActive");
+    	GameRegistry.registerBlock(AlloycraftBlocks.cookieblock, "BlockCookie");
+    	GameRegistry.registerBlock(AlloycraftBlocks.copperblock, "BlockCopper");
+    	GameRegistry.registerBlock(AlloycraftBlocks.tinblock, "BlockTin");
+    	GameRegistry.registerBlock(AlloycraftBlocks.hellishblock, "BlockHellish");
+    	GameRegistry.registerBlock(AlloycraftBlocks.whatthehellblock, "BlockWHATTHEHELL");
+    	GameRegistry.registerBlock(AlloycraftBlocks.goldironblock, "BlockGoldIron");
+    	GameRegistry.registerBlock(AlloycraftBlocks.alloysmelteridle, "AlloyFurnaceIdle");
+    	GameRegistry.registerBlock(AlloycraftBlocks.alloysmelteractive, "AlloyFurnaceActive");
+       	GameRegistry.registerBlock(AlloycraftBlocks.rainbowwool, "RainbowWool");
+       	GameRegistry.registerBlock(AlloycraftBlocks.crystalizeridle, "CrystalizerIdle");
+       	GameRegistry.registerBlock(AlloycraftBlocks.crystalizeractive, "CrystalizerActive");
+       	GameRegistry.registerBlock(AlloycraftBlocks.hypertorch, "HyperTorch");
+    	FluidRegistry.registerFluid(Alloycraft.goldironfluid);
+       	//GameRegistry.registerBlock(Alloycraft.goldironfluidblock, "GoldIronFluidBlock");
 	}
 
 	public static void registerHooks() {
 
-		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(Alloycraft.yttriumingot), 1, 5, 5));
-		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(Alloycraft.copperingot), 1, 5, 5));
-		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(Alloycraft.tiningot), 1, 5, 5));
-		
+		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(AlloycraftItems.yttriumingot), 1, 5, 5));
+		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(AlloycraftItems.copperingot), 1, 5, 5));
+		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(AlloycraftItems.tiningot), 1, 5, 5));
+    	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
+    	GameRegistry.registerTileEntity(TileEntityCrystalizer.class, "Crystalizer");
+    	GameRegistry.registerWorldGenerator(new EventManager(), 1);
+    	NetworkRegistry.INSTANCE.registerGuiHandler(Alloycraft.instance, new GuiHandler());
 	}
 }

@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.AlloycraftItems;
 import com.alloycraft.exxo.entities.EntityProjectXBolt;
 import com.alloycraft.exxo.lib.Refrences;
 
@@ -21,7 +22,7 @@ public class ItemProjectX extends Item {
   
   public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
   {
-	  if(par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.consumeInventoryItem(Alloycraft.projectxammo)) {
+	  if(par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.consumeInventoryItem(AlloycraftItems.projectxammo)) {
 		  par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		  if (!par2World.isRemote)
 	      {

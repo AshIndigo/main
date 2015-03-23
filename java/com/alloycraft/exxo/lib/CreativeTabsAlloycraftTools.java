@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import akka.japi.Function;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.AlloycraftBlocks;
 import com.google.common.collect.Ordering;
 
 import cpw.mods.fml.relauncher.Side;
@@ -24,7 +25,7 @@ public class CreativeTabsAlloycraftTools extends CreativeTabs {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem() {
-		return Item.getItemFromBlock(Alloycraft.goldironblock);
+		return Item.getItemFromBlock(AlloycraftBlocks.goldironblock);
 	}
 
 }

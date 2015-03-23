@@ -1,6 +1,8 @@
 package com.alloycraft.exxo.recipes;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.AlloycraftItems;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -18,8 +20,8 @@ public class CrystalizerRecipes {
 	
 	public static ItemStack getOutput(Item item, Item item2) {
 		//*Poof!*
-		if (item == Alloycraft.yttriumingot && item2 == Items.iron_ingot || item == Items.iron_ingot && item2 == Alloycraft.yttriumingot) {
-			return new ItemStack(Alloycraft.cookieingot, 2);
+		if (item == AlloycraftItems.yttriumingot && item2 == Items.iron_ingot || item == Items.iron_ingot && item2 == AlloycraftItems.yttriumingot) {
+			return new ItemStack(AlloycraftItems.cookieingot, 2);
 		}
 		return null;
 	}

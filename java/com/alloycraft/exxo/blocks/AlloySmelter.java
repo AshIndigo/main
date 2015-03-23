@@ -3,6 +3,7 @@ package com.alloycraft.exxo.blocks;
 import java.util.Random;
 
 import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.AlloycraftBlocks;
 import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 
@@ -141,9 +142,9 @@ public class AlloySmelter extends BlockContainer {
 		keepInventory = true;
 		
 		if (issmelting) {
-			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.alloysmelteridle);
+			world.setBlock(xCoord, yCoord, zCoord, AlloycraftBlocks.alloysmelteridle);
 		}else{
-			world.setBlock(xCoord, yCoord, zCoord, Alloycraft.alloysmelteractive);
+			world.setBlock(xCoord, yCoord, zCoord, AlloycraftBlocks.alloysmelteractive);
 		}
 		
 		keepInventory = false;
@@ -160,6 +161,6 @@ public class AlloySmelter extends BlockContainer {
 	
 	public Item getItemDropped(int meta, Random random, int fortune)
     {
-        return Item.getItemFromBlock(Alloycraft.alloysmelteridle);
+        return Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle);
     }
 }
