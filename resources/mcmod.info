@@ -2,12 +2,12 @@
 {
   "modid": "alloycraft",
   "name": "Alloy Craft",
-  "description": "It's Alloycraft",
+  "description": "A mod about making alloys of other metals",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Ash Indigo"],
+  "authorList": ["Ash Indigo"],["PhilSym7"],["Tomek9g"]
   "credits": "The Forge and FML guys for making Forge and FML. Wuppy29 for his awesome tutorials that helped get started with modding. And my friends tomek9g and buffalobite for spriting.",
   "logoFile": "",
   "screenshots": [],

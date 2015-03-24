@@ -34,7 +34,6 @@ public class EventManager implements IWorldGenerator {
         }
 
     private void GenerateOverworld(Random random, int x, int z, World world) {
-    	
 
     	  this.addOreSpawn(AlloycraftBlocks.cookieblock, world, random, x, z, 10, 15, 8, 0, 128);
     	  this.addOreSpawn(AlloycraftBlocks.yttriumore, world, random, x, z, 10, 15, 10, 0, 128);
@@ -43,6 +42,8 @@ public class EventManager implements IWorldGenerator {
     }
 
     private void GenerateNether(Random random, int x, int z, World world) {
+    	
+    	this.addOreSpawn(AlloycraftBlocks.fireiteore, world, random, x, z, 10, 16, 10, 0, 128);
     }
 
     private void GenerateEnd(Random random, int x, int z, World world) {

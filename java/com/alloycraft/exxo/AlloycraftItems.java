@@ -3,6 +3,7 @@ package com.alloycraft.exxo;
 import com.alloycraft.exxo.items.ItemBronzeIngot;
 import com.alloycraft.exxo.items.ItemCookieIngot;
 import com.alloycraft.exxo.items.ItemCopperIngot;
+import com.alloycraft.exxo.items.ItemFireiteIngot;
 import com.alloycraft.exxo.items.ItemGoldIronAxe;
 import com.alloycraft.exxo.items.ItemGoldIronHoe;
 import com.alloycraft.exxo.items.ItemGoldIronIngot;
@@ -27,6 +28,7 @@ import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.MusicDisc;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class AlloycraftItems {
@@ -70,6 +72,7 @@ public class AlloycraftItems {
     public static Item hellishchestplate;
     public static Item hellishleggings;
     public static Item hellishboots;
+	public static Item fireiteingot;
 
 	public static void registerItems() {
 		
@@ -89,6 +92,7 @@ public class AlloycraftItems {
     	rainbowdye = new ItemRainbowDye();
     	bronzeingot = new ItemBronzeIngot();
     	hypercoal = new ItemHyperCoal();
+    	fireiteingot = new ItemFireiteIngot();
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Gold-Iron Tools
     	goldironsword = new ItemGoldIronSword("GoldIronSword", Alloycraft.GoldIron);

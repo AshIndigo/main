@@ -7,7 +7,7 @@ import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.armor.ItemHellishArmor;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
-
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -21,7 +21,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class Registry {
 
-	public static void registerOreDictionary() {
+	public static void registerOreDictionary(){
 		
 		//Ingots
 		OreDictionary.registerOre("ingotCopper", new ItemStack(AlloycraftItems.copperingot));
@@ -45,6 +45,7 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.copperingot, "ItemCopperIngot");
     	GameRegistry.registerItem(AlloycraftItems.bronzeingot, "ItemBronzeIngot");
     	GameRegistry.registerItem(AlloycraftItems.projectx, "ItemProjectX");
+    	GameRegistry.registerItem(AlloycraftItems.fireiteingot, "ItemFireiteIngot");
     	GameRegistry.registerItem(AlloycraftItems.awesomemusic, "ItemAwesomeRecord");
     	//GameRegistry.registerItem(AlloycraftItems.lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(AlloycraftItems.lapislavonium, "ItemLapisLavonium");
@@ -83,6 +84,7 @@ public class Registry {
     	GameRegistry.registerBlock(AlloycraftBlocks.copperore, "CopperOre");
     	GameRegistry.registerBlock(AlloycraftBlocks.tinore, "TinOre");
     	GameRegistry.registerBlock(AlloycraftBlocks.yttriumore, "YttriumOre");
+    	GameRegistry.registerBlock(AlloycraftBlocks.fireiteore, "FireiteOre");
     	//Blocks
     	GameRegistry.registerBlock(AlloycraftBlocks.cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(AlloycraftBlocks.copperblock, "BlockCopper");
@@ -96,8 +98,6 @@ public class Registry {
        	GameRegistry.registerBlock(AlloycraftBlocks.crystalizeridle, "CrystalizerIdle");
        	GameRegistry.registerBlock(AlloycraftBlocks.crystalizeractive, "CrystalizerActive");
        	GameRegistry.registerBlock(AlloycraftBlocks.hypertorch, "HyperTorch");
-    	FluidRegistry.registerFluid(Alloycraft.goldironfluid);
-       	//GameRegistry.registerBlock(Alloycraft.goldironfluidblock, "GoldIronFluidBlock");
 	}
 
 	public static void registerHooks() {

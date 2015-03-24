@@ -1,6 +1,7 @@
 package com.alloycraft.exxo;
 
 import java.util.logging.Level;
+import cpw.mods.fml.common.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.main.Main;
@@ -25,15 +26,18 @@ import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
+
 import com.alloycraft.exxo.*;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
 import com.alloycraft.exxo.fluids.FluidGoldIron;
 import com.alloycraft.exxo.items.*;
+import com.alloycraft.exxo.achievement.AchievementHandler;
 import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
 import com.alloycraft.exxo.render.ProjectXRender;
 import com.alloycraft.exxo.tileenties.*;
+
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -48,12 +52,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = Refrences.MODID, version = Refrences.VERSION)
 public class Alloycraft
 {
-    public static Fluid goldironfluid;
     public static final int guiIDAlloyFurnace = 5;
     public static final int guiIDCrystalizer = 6;
     public static final int guiIDLunchBox = 7;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static CreativeTabs taballoycrafttools = new CreativeTabsAlloycraftTools("AlloycraftTools");
+    public static Achievement alloyfurnaceachievement;
     public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
@@ -69,14 +73,19 @@ public class Alloycraft
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
     {
-    	goldironfluid = new FluidGoldIron("goldironfluid");
+    	//Much Nicer
     	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();
     	Registry.registerItems();
     	Registry.registerBlocks();
        	Registry.registerHooks();
-    	Recipes.registerRecipes();
+       	alloyfurnaceachievement = new Achievement("achievement.alloyfurnace", "AlloyFurnace", 0, 0,Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle), (Achievement) null).initIndependentStat().registerStat();;
+       	AlloycraftPage = new AchievementPage("\u00a7aTut Achievements", alloyfurnaceachievement);
+       	AchievementPage.registerAchievementPage(AlloycraftPage);
+       	FMLCommonHandler.instance().bus().register(new AchievementHandler());
+       	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
+    	ApiRegistry.registerBaubles();
     	System.out.println("Alloycraft Loaded");
     }
     public void init(FMLInitializationEvent event){

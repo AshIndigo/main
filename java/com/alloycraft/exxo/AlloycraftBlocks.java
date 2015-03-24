@@ -4,6 +4,7 @@ import com.alloycraft.exxo.blocks.AlloySmelter;
 import com.alloycraft.exxo.blocks.BlockCookie;
 import com.alloycraft.exxo.blocks.BlockCopper;
 import com.alloycraft.exxo.blocks.BlockCopperOre;
+import com.alloycraft.exxo.blocks.BlockFireiteOre;
 import com.alloycraft.exxo.blocks.BlockGoldIron;
 import com.alloycraft.exxo.blocks.BlockHellish;
 import com.alloycraft.exxo.blocks.BlockHyperTorch;
@@ -38,6 +39,7 @@ public class AlloycraftBlocks {
     public static Block yttriumore;
     public static Block copperore;
     public static Block tinore;
+    public static Block fireiteore;
     //Fluids
     public static Block goldironfluidblock;
 	
@@ -60,6 +62,7 @@ public class AlloycraftBlocks {
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	copperore = new BlockCopperOre().setHardness(3.0F);
     	tinore = new BlockTinOre().setHardness(3.0F);
+    	fireiteore = new BlockFireiteOre().setHardness(3.0F);
 	}
 	
 	//For use later

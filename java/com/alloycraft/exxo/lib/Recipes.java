@@ -57,7 +57,7 @@ public class Recipes {
         	"AAA",
         	'A', AlloycraftItems.yttriumingot, 'B', Blocks.furnace
     	});
-    	//Gold-Iron Set
+    	//Gold-Iron Tools
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.goldironsword, 1), new Object[]{
         	" A ",
         	" A ",
@@ -100,6 +100,7 @@ public class Recipes {
         	" B ",
         	'A', AlloycraftItems.goldironingot, 'B', Items.stick
     	});
+    	//Gold-Iron Armor
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.goldironchestplate, 1), new Object[]{
         	"A A",
         	"AAA",
@@ -124,7 +125,7 @@ public class Recipes {
         	"   ",
         	'A', AlloycraftItems.goldironingot
     	});
-    	//Hellish Set
+    	//Hellish Tools
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.hellishsword, 1), new Object[]{
         	" A ",
         	" A ",
@@ -167,6 +168,7 @@ public class Recipes {
         	" B ",
         	'A', AlloycraftItems.hellishingot, 'B', Items.stick
     	});
+    	//Hellish Armor
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.hellishchestplate, 1), new Object[]{
         	"A A",
         	"AAA",
@@ -231,5 +233,6 @@ public class Recipes {
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.yttriumore, 1), new ItemStack(AlloycraftItems.yttriumingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.copperore, 1), new ItemStack(AlloycraftItems.copperingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.tinore, 1), new ItemStack(AlloycraftItems.tiningot, 1), 0.1F);
+    	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.fireiteore, 1), new ItemStack(AlloycraftItems.fireiteingot, 1), 0.1F);
 	}
 	}
