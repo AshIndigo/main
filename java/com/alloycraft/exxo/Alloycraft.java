@@ -1,6 +1,7 @@
 package com.alloycraft.exxo;
 
 import java.util.logging.Level;
+
 import cpw.mods.fml.common.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -40,6 +41,8 @@ import com.alloycraft.exxo.tileenties.*;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -63,7 +66,7 @@ public class Alloycraft
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
     public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 20);
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
-
+    
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
     
@@ -79,13 +82,22 @@ public class Alloycraft
     	Registry.registerItems();
     	Registry.registerBlocks();
        	Registry.registerHooks();
+       	//Might want to move this somewhere else
        	alloyfurnaceachievement = new Achievement("achievement.alloyfurnace", "AlloyFurnace", 0, 0,Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle), (Achievement) null).initIndependentStat().registerStat();;
+       	yttriumachievement = new Achievement("achievement.alloyfurnace", "AlloyFurnace", 0, 0,Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle), (Achievement) null).initIndependentStat().registerStat();;
        	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevement", alloyfurnaceachievement);
        	AchievementPage.registerAchievementPage(AlloycraftPage);
        	FMLCommonHandler.instance().bus().register(new AchievementHandler());
        	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
-    	//ApiRegistry.registerBaubles();
+    	//This Too
+    	if (Loader.isModLoaded("Baubles")) {
+    		System.out.println("Baubles Detected");
+    		ApiRegistry.registerBaubles();
+    		} else {
+    		System.out.println("Baubles Not Detected");
+    		}
+    		
     	System.out.println("Alloycraft Loaded");
     }
     public void init(FMLInitializationEvent event){
