@@ -1,5 +1,6 @@
 package com.alloycraft.exxo.achievement;
 
+import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.AlloycraftBlocks;
 
 import net.minecraft.item.Item;
@@ -16,8 +17,8 @@ public class AchievementHandler {
 	public void onCrafting(PlayerEvent.ItemCraftedEvent e) {
 		
 		if (e.crafting.getItem().equals(
-				Item.getItemFromBlock(AlloycraftBlocks.))) {
-				e.player.addStat(mod_TutBase.xoriteBlock, 1);
+				Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle))) {
+				e.player.addStat(Alloycraft.alloyfurnaceachievement, 1);
 				}
 	}
 	

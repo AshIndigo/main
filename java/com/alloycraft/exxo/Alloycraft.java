@@ -80,12 +80,12 @@ public class Alloycraft
     	Registry.registerBlocks();
        	Registry.registerHooks();
        	alloyfurnaceachievement = new Achievement("achievement.alloyfurnace", "AlloyFurnace", 0, 0,Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle), (Achievement) null).initIndependentStat().registerStat();;
-       	AlloycraftPage = new AchievementPage("\u00a7aTut Achievements", alloyfurnaceachievement);
+       	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevement", alloyfurnaceachievement);
        	AchievementPage.registerAchievementPage(AlloycraftPage);
        	FMLCommonHandler.instance().bus().register(new AchievementHandler());
        	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
-    	ApiRegistry.registerBaubles();
+    	//ApiRegistry.registerBaubles();
     	System.out.println("Alloycraft Loaded");
     }
     public void init(FMLInitializationEvent event){
