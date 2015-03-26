@@ -8,9 +8,9 @@ import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.Item.ToolMaterial;
 
-public class ItemHellishAxe extends ItemAxe {
+public class ItemBronzeAxe extends ItemAxe {
 
-	public ItemHellishAxe(String unlocalizedName, ToolMaterial material) {
+	public ItemBronzeAxe(String unlocalizedName, ToolMaterial material) {
         super(material);
         this.setUnlocalizedName(unlocalizedName);
         this.setTextureName(Refrences.MODID + ":" + unlocalizedName);

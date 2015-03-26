@@ -1,8 +1,14 @@
 package com.alloycraft.exxo;
 
+import com.alloycraft.exxo.items.ItemBronzeAxe;
+import com.alloycraft.exxo.items.ItemBronzeHoe;
 import com.alloycraft.exxo.items.ItemBronzeIngot;
+import com.alloycraft.exxo.items.ItemBronzePick;
+import com.alloycraft.exxo.items.ItemBronzeSpade;
+import com.alloycraft.exxo.items.ItemBronzeSword;
 import com.alloycraft.exxo.items.ItemCookieIngot;
 import com.alloycraft.exxo.items.ItemCopperIngot;
+import com.alloycraft.exxo.items.ItemFireiteGem;
 import com.alloycraft.exxo.items.ItemFireiteIngot;
 import com.alloycraft.exxo.items.ItemGoldIronAxe;
 import com.alloycraft.exxo.items.ItemGoldIronHoe;
@@ -22,8 +28,10 @@ import com.alloycraft.exxo.items.ItemLunchBox;
 import com.alloycraft.exxo.items.ItemProjectX;
 import com.alloycraft.exxo.items.ItemProjectXAmmo;
 import com.alloycraft.exxo.items.ItemPureCrystal;
+import com.alloycraft.exxo.items.ItemPureShard;
 import com.alloycraft.exxo.items.ItemRainbowDye;
 import com.alloycraft.exxo.items.ItemTinIngot;
+import com.alloycraft.exxo.items.ItemUnpureCrystal;
 import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
 import com.alloycraft.exxo.lib.MusicDisc;
@@ -50,6 +58,10 @@ public class AlloycraftItems {
     public static Item rainbowdye;
     public static Item hypercoal;
     public static Item awesomemusic;
+	public static Item fireiteingot;
+	public static Item fireitegem;
+	public static Item pureshard;
+	public static Item unpurecrystal;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -62,6 +74,12 @@ public class AlloycraftItems {
     public static Item hellishspade;
     public static Item hellishhoe;
     public static Item hellishaxe;
+    //Bronze Set
+    public static Item bronzesword;
+    public static Item bronzepick;
+    public static Item bronzespade;
+    public static Item bronzehoe;
+    public static Item bronzeaxe;
     //Gold-Iron Armor
     public static Item goldironhelmet;
     public static Item goldironchestplate;
@@ -72,13 +90,20 @@ public class AlloycraftItems {
     public static Item hellishchestplate;
     public static Item hellishleggings;
     public static Item hellishboots;
-	public static Item fireiteingot;
-
+    //Bronze Armor
+    public static Item bronzehelmet;
+    public static Item bronzechestplate;
+    public static Item bronzeleggings;
+    public static Item bronzeboots;
+    
 	public static void registerItems() {
 		
-		//Items
+		//Ingots
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	copperingot = new ItemCopperIngot();
+    	pureshard = new ItemPureShard();
+    	unpurecrystal = new ItemUnpureCrystal();
+    	fireitegem = new ItemFireiteGem();
     	yttriumingot = new ItemYttriumIngot();
     	whatthehellingot = new ItemWhatTheHellIngot();
     	hellishingot = new ItemHellishIngot();
@@ -86,13 +111,13 @@ public class AlloycraftItems {
     	goldironingot = new ItemGoldIronIngot();
     	tiningot = new ItemTinIngot();
     	purecrystal = new ItemPureCrystal();
+    	bronzeingot = new ItemBronzeIngot();
+    	hypercoal = new ItemHyperCoal();
+    	fireiteingot = new ItemFireiteIngot();
     	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
     	projectx = new ItemProjectX();
     	rainbowdye = new ItemRainbowDye();
-    	bronzeingot = new ItemBronzeIngot();
-    	hypercoal = new ItemHyperCoal();
-    	fireiteingot = new ItemFireiteIngot();
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Gold-Iron Tools
     	goldironsword = new ItemGoldIronSword("GoldIronSword", Alloycraft.GoldIron);
@@ -106,8 +131,12 @@ public class AlloycraftItems {
     	hellishspade = new ItemHellishSpade("HellishSpade", Alloycraft.Hellish);
     	hellishhoe = new ItemHellishHoe("HellishHoe", Alloycraft.Hellish);
     	hellishaxe = new ItemHellishAxe("HellishAxe", Alloycraft.Hellish);
-		
+		//Bronze Tools
+       	bronzesword = new ItemBronzeSword("BronzeSword", Alloycraft.Bronze);
+       	bronzepick = new ItemBronzePick("bronzePick", Alloycraft.Bronze);
+       	bronzespade = new ItemBronzeSpade("BronzeSpade", Alloycraft.Bronze);
+       	bronzehoe = new ItemBronzeHoe("BronzHoe", Alloycraft.Bronze);
+       	bronzeaxe = new ItemBronzeAxe("BronzeAxe", Alloycraft.Bronze);
+    	
 	}
-
-	//For use later
 }

@@ -21,7 +21,10 @@ public class CrystalizerRecipes {
 	public static ItemStack getOutput(Item item, Item item2) {
 		//*Poof!*
 		if (item == AlloycraftItems.yttriumingot && item2 == Items.iron_ingot || item == Items.iron_ingot && item2 == AlloycraftItems.yttriumingot) {
-			return new ItemStack(AlloycraftItems.cookieingot, 2);
+			return new ItemStack(AlloycraftItems.cookieingot, 2);	
+		}
+		if (item == AlloycraftItems.fireiteingot && item2 == Items.diamond || item == Items.iron_ingot && item2 == AlloycraftItems.yttriumingot) {
+			return new ItemStack(AlloycraftItems.fireitegem, 1);	
 		}
 		return null;
 	}

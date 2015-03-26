@@ -23,11 +23,14 @@ public class AlloyFurnaceRecipes {
 		if (item == AlloycraftItems.yttriumingot && item2 == Items.iron_ingot || item == Items.iron_ingot && item2 == AlloycraftItems.yttriumingot) {
 			return new ItemStack(AlloycraftItems.cookieingot, 2);
 		}
-		if (item == Items.iron_ingot && item2 == Items.netherbrick || item == Items.netherbrick && item2 == Items.iron_ingot) {
+		if (item == AlloycraftItems.hypercoal && item2 == AlloycraftItems.fireiteingot|| item == AlloycraftItems.fireiteingot && item2 == AlloycraftItems.hypercoal) {
 			return new ItemStack(AlloycraftItems.hellishingot, 2);
 		}
 		if (item == Items.iron_ingot && item2 == Items.gold_ingot || item == Items.gold_ingot && item2 == Items.iron_ingot) {
 			return new ItemStack(AlloycraftItems.goldironingot, 2);
+		}
+		if (item == AlloycraftItems.fireiteingot && item2 == Items.coal || item == Items.coal && item2 == AlloycraftItems.fireiteingot) {
+			return new ItemStack(AlloycraftItems.hypercoal, 2);
 		}
 		return null;
 	}

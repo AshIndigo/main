@@ -1,7 +1,6 @@
 package com.alloycraft.exxo;
 
 import java.util.logging.Level;
-
 import cpw.mods.fml.common.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -21,13 +20,14 @@ import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
-
 import com.alloycraft.exxo.*;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
@@ -37,7 +37,6 @@ import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
 import com.alloycraft.exxo.render.ProjectXRender;
 import com.alloycraft.exxo.tileenties.*;
-
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
@@ -59,13 +58,12 @@ public class Alloycraft
     public static final int guiIDLunchBox = 7;
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static CreativeTabs taballoycrafttools = new CreativeTabsAlloycraftTools("AlloycraftTools");
-    public static Achievement alloyfurnaceachievement;
-    public static Achievement yttriumachievement;
-    public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
+    public static ToolMaterial Bronze = EnumHelper.addToolMaterial("Bronze", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
-    public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 20);
+    public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
+    public static ArmorMaterial ARMORBRONZE = EnumHelper.addArmorMaterial("Bronze", 16, new int[] {2, 4, 4, 2}, 15);
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -76,29 +74,18 @@ public class Alloycraft
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
     {
-    	//Much Nicer
+    	//Much Much Nicer
     	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();
     	Registry.registerItems();
     	Registry.registerBlocks();
        	Registry.registerHooks();
-       	//Might want to move this somewhere else
-    	yttriumachievement = new Achievement("achievement.yttrium", "Yttrium", 0, 2,AlloycraftItems.yttriumingot, (Achievement) null).registerStat();;
-       	alloyfurnaceachievement = new Achievement("achievement.alloyfurnaceachievement", "Alloyfurnace",0, 0, AlloycraftBlocks.alloysmelteridle, yttriumachievement).registerStat();
-       	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevements", yttriumachievement, alloyfurnaceachievement);
-       	AchievementPage.registerAchievementPage(AlloycraftPage);
-       	FMLCommonHandler.instance().bus().register(new AchievementHandler());
+       	Registry.registerAchievements();
        	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
-    	//This Too
-    	if (Loader.isModLoaded("Baubles")) {
-    		System.out.println("Baubles Detected");
-    		ApiRegistry.registerBaubles();
-    		} else {
-    		System.out.println("Baubles Not Detected");
-    		}
-    		
+    	ApiRegistry.registerMods();
     	System.out.println("Alloycraft Loaded");
+    	
     }
     public void init(FMLInitializationEvent event){
     	

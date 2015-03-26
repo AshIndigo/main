@@ -19,7 +19,7 @@ public class AchievementHandler {
 		
 		if (e.crafting.getItem().equals(
 				Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle))) {
-				e.player.addStat(Alloycraft.alloyfurnaceachievement, 1);
+				e.player.addStat(Registry.alloyfurnaceachievement, 1);
 				}
 	}
 	
@@ -27,7 +27,7 @@ public class AchievementHandler {
 	public void onSmelting(PlayerEvent.ItemSmeltedEvent e) {
 		
 		if (e.smelting.getItem().equals(AlloycraftItems.yttriumingot)) {
-			e.player.addStat(Alloycraft.yttriumachievement, 1);
+			e.player.addStat(Registry.yttriumachievement, 1);
 			}
 			}
 	}
