@@ -33,7 +33,6 @@ import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
 import com.alloycraft.exxo.fluids.FluidGoldIron;
 import com.alloycraft.exxo.items.*;
-import com.alloycraft.exxo.achievement.AchievementHandler;
 import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
 import com.alloycraft.exxo.render.ProjectXRender;
@@ -61,6 +60,7 @@ public class Alloycraft
     public static CreativeTabs taballoycraft = new CreativeTabsAlloycraft("Alloycraft");
     public static CreativeTabs taballoycrafttools = new CreativeTabsAlloycraftTools("AlloycraftTools");
     public static Achievement alloyfurnaceachievement;
+    public static Achievement yttriumachievement;
     public static AchievementPage AlloycraftPage;
     public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
@@ -83,9 +83,9 @@ public class Alloycraft
     	Registry.registerBlocks();
        	Registry.registerHooks();
        	//Might want to move this somewhere else
-       	alloyfurnaceachievement = new Achievement("achievement.alloyfurnace", "AlloyFurnace", 0, 0,Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle), (Achievement) null).initIndependentStat().registerStat();;
-       	yttriumachievement = new Achievement("achievement.alloyfurnace", "AlloyFurnace", 0, 0,Item.getItemFromBlock(AlloycraftBlocks.alloysmelteridle), (Achievement) null).initIndependentStat().registerStat();;
-       	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevement", alloyfurnaceachievement);
+    	yttriumachievement = new Achievement("achievement.yttrium", "Yttrium", 0, 2,AlloycraftItems.yttriumingot, (Achievement) null).registerStat();;
+       	alloyfurnaceachievement = new Achievement("achievement.alloyfurnaceachievement", "Alloyfurnace",0, 0, AlloycraftBlocks.alloysmelteridle, yttriumachievement).registerStat();
+       	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevements", yttriumachievement, alloyfurnaceachievement);
        	AchievementPage.registerAchievementPage(AlloycraftPage);
        	FMLCommonHandler.instance().bus().register(new AchievementHandler());
        	Recipes.registerRecipes();
