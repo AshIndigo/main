@@ -6,7 +6,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
 public class CommonProxy implements IGuiHandler {
-	public void registerRenderers() {
+	
+public void registerItemRenderers() {
+		
+		
 	}
 
 	@Override

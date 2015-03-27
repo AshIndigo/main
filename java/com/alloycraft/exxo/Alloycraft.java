@@ -1,6 +1,7 @@
 package com.alloycraft.exxo;
 
 import java.util.logging.Level;
+
 import cpw.mods.fml.common.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,6 +29,7 @@ import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
+
 import com.alloycraft.exxo.*;
 import com.alloycraft.exxo.lib.*;
 import com.alloycraft.exxo.blocks.*;
@@ -37,6 +39,7 @@ import com.alloycraft.exxo.armor.*;
 import com.alloycraft.exxo.containers.*;
 import com.alloycraft.exxo.render.ProjectXRender;
 import com.alloycraft.exxo.tileenties.*;
+
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
@@ -84,6 +87,7 @@ public class Alloycraft
        	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
     	ApiRegistry.registerMods();
+    	proxy.registerItemRenderers();
     	System.out.println("Alloycraft Loaded");
     	
     }
