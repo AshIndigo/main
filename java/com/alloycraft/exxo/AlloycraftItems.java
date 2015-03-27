@@ -24,7 +24,6 @@ import com.alloycraft.exxo.items.ItemHellishSpade;
 import com.alloycraft.exxo.items.ItemHellishSword;
 import com.alloycraft.exxo.items.ItemHyperCoal;
 import com.alloycraft.exxo.items.ItemLapisLavonium;
-import com.alloycraft.exxo.items.ItemLunchBox;
 import com.alloycraft.exxo.items.ItemProjectX;
 import com.alloycraft.exxo.items.ItemProjectXAmmo;
 import com.alloycraft.exxo.items.ItemPureCrystal;
@@ -54,7 +53,6 @@ public class AlloycraftItems {
     public static Item copperingot;
     public static Item bronzeingot;
     public static Item tiningot;
-    public static Item lunchbox;
     public static Item rainbowdye;
     public static Item hypercoal;
     public static Item awesomemusic;
@@ -114,7 +112,6 @@ public class AlloycraftItems {
     	bronzeingot = new ItemBronzeIngot();
     	hypercoal = new ItemHyperCoal();
     	fireiteingot = new ItemFireiteIngot();
-    	lunchbox = new ItemLunchBox();
     	projectxammo = new ItemProjectXAmmo();
     	projectx = new ItemProjectX();
     	rainbowdye = new ItemRainbowDye();

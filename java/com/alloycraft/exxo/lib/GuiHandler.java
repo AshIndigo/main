@@ -9,7 +9,6 @@ import com.alloycraft.exxo.containers.ContainerAlloyFurnace;
 import com.alloycraft.exxo.containers.ContainerCrystalizer;
 import com.alloycraft.exxo.guis.GuiAlloyFurnace;
 import com.alloycraft.exxo.guis.GuiCrystalizer;
-import com.alloycraft.exxo.guis.GuiLunchBox;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 

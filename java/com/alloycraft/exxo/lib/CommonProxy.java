@@ -1,10 +1,6 @@
 package com.alloycraft.exxo.lib;
 
 import com.alloycraft.exxo.Alloycraft;
-import com.alloycraft.exxo.containers.ContainerLunchBox;
-import com.alloycraft.exxo.guis.GuiLunchBox;
-import com.alloycraft.exxo.inventories.InventoryLunchBox;
-
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -14,23 +10,16 @@ public class CommonProxy implements IGuiHandler {
 	}
 
 	@Override
-	public Object getServerGuiElement(int guiId, EntityPlayer player,
-			World world, int x, int y, int z) {
-		if (guiId == Alloycraft.guiIDLunchBox) {
-			return new ContainerLunchBox(player, player.inventory,
-					new InventoryLunchBox(player.getHeldItem()));
-		}
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
+			int x, int y, int z) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object getClientGuiElement(int guiId, EntityPlayer player,
-			World world, int x, int y, int z) {
-		if (guiId == Alloycraft.guiIDLunchBox) {
-			return new GuiLunchBox((ContainerLunchBox) new ContainerLunchBox(
-					player, player.inventory, new InventoryLunchBox(
-							player.getHeldItem())));
-		}
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
+			int x, int y, int z) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }

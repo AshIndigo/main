@@ -56,7 +56,6 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.projectx, "ItemProjectX");
     	GameRegistry.registerItem(AlloycraftItems.fireiteingot, "ItemFireiteIngot");
     	GameRegistry.registerItem(AlloycraftItems.awesomemusic, "ItemAwesomeRecord");
-    	//GameRegistry.registerItem(AlloycraftItems.lunchbox, "ItemLunchBox");
     	GameRegistry.registerItem(AlloycraftItems.lapislavonium, "ItemLapisLavonium");
     	GameRegistry.registerItem(AlloycraftItems.tiningot, "ItemTinIngot");
     	GameRegistry.registerItem(AlloycraftItems.rainbowdye, "ItemRainbowDye");
