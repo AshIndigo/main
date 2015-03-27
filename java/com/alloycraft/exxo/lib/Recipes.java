@@ -193,6 +193,74 @@ public class Recipes {
         	"   ",
         	'A', AlloycraftItems.hellishingot
     	});
+    	//Bronze Tools
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzesword, 1), new Object[]{
+        	" A ",
+        	" A ",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzepick, 1), new Object[]{
+        	"AAA",
+        	" B ",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzespade, 1), new Object[]{
+        	" A ",
+        	" B ",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzehoe, 1), new Object[]{
+        	"AA ",
+        	" B ",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzehoe, 1), new Object[]{
+        	" AA",
+        	" B ",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeaxe, 1), new Object[]{
+        	"AA ",
+        	"AB ",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeaxe, 1), new Object[]{
+        	" AA",
+        	" BA",
+        	" B ",
+        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+    	});
+    	//Bronze Armor
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzechestplate, 1), new Object[]{
+        	"A A",
+        	"AAA",
+        	"AAA",
+        	'A', AlloycraftItems.bronzeingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeboots, 1), new Object[]{
+        	"   ",
+        	"A A",
+        	"A A",
+        	'A', AlloycraftItems.bronzeingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeleggings, 1), new Object[]{
+        	"AAA",
+        	"A A",
+        	"A A",
+        	'A', AlloycraftItems.bronzeingot
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzehelmet, 1), new Object[]{
+        	"AAA",
+        	"A A",
+        	"   ",
+        	'A', AlloycraftItems.bronzeingot
+    	});
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.projectxammo, 64), new Object[]{
         	"DCD",
         	"ABA",
@@ -210,6 +278,12 @@ public class Recipes {
         	"ABA",
         	"AAA",
         	'A', Blocks.wool, 'B', AlloycraftItems.rainbowdye
+    	});
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftBlocks.hypertorch, 8), new Object[]{
+        	" A ",
+        	" B ",
+        	"   ",
+        	'B', Items.stick, 'A', AlloycraftItems.hypercoal
     	});
     	GameRegistry.addShapelessRecipe(new ItemStack(AlloycraftItems.hellishingot, 9), new Object[]{
     		new ItemStack(AlloycraftBlocks.hellishblock, 1)

@@ -133,9 +133,9 @@ public class AlloycraftItems {
     	hellishaxe = new ItemHellishAxe("HellishAxe", Alloycraft.Hellish);
 		//Bronze Tools
        	bronzesword = new ItemBronzeSword("BronzeSword", Alloycraft.Bronze);
-       	bronzepick = new ItemBronzePick("bronzePick", Alloycraft.Bronze);
+       	bronzepick = new ItemBronzePick("BronzePick", Alloycraft.Bronze);
        	bronzespade = new ItemBronzeSpade("BronzeSpade", Alloycraft.Bronze);
-       	bronzehoe = new ItemBronzeHoe("BronzHoe", Alloycraft.Bronze);
+       	bronzehoe = new ItemBronzeHoe("BronzeHoe", Alloycraft.Bronze);
        	bronzeaxe = new ItemBronzeAxe("BronzeAxe", Alloycraft.Bronze);
     	
 	}
