@@ -5,6 +5,7 @@ import java.util.Random;
 import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.AlloycraftBlocks;
 import com.alloycraft.exxo.lib.Refrences;
+import com.alloycraft.exxo.lib.Registry;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
@@ -122,7 +123,7 @@ public class Crystalizer extends BlockContainer {
     	}else if (!player.isSneaking()) {
     		TileEntityCrystalizer entity = (TileEntityCrystalizer) world.getTileEntity(x, y, z);
     		if (entity != null) {
-    			FMLNetworkHandler.openGui(player, Alloycraft.instance, Alloycraft.guiIDCrystalizer, world, x, y, z);
+    			FMLNetworkHandler.openGui(player, Alloycraft.instance, Registry.guiIDCrystalizer, world, x, y, z);
     		}
     		return true;
     	}else{

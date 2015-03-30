@@ -193,73 +193,73 @@ public class Recipes {
         	"   ",
         	'A', AlloycraftItems.hellishingot
     	});
-    	//Bronze Tools
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzesword, 1), new Object[]{
+    	//Steel Tools
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelsword, 1), new Object[]{
         	" A ",
         	" A ",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzepick, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelpick, 1), new Object[]{
         	"AAA",
         	" B ",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzespade, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelspade, 1), new Object[]{
         	" A ",
         	" B ",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzehoe, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelhoe, 1), new Object[]{
         	"AA ",
         	" B ",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzehoe, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelhoe, 1), new Object[]{
         	" AA",
         	" B ",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeaxe, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelaxe, 1), new Object[]{
         	"AA ",
         	"AB ",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeaxe, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelaxe, 1), new Object[]{
         	" AA",
         	" BA",
         	" B ",
-        	'A', AlloycraftItems.bronzeingot, 'B', Items.stick
+        	'A', AlloycraftItems.steelingot, 'B', Items.stick
     	});
-    	//Bronze Armor
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzechestplate, 1), new Object[]{
+    	//Steel Armor
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelchestplate, 1), new Object[]{
         	"A A",
         	"AAA",
         	"AAA",
-        	'A', AlloycraftItems.bronzeingot
+        	'A', AlloycraftItems.steelingot
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeboots, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelboots, 1), new Object[]{
         	"   ",
         	"A A",
         	"A A",
-        	'A', AlloycraftItems.bronzeingot
+        	'A', AlloycraftItems.steelingot
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzeleggings, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelleggings, 1), new Object[]{
         	"AAA",
         	"A A",
         	"A A",
-        	'A', AlloycraftItems.bronzeingot
+        	'A', AlloycraftItems.steelingot
     	});
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.bronzehelmet, 1), new Object[]{
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.steelhelmet, 1), new Object[]{
         	"AAA",
         	"A A",
         	"   ",
-        	'A', AlloycraftItems.bronzeingot
+        	'A', AlloycraftItems.steelingot
     	});
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.projectxammo, 64), new Object[]{
         	"DCD",

@@ -17,7 +17,7 @@ public class ItemGoldIronArmor extends ItemArmor {
 	    this.textureName = textureName;
 	    this.setUnlocalizedName(unlocalizedName);
 	    this.setTextureName(Refrences.MODID + ":" + unlocalizedName);
-	    setCreativeTab(Alloycraft.taballoycrafttools);
+	    setCreativeTab(Alloycraft.taballoycraftarmor);
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)

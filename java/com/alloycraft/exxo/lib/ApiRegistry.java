@@ -33,9 +33,9 @@ public class ApiRegistry {
 		GameRegistry.registerItem(epicring, "BaubleEpicRing");
 		GameRegistry.addRecipe(new ItemStack(epicring, 1), new Object[]{
         	" A ",
-        	"A A",
+        	"ABA",
         	" A ",
-        	'A', AlloycraftItems.hellishingot
+        	'A', AlloycraftItems.hellishingot, 'B', AlloycraftItems.fireitegem
     	});
 	}
 

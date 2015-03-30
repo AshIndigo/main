@@ -22,11 +22,11 @@ public class GuiHandler implements IGuiHandler {
 		
 		if(entity != null) {
 			switch(ID) {
-			case Alloycraft.guiIDAlloyFurnace:
+			case Registry.guiIDAlloyFurnace:
 				if (entity instanceof TileEntityAlloyFurnace) {
 					return new ContainerAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
 				}
-			case Alloycraft.guiIDCrystalizer:
+			case Registry.guiIDCrystalizer:
 				if (entity instanceof TileEntityCrystalizer) {
 					return new ContainerCrystalizer(player.inventory, (TileEntityCrystalizer) entity);
 				}
@@ -44,11 +44,11 @@ public class GuiHandler implements IGuiHandler {
 		
 		if(entity != null) {
 			switch(ID) {
-			case Alloycraft.guiIDAlloyFurnace:
+			case Registry.guiIDAlloyFurnace:
 				if (entity instanceof TileEntityAlloyFurnace) {
 					return new GuiAlloyFurnace(player.inventory, (TileEntityAlloyFurnace) entity);
 				}
-			case Alloycraft.guiIDCrystalizer:
+			case Registry.guiIDCrystalizer:
 				if (entity instanceof TileEntityCrystalizer) {
 					return new GuiCrystalizer(player.inventory, (TileEntityCrystalizer) entity);
 				}

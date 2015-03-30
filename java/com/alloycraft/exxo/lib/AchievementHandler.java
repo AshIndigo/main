@@ -22,7 +22,7 @@ public class AchievementHandler {
 				e.player.addStat(Registry.alloyfurnaceachievement, 1);
 				}
 	}
-	
+
 	@SubscribeEvent
 	public void onSmelting(PlayerEvent.ItemSmeltedEvent e) {
 		

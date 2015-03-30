@@ -14,9 +14,6 @@ import com.alloycraft.exxo.blocks.BlockTinOre;
 import com.alloycraft.exxo.blocks.BlockWhatTheHell;
 import com.alloycraft.exxo.blocks.BlockYttriumOre;
 import com.alloycraft.exxo.blocks.Crystalizer;
-import com.alloycraft.exxo.blocks.FluidBlockGoldIron;
-import com.alloycraft.exxo.fluids.FluidGoldIron;
-
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 
@@ -40,8 +37,6 @@ public class AlloycraftBlocks {
     public static Block copperore;
     public static Block tinore;
     public static Block fireiteore;
-    //Fluids
-    public static Block goldironfluidblock;
 	
 	public static void registerBlocks() {
 		
@@ -57,7 +52,6 @@ public class AlloycraftBlocks {
     	crystalizeractive = new Crystalizer(true).setBlockName("CrystalizerActive").setLightLevel(0.625F).setHardness(3.5F);
     	rainbowwool = new BlockRainbowWool().setHardness(1.0F);
     	hypertorch = new BlockHyperTorch().setLightLevel(2.0F).setHardness(0.0F);
-    	goldironfluidblock = new FluidBlockGoldIron();
     	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	copperore = new BlockCopperOre().setHardness(3.0F);

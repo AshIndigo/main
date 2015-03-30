@@ -6,6 +6,7 @@ import com.alloycraft.exxo.AlloycraftItems;
 import com.alloycraft.exxo.armor.ItemBronzeArmor;
 import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.armor.ItemHellishArmor;
+import com.alloycraft.exxo.armor.ItemSteelArmor;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 
@@ -15,20 +16,34 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.stats.Achievement;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.fluids.BlockFluidBase;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class Registry {
 	
+	public static final int guiIDAlloyFurnace = 5;
+    public static final int guiIDCrystalizer = 6;
 	public static Achievement alloyfurnaceachievement;
     public static Achievement yttriumachievement;
+    public static Achievement cookieingotachievement;
     public static AchievementPage AlloycraftPage;
+    public static ToolMaterial GoldIron = EnumHelper.addToolMaterial("GoldIron", 2, 400, 5.5F, 2.5F, 30);
+    //Balance
+    public static ToolMaterial Bronze = EnumHelper.addToolMaterial("Bronze", 2, 400, 5.5F, 2.5F, 30);
+    public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
+    //Balance
+    public static ToolMaterial Steel = EnumHelper.addToolMaterial("Steel", 2, 400, 5.5F, 2.5F, 30);
+    public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
+    public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
+    public static ArmorMaterial ARMORBRONZE = EnumHelper.addArmorMaterial("Bronze", 16, new int[] {2, 4, 4, 1}, 15);
+    //Balance
+    public static ArmorMaterial ARMORSTEEL = EnumHelper.addArmorMaterial("Steel", 16, new int[] {2, 4, 4, 1}, 15);
 
 	public static void registerOreDictionary(){
 		
@@ -65,6 +80,7 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.whatthehellingot, "ItemWhatTheHellIngot");
     	GameRegistry.registerItem(AlloycraftItems.pureshard, "ItemPureShard");
     	GameRegistry.registerItem(AlloycraftItems.unpurecrystal, "ItemUnpureCrystal");
+    	GameRegistry.registerItem(AlloycraftItems.steelingot, "ItemSteelIngot");
     	//Gold-Iron Set
     	GameRegistry.registerItem(AlloycraftItems.goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(AlloycraftItems.goldironpick, "ItemGoldIronPick");
@@ -83,21 +99,32 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.hellishaxe, "ItemHellishAxe");
     	GameRegistry.registerItem(AlloycraftItems.hellishspade, "ItemHellishSpade");
     	GameRegistry.registerItem(AlloycraftItems.hellishhoe, "ItemHellishHoe");
+    	//Steel Set
+    	GameRegistry.registerItem(AlloycraftItems.steelsword, "ItemSteelSword");
+    	GameRegistry.registerItem(AlloycraftItems.steelpick, "ItemSteelPick");
+    	GameRegistry.registerItem(AlloycraftItems.steelaxe, "ItemSteelAxe");
+    	GameRegistry.registerItem(AlloycraftItems.steelspade, "ItemSteelSpade");
+    	GameRegistry.registerItem(AlloycraftItems.steelhoe, "ItemSteelHoe");
     	//Gold-Iron Armor
-    	GameRegistry.registerItem(AlloycraftItems.goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", Alloycraft.ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
-    	GameRegistry.registerItem(AlloycraftItems.goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", Alloycraft.ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(AlloycraftItems.goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", Alloycraft.ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(AlloycraftItems.goldironboots = new ItemGoldIronArmor("GoldIronBoots", Alloycraft.ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
+    	GameRegistry.registerItem(AlloycraftItems.goldironhelmet = new ItemGoldIronArmor("GoldIronHelmet", ARMORGOLDIRON, "GoldIron", 0), "GoldIronHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.goldironchestplate = new ItemGoldIronArmor("GoldIronChestplate", ARMORGOLDIRON, "GoldIron", 1), "GoldIronChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.goldironleggings = new ItemGoldIronArmor("GoldIronLeggings", ARMORGOLDIRON, "GoldIron", 2), "GoldIronLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.goldironboots = new ItemGoldIronArmor("GoldIronBoots", ARMORGOLDIRON, "GoldIron", 3), "GoldIronBoots"); // 3 for boots
     	//Hellish Armor
-    	GameRegistry.registerItem(AlloycraftItems.hellishhelmet = new ItemHellishArmor("HellishHelmet", Alloycraft.ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
-    	GameRegistry.registerItem(AlloycraftItems.hellishchestplate = new ItemHellishArmor("HellishChestplate", Alloycraft.ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(AlloycraftItems.hellishleggings = new ItemHellishArmor("HellishLeggings", Alloycraft.ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(AlloycraftItems.hellishboots = new ItemHellishArmor("HellishBoots", Alloycraft.ARMORHELLISH, "Hellish", 3), "HellishBoots"); // 3 for boots
+    	GameRegistry.registerItem(AlloycraftItems.hellishhelmet = new ItemHellishArmor("HellishHelmet", ARMORHELLISH, "Hellish", 0), "HellishHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.hellishchestplate = new ItemHellishArmor("HellishChestplate", ARMORHELLISH, "Hellish", 1), "HellishChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.hellishleggings = new ItemHellishArmor("HellishLeggings", ARMORHELLISH, "Hellish", 2), "HellishLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.hellishboots = new ItemHellishArmor("HellishBoots", ARMORHELLISH, "Hellish", 3), "HellishBoots"); // 3 for boots
     	//Bronze Armor
-    	GameRegistry.registerItem(AlloycraftItems.bronzehelmet = new ItemBronzeArmor("BronzeHelmet", Alloycraft.ARMORBRONZE, "Bronze", 0), "BronzeHelmet"); //0 for helmet
-    	GameRegistry.registerItem(AlloycraftItems.bronzechestplate = new ItemBronzeArmor("BronzeChestplate", Alloycraft.ARMORBRONZE, "Bronze", 1), "BronzeChestplate"); // 1 for chestplate
-    	GameRegistry.registerItem(AlloycraftItems.bronzeleggings = new ItemBronzeArmor("BronzeLeggings", Alloycraft.ARMORBRONZE, "Bronze", 2), "BronzeLeggings"); // 2 for leggings
-    	GameRegistry.registerItem(AlloycraftItems.bronzeboots = new ItemBronzeArmor("BronzeBoots", Alloycraft.ARMORBRONZE, "Bronze", 3), "BronzeBoots"); // 3 for boots
+    	GameRegistry.registerItem(AlloycraftItems.bronzehelmet = new ItemBronzeArmor("BronzeHelmet", ARMORBRONZE, "Bronze", 0), "BronzeHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.bronzechestplate = new ItemBronzeArmor("BronzeChestplate", ARMORBRONZE, "Bronze", 1), "BronzeChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.bronzeleggings = new ItemBronzeArmor("BronzeLeggings", ARMORBRONZE, "Bronze", 2), "BronzeLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.bronzeboots = new ItemBronzeArmor("BronzeBoots", ARMORBRONZE, "Bronze", 3), "BronzeBoots"); // 3 for boots
+    	//Steel Armor
+    	GameRegistry.registerItem(AlloycraftItems.steelhelmet = new ItemSteelArmor("SteelHelmet", ARMORSTEEL, "Steel", 0), "SteelHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.steelchestplate = new ItemSteelArmor("SteelChestplate", ARMORSTEEL, "Steel", 1), "SteelChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.steelleggings = new ItemSteelArmor("SteelLeggings", ARMORSTEEL, "Steel", 2), "SteelLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.steelboots = new ItemSteelArmor("SteelBoots", ARMORSTEEL, "Steel", 3), "SteelBoots"); // 3 for boots
 	}
 	
 	public static void registerBlocks() {
@@ -135,6 +162,7 @@ public class Registry {
 	public static void registerAchievements(){
 		
     	yttriumachievement = new Achievement("achievement.yttrium", "Yttrium", 0, 2,AlloycraftItems.yttriumingot, (Achievement) null).registerStat();;
+    	cookieingotachievement = new Achievement("achievement.cookie", "CookieIngot", 0, 2,AlloycraftItems.cookieingot, (Achievement) null).registerStat();;
        	alloyfurnaceachievement = new Achievement("achievement.alloyfurnaceachievement", "Alloyfurnace",0, 0, AlloycraftBlocks.alloysmelteridle, yttriumachievement).registerStat();
        	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevements", yttriumachievement, alloyfurnaceachievement);
        	AchievementPage.registerAchievementPage(AlloycraftPage);
