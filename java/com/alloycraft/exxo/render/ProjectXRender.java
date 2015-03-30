@@ -25,10 +25,10 @@ public class ProjectXRender extends BaseRender {
 			GL11.glScalef(scale, scale, scale);
 			if (((Entity) data[1]).worldObj.isDaytime()) {
 				mc.renderEngine.bindTexture(new ResourceLocation(
-						"rpginventorymod:weapons/projectx.png"));
+						"alloycraft:models/projectx.png"));
 			} else {
 				mc.renderEngine.bindTexture(new ResourceLocation(
-						"rpginventorymod:weapons/projectxNight.png"));
+						"alloycraft:models/projectx.png"));
 			}
 			GL11.glRotatef(-150F, 1.0f, 0.0f, 0.0f);
 			GL11.glRotatef(-100F, 0.0f, 1.0f, 0.0f);
@@ -46,10 +46,10 @@ public class ProjectXRender extends BaseRender {
 			if (((Entity) data[1] != null)
 					&& ((Entity) data[1]).worldObj.isDaytime()) {
 				mc.renderEngine.bindTexture(new ResourceLocation(
-						"rpginventorymod:weapons/projectx.png"));
+						"alloycraft:models/projectx.png"));
 			} else {
 				mc.renderEngine.bindTexture(new ResourceLocation(
-						"rpginventorymod:weapons/projectxNight.png"));
+						"alloycraft:models/projectx.png"));
 			}
 			GL11.glRotatef(180F, 1.0f, 0.0f, 0.0f);
 			GL11.glRotatef(0F, 0.0f, 1.0f, 0.0f);
@@ -66,10 +66,10 @@ public class ProjectXRender extends BaseRender {
 			GL11.glScalef(scale, scale, scale);
 			if (((Entity) data[1]).worldObj.isDaytime()) {
 				mc.renderEngine.bindTexture(new ResourceLocation(
-						"rpginventorymod:weapons/projectx.png"));
+						"alloycraft:models/projectx.png"));
 			} else {
 				mc.renderEngine.bindTexture(new ResourceLocation(
-						"rpginventorymod:weapons/projectxNight.png"));
+						"alloycraft:models/projectx.png"));
 			}
 
 			GL11.glRotatef(90F, 1.0f, 0.0f, 0.0f);
@@ -84,7 +84,7 @@ public class ProjectXRender extends BaseRender {
 		case INVENTORY:
 			GL11.glPushMatrix();
 			mc.renderEngine.bindTexture(new ResourceLocation(
-					"rpginventorymod:weapons/projectx.png"));
+					"alloycraft:models/projectx.png"));
 			scale = 0.8F;
 			GL11.glScalef(scale, scale, scale);
 			GL11.glRotatef(160F, 1.0f, 0.0f, 0.0f);
