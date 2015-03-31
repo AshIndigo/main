@@ -1,13 +1,23 @@
 package com.alloycraft.exxo;
 
-import net.minecraft.creativetab.*;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.config.Configuration;
 
-import com.alloycraft.exxo.lib.*;
+import com.alloycraft.exxo.lib.ApiRegistry;
+import com.alloycraft.exxo.lib.CommonProxy;
+import com.alloycraft.exxo.lib.CreativeTabsAlloycraft;
+import com.alloycraft.exxo.lib.CreativeTabsAlloycraftArmor;
+import com.alloycraft.exxo.lib.CreativeTabsAlloycraftTools;
+import com.alloycraft.exxo.lib.Recipes;
+import com.alloycraft.exxo.lib.Refrences;
+import com.alloycraft.exxo.lib.Registry;
 
-import cpw.mods.fml.common.*;
+import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin.Name;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Refrences.MODID, version = Refrences.VERSION, name = Refrences.NAME)
 public class Alloycraft
@@ -32,7 +42,10 @@ public class Alloycraft
     	//Add Pure shard boss
     	//Need to add Earth Gem, End Gem, and pure shard.
     	//Double Check Refrence Items
-    	
+    	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+    	config.load();
+    	//For later purposes
+    	config.save();
     	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();
     	Registry.registerItems();
