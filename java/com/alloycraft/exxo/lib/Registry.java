@@ -52,10 +52,12 @@ public class Registry {
     	OreDictionary.registerOre("ingotTin", new ItemStack(AlloycraftItems.tiningot));
     	OreDictionary.registerOre("ingotYtrrium", new ItemStack(AlloycraftItems.yttriumingot));
     	OreDictionary.registerOre("ingotBronze", new ItemStack(AlloycraftItems.bronzeingot));
+    	OreDictionary.registerOre("ingotTitanium", new ItemStack(AlloycraftItems.titaniumingot));
     	//Ore
     	OreDictionary.registerOre("oreCopper", new ItemStack(AlloycraftBlocks.copperore));
     	OreDictionary.registerOre("oreTin", new ItemStack(AlloycraftBlocks.tinore));
     	OreDictionary.registerOre("oreYtrrium", new ItemStack(AlloycraftBlocks.yttriumore));
+    	OreDictionary.registerOre("oreTitanium", new ItemStack(AlloycraftBlocks.titaniumore));
 		
 	}
 	
@@ -81,6 +83,7 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.pureshard, "ItemPureShard");
     	GameRegistry.registerItem(AlloycraftItems.unpurecrystal, "ItemUnpureCrystal");
     	GameRegistry.registerItem(AlloycraftItems.steelingot, "ItemSteelIngot");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumingot, "ItemTitaniumIngot");
     	//Objection!!!
     	GameRegistry.registerItem(AlloycraftItems.objection, "ItemObjection");
     	GameRegistry.registerItem(AlloycraftItems.holdit, "ItemHoldIt");
@@ -138,6 +141,7 @@ public class Registry {
     	GameRegistry.registerBlock(AlloycraftBlocks.tinore, "TinOre");
     	GameRegistry.registerBlock(AlloycraftBlocks.yttriumore, "YttriumOre");
     	GameRegistry.registerBlock(AlloycraftBlocks.fireiteore, "FireiteOre");
+    	GameRegistry.registerBlock(AlloycraftBlocks.titaniumore, "TitaniumOre");
     	//Blocks
     	GameRegistry.registerBlock(AlloycraftBlocks.cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(AlloycraftBlocks.copperblock, "BlockCopper");

@@ -21,6 +21,7 @@ public class AlloycraftItems {
     public static Item copperingot;
     public static Item bronzeingot;
     public static Item steelingot;
+    public static Item titaniumingot;
     public static Item tiningot;
     public static Item rainbowdye;
     public static Item hypercoal;
@@ -82,6 +83,7 @@ public class AlloycraftItems {
 		//Ingots
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	copperingot = new ItemCopperIngot();
+    	titaniumingot = new ItemTitaniumIngot();
     	pureshard = new ItemPureShard();
     	unpurecrystal = new ItemUnpureCrystal();
     	fireitegem = new ItemFireiteGem();

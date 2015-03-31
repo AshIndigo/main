@@ -26,6 +26,13 @@ public class Alloycraft
     public void preinit(FMLPreInitializationEvent event)
     {
     	//Much Much Nicer
+    	//Steel or titanium slow you down when alloyed they dont
+    	//Titanium Pearl infinite use ender pearl
+    	//Titanium is found in the end.
+    	//Add Pure shard boss
+    	//Need to add Earth Gem, End Gem, and pure shard.
+    	//Double Check Refrence Items
+    	
     	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();
     	Registry.registerItems();

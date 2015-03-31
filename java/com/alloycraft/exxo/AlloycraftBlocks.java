@@ -11,9 +11,11 @@ import com.alloycraft.exxo.blocks.BlockHyperTorch;
 import com.alloycraft.exxo.blocks.BlockRainbowWool;
 import com.alloycraft.exxo.blocks.BlockTin;
 import com.alloycraft.exxo.blocks.BlockTinOre;
+import com.alloycraft.exxo.blocks.BlockTitaniumOre;
 import com.alloycraft.exxo.blocks.BlockWhatTheHell;
 import com.alloycraft.exxo.blocks.BlockYttriumOre;
 import com.alloycraft.exxo.blocks.Crystalizer;
+
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 
@@ -37,6 +39,7 @@ public class AlloycraftBlocks {
     public static Block copperore;
     public static Block tinore;
     public static Block fireiteore;
+    public static Block titaniumore;
 	
 	public static void registerBlocks() {
 		
@@ -56,6 +59,7 @@ public class AlloycraftBlocks {
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	copperore = new BlockCopperOre().setHardness(3.0F);
     	tinore = new BlockTinOre().setHardness(3.0F);
+    	titaniumore = new BlockTitaniumOre().setHardness(3.0F);
     	fireiteore = new BlockFireiteOre().setHardness(3.0F);
 	}
 	

@@ -18,10 +18,10 @@ public class ItemTakeThat extends Item {
 	}
 	
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player){
 		
-		par2World.playSoundEffect(20, 70, 20, "alloycraft:takethat", 1, 1);
-		return par1ItemStack;
+		world.playSoundAtEntity(player, "alloycraft:takethat", 1.0F, 1.0F);
+	    return itemStack;
 	}
 }
 
