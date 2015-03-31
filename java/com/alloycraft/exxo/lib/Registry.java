@@ -81,6 +81,10 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.pureshard, "ItemPureShard");
     	GameRegistry.registerItem(AlloycraftItems.unpurecrystal, "ItemUnpureCrystal");
     	GameRegistry.registerItem(AlloycraftItems.steelingot, "ItemSteelIngot");
+    	//Objection!!!
+    	GameRegistry.registerItem(AlloycraftItems.objection, "ItemObjection");
+    	GameRegistry.registerItem(AlloycraftItems.holdit, "ItemHoldIt");
+    	GameRegistry.registerItem(AlloycraftItems.takethat, "ItemTakeThat");
     	//Gold-Iron Set
     	GameRegistry.registerItem(AlloycraftItems.goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(AlloycraftItems.goldironpick, "ItemGoldIronPick");

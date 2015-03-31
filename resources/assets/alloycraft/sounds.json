@@ -1,4 +1,31 @@
 {
+    "objection": {
+        "category": "master",
+        "sounds": [
+            {
+                "name": "objection",
+                "stream": false
+            }
+        ]
+    },
+	 "holdit": {
+        "category": "master",
+        "sounds": [
+            {
+                "name": "holdit",
+                "stream": false
+            }
+        ]
+    },
+	 "takethat": {
+        "category": "master",
+        "sounds": [
+            {
+                "name": "takethat",
+                "stream": false
+            }
+        ]
+    },
     "records.Awesome": {
         "category": "record",
         "sounds": [

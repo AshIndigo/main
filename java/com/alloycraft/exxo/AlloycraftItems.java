@@ -73,7 +73,10 @@ public class AlloycraftItems {
     public static Item steelchestplate;
     public static Item steelleggings;
     public static Item steelboots;
-    
+    //Objection!!!
+    public static Item objection;
+    public static Item holdit;
+    public static Item takethat;
 	public static void registerItems() {
 		
 		//Ingots
@@ -97,6 +100,10 @@ public class AlloycraftItems {
     	projectx = new ItemProjectX();
     	rainbowdye = new ItemRainbowDye();
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
+    	//Objection!!!
+    	objection = new ItemObjection();
+    	holdit = new ItemHoldIt();
+    	takethat = new ItemTakeThat();
     	//Gold-Iron Tools
     	goldironsword = new ItemGoldIronSword("GoldIronSword", Registry.GoldIron);
     	goldironpick = new ItemGoldIronPick("GoldIronPick", Registry.GoldIron);
