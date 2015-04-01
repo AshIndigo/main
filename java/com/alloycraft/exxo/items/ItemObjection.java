@@ -1,5 +1,7 @@
 package com.alloycraft.exxo.items;
 
+import java.util.List;
+
 import com.alloycraft.exxo.lib.*;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,5 +25,10 @@ public class ItemObjection extends Item {
 		world.playSoundAtEntity(player, "alloycraft:objection", 1.0F, 1.0F);
 	    return itemStack;
 	}
+	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
+    {
+    	par3List.add("Objection!");
+
+    }
 }
 

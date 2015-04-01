@@ -41,7 +41,6 @@ public class Alloycraft
     	//Titanium is found in the end.
     	//Add Pure shard boss
     	//Need to add Earth Gem, End Gem, and pure shard.
-    	//Double Check Refrence Items
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	//For later purposes
