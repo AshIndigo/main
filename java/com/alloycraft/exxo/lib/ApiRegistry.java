@@ -2,6 +2,7 @@ package com.alloycraft.exxo.lib;
 
 import baubles.api.IBauble;
 
+import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.AlloycraftBlocks;
 import com.alloycraft.exxo.AlloycraftItems;
 import com.alloycraft.exxo.addons.items.BaubleEpicRing;
@@ -19,12 +20,14 @@ public class ApiRegistry {
 	
 	public static void registerMods(){
 		
+		if (Alloycraft.baublesenabled = true){
 		if (Loader.isModLoaded("Baubles")) {
     		System.out.println("Baubles Detected");
     		ApiRegistry.registerBaubles();
     		} else {
     		System.out.println("Baubles Not Detected");
     		}
+		}
 	}
 	
 	public static void registerBaubles(){
