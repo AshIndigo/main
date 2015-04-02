@@ -5,7 +5,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
-public class ModelProjectX extends ModelBase
+public class ModelPureBoss extends ModelBase
 {
   //fields
     ModelRenderer leg1;
@@ -14,7 +14,7 @@ public class ModelProjectX extends ModelBase
     ModelRenderer arm1;
     ModelRenderer arm2;
   
-  public ModelProjectX()
+  public ModelPureBoss()
   {
     textureWidth = 64;
     textureHeight = 32;
