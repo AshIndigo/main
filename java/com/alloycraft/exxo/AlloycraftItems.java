@@ -9,13 +9,11 @@ import net.minecraft.item.Item;
 public class AlloycraftItems {
 	
     //Items
-    public static Item cookieingot;
-    public static Item projectxammo;
     public static Item whatthehellingot;
     public static Item hellishingot;
     public static Item goldironingot;
     public static Item yttriumingot;
-    public static Item projectx;
+    public static Item cookieingot;
     public static Item lapislavonium;
     public static Item purecrystal;
     public static Item copperingot;
@@ -23,6 +21,8 @@ public class AlloycraftItems {
     public static Item steelingot;
     public static Item titaniumingot;
     public static Item tiningot;
+    public static Item projectxammo;
+    public static Item projectx;
     public static Item rainbowdye;
     public static Item hypercoal;
     public static Item awesomemusic;
@@ -30,6 +30,7 @@ public class AlloycraftItems {
 	public static Item fireitegem;
 	public static Item pureshard;
 	public static Item unpurecrystal;
+	public static Item purebossegg;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -78,6 +79,19 @@ public class AlloycraftItems {
     public static Item objection;
     public static Item holdit;
     public static Item takethat;
+    //Titanium Set
+    public static Item titaniumsword;
+    public static Item titaniumpick;
+    public static Item titaniumspade;
+    public static Item titaniumhoe;
+    public static Item titaniumaxe;
+    public static Item titaniumpearl;
+    //Titanium Armor
+    public static Item titaniumhelmet;
+    public static Item titaniumchestplate;
+    public static Item titaniumleggings;
+    public static Item titaniumboots;
+    
 	public static void registerItems() {
 		
 		//Ingots
@@ -100,6 +114,7 @@ public class AlloycraftItems {
     	fireiteingot = new ItemFireiteIngot();
     	projectxammo = new ItemProjectXAmmo();
     	projectx = new ItemProjectX();
+    	purebossegg = new ItemPureBossSpawner("PureBoss", 0xE18519, 0x000000).setUnlocalizedName("spawn_egg_pureboss".toLowerCase()).setTextureName("alloycraft:pureboss");
     	rainbowdye = new ItemRainbowDye();
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Objection!!!
@@ -130,5 +145,12 @@ public class AlloycraftItems {
        	steelspade = new ItemSteelSpade("SteelSpade", Registry.Steel);
        	steelhoe = new ItemSteelHoe("SteelHoe", Registry.Steel);
        	steelaxe = new ItemSteelAxe("SteelAxe", Registry.Steel);
+       	//Titanium Tools
+       	steelsword = new ItemSteelSword("SteelSword", Registry.Steel);
+       	steelpick = new ItemSteelPick("SteelPick", Registry.Steel);
+       	steelspade = new ItemSteelSpade("SteelSpade", Registry.Steel);
+       	steelhoe = new ItemSteelHoe("SteelHoe", Registry.Steel);
+       	steelaxe = new ItemSteelAxe("SteelAxe", Registry.Steel);
+       	titaniumpearl = new ItemTitaniumPearl();
 	}
 }

@@ -7,12 +7,14 @@ import com.alloycraft.exxo.armor.ItemBronzeArmor;
 import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.armor.ItemHellishArmor;
 import com.alloycraft.exxo.armor.ItemSteelArmor;
+import com.alloycraft.exxo.entities.EntityPureBoss;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -42,8 +44,8 @@ public class Registry {
     public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
     public static ArmorMaterial ARMORBRONZE = EnumHelper.addArmorMaterial("Bronze", 16, new int[] {2, 4, 4, 1}, 15);
-    //Balance
-    public static ArmorMaterial ARMORSTEEL = EnumHelper.addArmorMaterial("Steel", 16, new int[] {2, 4, 4, 1}, 15);
+    //Balance more
+    public static ArmorMaterial ARMORSTEEL = EnumHelper.addArmorMaterial("Steel", 20, new int[] {2, 8, 4, 3}, 20);
 
 	public static void registerOreDictionary(){
 		
@@ -53,6 +55,7 @@ public class Registry {
     	OreDictionary.registerOre("ingotYtrrium", new ItemStack(AlloycraftItems.yttriumingot));
     	OreDictionary.registerOre("ingotBronze", new ItemStack(AlloycraftItems.bronzeingot));
     	OreDictionary.registerOre("ingotTitanium", new ItemStack(AlloycraftItems.titaniumingot));
+    	OreDictionary.registerOre("ingotSteel", new ItemStack(AlloycraftItems.steelingot));
     	//Ore
     	OreDictionary.registerOre("oreCopper", new ItemStack(AlloycraftBlocks.copperore));
     	OreDictionary.registerOre("oreTin", new ItemStack(AlloycraftBlocks.tinore));
@@ -84,6 +87,7 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.unpurecrystal, "ItemUnpureCrystal");
     	GameRegistry.registerItem(AlloycraftItems.steelingot, "ItemSteelIngot");
     	GameRegistry.registerItem(AlloycraftItems.titaniumingot, "ItemTitaniumIngot");
+    	GameRegistry.registerItem(AlloycraftItems.purebossegg, "PureBossSpawnEgg");
     	//Objection!!!
     	GameRegistry.registerItem(AlloycraftItems.objection, "ItemObjection");
     	GameRegistry.registerItem(AlloycraftItems.holdit, "ItemHoldIt");
@@ -164,8 +168,9 @@ public class Registry {
 		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(AlloycraftItems.tiningot), 1, 5, 5));
     	GameRegistry.registerTileEntity(TileEntityAlloyFurnace.class, "AlloyFurnace");
     	GameRegistry.registerTileEntity(TileEntityCrystalizer.class, "Crystalizer");
-    	GameRegistry.registerWorldGenerator(new EventManager(), 1);
+    	GameRegistry.registerWorldGenerator(new EventManager(), 5);
     	NetworkRegistry.INSTANCE.registerGuiHandler(Alloycraft.instance, new GuiHandler());
+    	EntityRegistry.registerModEntity(EntityPureBoss.class, "PureBoss", 1, Alloycraft.instance, 1, 1, true);
 	}
 	public static void registerAchievements(){
 		

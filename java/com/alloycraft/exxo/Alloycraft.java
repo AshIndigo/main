@@ -3,17 +3,11 @@ package com.alloycraft.exxo;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
-
-import com.alloycraft.exxo.entities.EntityPureBoss;
-import com.alloycraft.exxo.items.ItemPureBossSpawner;
 import com.alloycraft.exxo.lib.*;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Refrences.MODID, version = Refrences.VERSION, name = Refrences.NAME)
 public class Alloycraft
@@ -24,6 +18,7 @@ public class Alloycraft
     public static boolean baublesenabled;
     public static boolean thaumcraftenabled;
     public static boolean projectx3dmodelenabled;
+    public static boolean refrenceitemsenabled;
     
     @SidedProxy(clientSide = Refrences.CLIENT_PROXY_CLASS, serverSide = Refrences.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -35,19 +30,17 @@ public class Alloycraft
     public void preinit(FMLPreInitializationEvent event)
     {
     	//Much Much Nicer
-    	//Steel or titanium slow you down when alloyed they dont
+    	//Steel or titanium slow you down when alloyed they dont slow you down
     	//Titanium Pearl infinite use ender pearl
-    	//Titanium is found in the end.
-    	//Add Pure shard boss
-    	//Need to add Earth Gem, End Gem, and pure shard.
-    	Item purebossegg = new ItemPureBossSpawner("PureBoss", 0xE18519, 0x000000).setUnlocalizedName("spawn_egg_pureboss".toLowerCase()).setTextureName("alloycraft:pureboss");
-    	GameRegistry.registerItem(purebossegg, "spawnEgg");
-    	EntityRegistry.registerModEntity(EntityPureBoss.class, "PureBoss", 1, instance, 5, 5, false);
+    	//Add Pure shard boss AI and model
+    	//Earth Gem Component Crop
+    	//Add Earth Gem and End Gem Items and Recipes.
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "Addons", true, "Is the Thaumcraft 4 Addon Enabled?");
     	baublesenabled = config.getBoolean("Baubles Enabled?", "Addons", true, "Are Baubles Enabled?");
-    	projectx3dmodelenabled = config.getBoolean("Project X's 3d Model Enabled?", "Render", true, "Is Project X's 3d Model Enabled?"); 
+    	projectx3dmodelenabled = config.getBoolean("Project X's 3d Model Enabled?", "Render", true, "Is Project X's 3d Model Enabled?");
+    	refrenceitemsenabled = config.getBoolean("Are Easter Eggs Enabled", "Misc.", true, "Are the Easter Egg Items Enabled?"); 
     	config.save();
     	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();

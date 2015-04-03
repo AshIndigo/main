@@ -1,5 +1,7 @@
 package com.alloycraft.exxo.entities;
 
+import com.alloycraft.exxo.AlloycraftItems;
+
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -21,13 +23,13 @@ public class EntityPureBoss extends EntityCreature{
 	public EntityPureBoss(World par1World) {
 		super(par1World);
 		this.setSize(0.5F, 0.4F);
+		this.dropItem(AlloycraftItems.pureshard, 5);
 		getNavigator().setAvoidsWater(true);
 		   clearAITasks(); // clear any tasks assigned in super classes
 		   tasks.addTask(0, new EntityAISwimming(this));
 		   // the leap and the collide together form an actual attack
-		   tasks.addTask(2, new EntityAILeapAtTarget(this, 0.4F));
-		   tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		   tasks.addTask(10, new EntityAILookIdle(this));      
+		   tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 5.0F, true));
+		   tasks.addTask(2, new EntityAILookIdle(this));    
 		}
 
 		protected void clearAITasks()
@@ -42,7 +44,9 @@ public class EntityPureBoss extends EntityCreature{
 	
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(16.0F);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(1.0F);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(5.0F);
+		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0F);
 	}
 }
