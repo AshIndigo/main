@@ -136,6 +136,14 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.steelchestplate = new ItemSteelArmor("SteelChestplate", ARMORSTEEL, "Steel", 1), "SteelChestplate"); // 1 for chestplate
     	GameRegistry.registerItem(AlloycraftItems.steelleggings = new ItemSteelArmor("SteelLeggings", ARMORSTEEL, "Steel", 2), "SteelLeggings"); // 2 for leggings
     	GameRegistry.registerItem(AlloycraftItems.steelboots = new ItemSteelArmor("SteelBoots", ARMORSTEEL, "Steel", 3), "SteelBoots"); // 3 for boots
+    	//Titanium Set
+    	GameRegistry.registerItem(AlloycraftItems.hellishsword, "ItemHellishSword");
+    	GameRegistry.registerItem(AlloycraftItems.hellishpick, "ItemHellishPick");
+    	GameRegistry.registerItem(AlloycraftItems.hellishaxe, "ItemHellishAxe");
+    	GameRegistry.registerItem(AlloycraftItems.hellishspade, "ItemHellishSpade");
+    	GameRegistry.registerItem(AlloycraftItems.hellishhoe, "ItemHellishHoe");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumpearl, "ItemTitaniumPearl");
+    	//Titanium Armor
 	}
 	
 	public static void registerBlocks() {
@@ -170,7 +178,7 @@ public class Registry {
     	GameRegistry.registerTileEntity(TileEntityCrystalizer.class, "Crystalizer");
     	GameRegistry.registerWorldGenerator(new EventManager(), 5);
     	NetworkRegistry.INSTANCE.registerGuiHandler(Alloycraft.instance, new GuiHandler());
-    	EntityRegistry.registerModEntity(EntityPureBoss.class, "PureBoss", 1, Alloycraft.instance, 1, 1, true);
+    	EntityRegistry.registerModEntity(EntityPureBoss.class, "PureBoss", 1, Alloycraft.instance, 10000000, 10000000, false);
 	}
 	public static void registerAchievements(){
 		

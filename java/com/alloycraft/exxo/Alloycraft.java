@@ -40,7 +40,7 @@ public class Alloycraft
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "Addons", true, "Is the Thaumcraft 4 Addon Enabled?");
     	baublesenabled = config.getBoolean("Baubles Enabled?", "Addons", true, "Are Baubles Enabled?");
     	projectx3dmodelenabled = config.getBoolean("Project X's 3d Model Enabled?", "Render", true, "Is Project X's 3d Model Enabled?");
-    	refrenceitemsenabled = config.getBoolean("Are Easter Eggs Enabled", "Misc.", true, "Are the Easter Egg Items Enabled?"); 
+    	refrenceitemsenabled = config.getBoolean("Are Easter Eggs Enabled", "Misc", true, "Are the Easter Egg Items Enabled?"); 
     	config.save();
     	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();
