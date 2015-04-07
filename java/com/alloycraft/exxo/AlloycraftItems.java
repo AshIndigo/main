@@ -4,6 +4,8 @@ import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.lib.*;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 public class AlloycraftItems {
@@ -31,6 +33,8 @@ public class AlloycraftItems {
 	public static Item pureshard;
 	public static Item unpurecrystal;
 	public static Item purebossegg;
+	public static Item crystalizedseed;
+	public static Item plantgem;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -116,6 +120,7 @@ public class AlloycraftItems {
     	projectx = new ItemProjectX();
     	purebossegg = new ItemPureBossSpawner("PureBoss", 0xE18519, 0x000000).setUnlocalizedName("spawn_egg_pureboss".toLowerCase()).setTextureName("alloycraft:pureboss");
     	rainbowdye = new ItemRainbowDye();
+    	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Objection!!!
     	objection = new ItemObjection();
@@ -146,11 +151,11 @@ public class AlloycraftItems {
        	steelhoe = new ItemSteelHoe("SteelHoe", Registry.Steel);
        	steelaxe = new ItemSteelAxe("SteelAxe", Registry.Steel);
        	//Titanium Tools
-       	steelsword = new ItemSteelSword("SteelSword", Registry.Steel);
-       	steelpick = new ItemSteelPick("SteelPick", Registry.Steel);
-       	steelspade = new ItemSteelSpade("SteelSpade", Registry.Steel);
-       	steelhoe = new ItemSteelHoe("SteelHoe", Registry.Steel);
-       	steelaxe = new ItemSteelAxe("SteelAxe", Registry.Steel);
+       	titaniumsword = new ItemTitaniumSword("TitaniumSword", Registry.Titanium);
+       	titaniumpick = new ItemTitaniumPick("TitaniumPick", Registry.Titanium);
+       	titaniumspade = new ItemTitaniumSpade("TitaniumSpade", Registry.Titanium);
+       	titaniumhoe = new ItemTitaniumHoe("TitaniumHoe", Registry.Titanium);
+       	titaniumaxe = new ItemTitaniumAxe("TitaniumAxe", Registry.Titanium);
        	titaniumpearl = new ItemTitaniumPearl();
+       	}
 	}
-}

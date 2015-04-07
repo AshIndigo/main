@@ -31,8 +31,7 @@ public class Alloycraft
     {
     	//Much Much Nicer
     	//Steel or titanium slow you down when alloyed they dont slow you down
-    	//Titanium Pearl infinite use ender pearl
-    	//Add Pure shard boss AI and model
+    	//Add Pure shard boss AI, Model, and fix bugs
     	//Earth Gem Component Crop
     	//Add Earth Gem and End Gem Items and Recipes.
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());

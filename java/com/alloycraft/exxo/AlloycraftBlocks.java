@@ -34,6 +34,7 @@ public class AlloycraftBlocks {
     public static Block crystalizeridle;
     public static Block crystalizeractive;
     public static Block hypertorch;
+	public static Block crystalizedplant;
     //Ore
     public static Block yttriumore;
     public static Block copperore;

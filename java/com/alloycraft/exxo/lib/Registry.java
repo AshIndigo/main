@@ -7,6 +7,7 @@ import com.alloycraft.exxo.armor.ItemBronzeArmor;
 import com.alloycraft.exxo.armor.ItemGoldIronArmor;
 import com.alloycraft.exxo.armor.ItemHellishArmor;
 import com.alloycraft.exxo.armor.ItemSteelArmor;
+import com.alloycraft.exxo.armor.ItemTitaniumArmor;
 import com.alloycraft.exxo.entities.EntityPureBoss;
 import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
@@ -39,10 +40,12 @@ public class Registry {
     //Balance
     public static ToolMaterial Bronze = EnumHelper.addToolMaterial("Bronze", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
-    //Balance
+    public static ToolMaterial Titanium = EnumHelper.addToolMaterial("Titanium", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Steel = EnumHelper.addToolMaterial("Steel", 2, 400, 5.5F, 2.5F, 30);
     public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
+    //Balance
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
+    public static ArmorMaterial ARMORTITANIUM = EnumHelper.addArmorMaterial("Titanium", 20, new int[] {2, 8, 4, 3}, 20);
     public static ArmorMaterial ARMORBRONZE = EnumHelper.addArmorMaterial("Bronze", 16, new int[] {2, 4, 4, 1}, 15);
     //Balance more
     public static ArmorMaterial ARMORSTEEL = EnumHelper.addArmorMaterial("Steel", 20, new int[] {2, 8, 4, 3}, 20);
@@ -88,6 +91,8 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.steelingot, "ItemSteelIngot");
     	GameRegistry.registerItem(AlloycraftItems.titaniumingot, "ItemTitaniumIngot");
     	GameRegistry.registerItem(AlloycraftItems.purebossegg, "PureBossSpawnEgg");
+    	GameRegistry.registerItem(AlloycraftItems.crystalizedseed, "CrystalizedSeed");
+    	GameRegistry.registerItem(AlloycraftItems.plantgem, "PlantGem");
     	//Objection!!!
     	GameRegistry.registerItem(AlloycraftItems.objection, "ItemObjection");
     	GameRegistry.registerItem(AlloycraftItems.holdit, "ItemHoldIt");
@@ -137,13 +142,18 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.steelleggings = new ItemSteelArmor("SteelLeggings", ARMORSTEEL, "Steel", 2), "SteelLeggings"); // 2 for leggings
     	GameRegistry.registerItem(AlloycraftItems.steelboots = new ItemSteelArmor("SteelBoots", ARMORSTEEL, "Steel", 3), "SteelBoots"); // 3 for boots
     	//Titanium Set
-    	GameRegistry.registerItem(AlloycraftItems.hellishsword, "ItemHellishSword");
-    	GameRegistry.registerItem(AlloycraftItems.hellishpick, "ItemHellishPick");
-    	GameRegistry.registerItem(AlloycraftItems.hellishaxe, "ItemHellishAxe");
-    	GameRegistry.registerItem(AlloycraftItems.hellishspade, "ItemHellishSpade");
-    	GameRegistry.registerItem(AlloycraftItems.hellishhoe, "ItemHellishHoe");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumsword, "ItemTitaniumSword");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumpick, "ItemTitaniumPick");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumaxe, "ItemTitaniumAxe");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumspade, "ItemTitaniumSpade");
+    	GameRegistry.registerItem(AlloycraftItems.titaniumhoe, "ItemTitaniumHoe");
     	GameRegistry.registerItem(AlloycraftItems.titaniumpearl, "ItemTitaniumPearl");
     	//Titanium Armor
+    	GameRegistry.registerItem(AlloycraftItems.titaniumhelmet = new ItemTitaniumArmor("TitaniumHelmet", ARMORTITANIUM, "Titanium", 0), "TitaniumHelmet"); //0 for helmet
+    	GameRegistry.registerItem(AlloycraftItems.titaniumchestplate = new ItemTitaniumArmor("TitaniumChestplate", ARMORTITANIUM, "Titanium", 1), "TitaniumChestplate"); // 1 for chestplate
+    	GameRegistry.registerItem(AlloycraftItems.titaniumleggings = new ItemTitaniumArmor("TitaniumLeggings", ARMORTITANIUM, "Titanium", 2), "TitaniumLeggings"); // 2 for leggings
+    	GameRegistry.registerItem(AlloycraftItems.titaniumboots = new ItemTitaniumArmor("TitaniumBoots", ARMORTITANIUM, "Titanium", 3), "TitaniumBoots"); // 3 for boots
+
 	}
 	
 	public static void registerBlocks() {
@@ -167,6 +177,7 @@ public class Registry {
        	GameRegistry.registerBlock(AlloycraftBlocks.crystalizeridle, "CrystalizerIdle");
        	GameRegistry.registerBlock(AlloycraftBlocks.crystalizeractive, "CrystalizerActive");
        	GameRegistry.registerBlock(AlloycraftBlocks.hypertorch, "HyperTorch");
+       	GameRegistry.registerBlock(AlloycraftBlocks.crystalizedplant, "CrystalizedPlant");
 	}
 
 	public static void registerHooks() {
