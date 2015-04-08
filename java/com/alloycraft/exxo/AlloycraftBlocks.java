@@ -4,6 +4,7 @@ import com.alloycraft.exxo.blocks.AlloySmelter;
 import com.alloycraft.exxo.blocks.BlockCookie;
 import com.alloycraft.exxo.blocks.BlockCopper;
 import com.alloycraft.exxo.blocks.BlockCopperOre;
+import com.alloycraft.exxo.blocks.BlockCrystalizedPlant;
 import com.alloycraft.exxo.blocks.BlockFireiteOre;
 import com.alloycraft.exxo.blocks.BlockGoldIron;
 import com.alloycraft.exxo.blocks.BlockHellish;
@@ -56,6 +57,7 @@ public class AlloycraftBlocks {
     	crystalizeractive = new Crystalizer(true).setBlockName("CrystalizerActive").setLightLevel(0.625F).setHardness(3.5F);
     	rainbowwool = new BlockRainbowWool().setHardness(1.0F);
     	hypertorch = new BlockHyperTorch().setLightLevel(2.0F).setHardness(0.0F);
+    	crystalizedplant = new BlockCrystalizedPlant();
     	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
     	copperore = new BlockCopperOre().setHardness(3.0F);

@@ -1,7 +1,6 @@
 package com.alloycraft.exxo;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import com.alloycraft.exxo.lib.*;
 import cpw.mods.fml.common.Mod;
@@ -34,6 +33,7 @@ public class Alloycraft
     	//Add Pure shard boss AI, Model, and fix bugs
     	//Earth Gem Component Crop
     	//Add Earth Gem and End Gem Items and Recipes.
+    	//Translate the Mod
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "Addons", true, "Is the Thaumcraft 4 Addon Enabled?");

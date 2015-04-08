@@ -120,6 +120,7 @@ public class AlloycraftItems {
     	projectx = new ItemProjectX();
     	purebossegg = new ItemPureBossSpawner("PureBoss", 0xE18519, 0x000000).setUnlocalizedName("spawn_egg_pureboss".toLowerCase()).setTextureName("alloycraft:pureboss");
     	rainbowdye = new ItemRainbowDye();
+    	plantgem = new ItemPlantGem();
     	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Objection!!!
