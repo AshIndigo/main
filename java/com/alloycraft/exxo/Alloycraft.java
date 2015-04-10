@@ -1,12 +1,25 @@
 package com.alloycraft.exxo;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
-import com.alloycraft.exxo.lib.*;
+
+import com.alloycraft.exxo.lib.ApiRegistry;
+import com.alloycraft.exxo.lib.CommonProxy;
+import com.alloycraft.exxo.lib.CreativeTabsAlloycraft;
+import com.alloycraft.exxo.lib.CreativeTabsAlloycraftArmor;
+import com.alloycraft.exxo.lib.CreativeTabsAlloycraftTools;
+import com.alloycraft.exxo.lib.Recipes;
+import com.alloycraft.exxo.lib.Refrences;
+import com.alloycraft.exxo.lib.Registry;
+
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Refrences.MODID, version = Refrences.VERSION, name = Refrences.NAME)
 public class Alloycraft
@@ -33,7 +46,7 @@ public class Alloycraft
     	//Add Pure shard boss AI, Model, and fix bugs
     	//Earth Gem Component Crop
     	//Add Earth Gem and End Gem Items and Recipes.
-    	//Translate the Mod
+    	//Crystalized Plant's Textures are just for testing.
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "Addons", true, "Is the Thaumcraft 4 Addon Enabled?");
@@ -52,6 +65,7 @@ public class Alloycraft
     	ApiRegistry.registerMods();
     	proxy.registerItemRenderers();
     	System.out.println("Alloycraft Loaded");
+    	FMLLog.info("Hax", "Hax2");
     	
     }
     public void init(FMLInitializationEvent event){

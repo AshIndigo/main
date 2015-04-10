@@ -51,8 +51,8 @@ public class EntityPureBoss extends EntityMob{
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0F);
-		//this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5F);
-        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(1.0D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0F);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0F);
 	}

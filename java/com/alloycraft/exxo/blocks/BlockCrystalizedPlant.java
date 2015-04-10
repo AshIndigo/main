@@ -36,7 +36,7 @@ public class BlockCrystalizedPlant extends BlockPlantBase
     public Item getItemDropped(int parMetadata, Random parRand, int parFortune)  
     {
      // DEBUG
-     System.out.println("BlockBlueberry getItemDropped()");
+     System.out.println("BlockCrystalizedPlant getItemDropped()");
         return (AlloycraftItems.plantgem);
     }
     

@@ -1,6 +1,10 @@
 package com.alloycraft.exxo.items;
 
+import com.alloycraft.exxo.Alloycraft;
+import com.alloycraft.exxo.lib.Refrences;
+
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,6 +26,9 @@ public class ItemCrystalizedSeed extends Item implements IPlantable
     {
         theBlockPlant = parBlockPlant;
         soilId = parSoilBlock;
+        setUnlocalizedName(Refrences.MODID + "_" + "CrystalizedSeed");
+		setCreativeTab(Alloycraft.taballoycraft);
+		setTextureName(Refrences.MODID + ":" + "CrystalizedSeed");
     }
 
     @Override

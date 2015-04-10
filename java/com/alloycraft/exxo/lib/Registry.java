@@ -189,7 +189,7 @@ public class Registry {
     	GameRegistry.registerTileEntity(TileEntityCrystalizer.class, "Crystalizer");
     	GameRegistry.registerWorldGenerator(new EventManager(), 5);
     	NetworkRegistry.INSTANCE.registerGuiHandler(Alloycraft.instance, new GuiHandler());
-    	EntityRegistry.registerModEntity(EntityPureBoss.class, "PureBoss", 1, Alloycraft.instance, 10000000, 10000000, false);
+    	EntityRegistry.registerModEntity(EntityPureBoss.class, "PureBoss", 1, Alloycraft.instance, 64, 1, false);
 	}
 	public static void registerAchievements(){
 		

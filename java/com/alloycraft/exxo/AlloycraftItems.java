@@ -35,6 +35,7 @@ public class AlloycraftItems {
 	public static Item purebossegg;
 	public static Item crystalizedseed;
 	public static Item plantgem;
+	public static Item earth;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -120,6 +121,7 @@ public class AlloycraftItems {
     	projectx = new ItemProjectX();
     	purebossegg = new ItemPureBossSpawner("PureBoss", 0xE18519, 0x000000).setUnlocalizedName("spawn_egg_pureboss".toLowerCase()).setTextureName("alloycraft:pureboss");
     	rainbowdye = new ItemRainbowDye();
+    	earth = new ItemEarth();
     	plantgem = new ItemPlantGem();
     	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
