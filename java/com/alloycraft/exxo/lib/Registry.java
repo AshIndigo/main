@@ -93,10 +93,15 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.purebossegg, "PureBossSpawnEgg");
     	GameRegistry.registerItem(AlloycraftItems.crystalizedseed, "CrystalizedSeed");
     	GameRegistry.registerItem(AlloycraftItems.plantgem, "PlantGem");
+    	GameRegistry.registerItem(AlloycraftItems.metalgem, "MetalGem");
+    	GameRegistry.registerItem(AlloycraftItems.earthgem, "EarthGem");
     	//Objection!!!
+    	if (Alloycraft.refrenceitemsenabled = true){
+    		
     	GameRegistry.registerItem(AlloycraftItems.objection, "ItemObjection");
     	GameRegistry.registerItem(AlloycraftItems.holdit, "ItemHoldIt");
     	GameRegistry.registerItem(AlloycraftItems.takethat, "ItemTakeThat");
+    	}
     	//Gold-Iron Set
     	GameRegistry.registerItem(AlloycraftItems.goldironsword, "ItemGoldIronSword");
     	GameRegistry.registerItem(AlloycraftItems.goldironpick, "ItemGoldIronPick");
@@ -153,7 +158,9 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.titaniumchestplate = new ItemTitaniumArmor("TitaniumChestplate", ARMORTITANIUM, "Titanium", 1), "TitaniumChestplate"); // 1 for chestplate
     	GameRegistry.registerItem(AlloycraftItems.titaniumleggings = new ItemTitaniumArmor("TitaniumLeggings", ARMORTITANIUM, "Titanium", 2), "TitaniumLeggings"); // 2 for leggings
     	GameRegistry.registerItem(AlloycraftItems.titaniumboots = new ItemTitaniumArmor("TitaniumBoots", ARMORTITANIUM, "Titanium", 3), "TitaniumBoots"); // 3 for boots
-
+    	//Projects
+    	GameRegistry.registerItem(AlloycraftItems.universalitemclassone, "ItemUniversalItemOne");
+    	GameRegistry.registerItem(AlloycraftItems.universalitemclasstwo, "ItemUniversalItemTwo");
 	}
 	
 	public static void registerBlocks() {

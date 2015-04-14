@@ -35,7 +35,8 @@ public class AlloycraftItems {
 	public static Item purebossegg;
 	public static Item crystalizedseed;
 	public static Item plantgem;
-	public static Item earth;
+	public static Item earthgem;
+	public static Item metalgem;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -96,9 +97,12 @@ public class AlloycraftItems {
     public static Item titaniumchestplate;
     public static Item titaniumleggings;
     public static Item titaniumboots;
+    //Projects
+    public static Item universalitemclassone;
+    public static Item universalitemclasstwo;
     
 	public static void registerItems() {
-		
+
 		//Ingots
     	cookieingot = new ItemCookieIngot(3, 0.3f, false);
     	copperingot = new ItemCopperIngot();
@@ -121,8 +125,9 @@ public class AlloycraftItems {
     	projectx = new ItemProjectX();
     	purebossegg = new ItemPureBossSpawner("PureBoss", 0xE18519, 0x000000).setUnlocalizedName("spawn_egg_pureboss".toLowerCase()).setTextureName("alloycraft:pureboss");
     	rainbowdye = new ItemRainbowDye();
-    	earth = new ItemEarth();
+    	earthgem = new ItemEarthGem();
     	plantgem = new ItemPlantGem();
+    	metalgem = new ItemMetalGem();
     	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Objection!!!
@@ -160,5 +165,9 @@ public class AlloycraftItems {
        	titaniumhoe = new ItemTitaniumHoe("TitaniumHoe", Registry.Titanium);
        	titaniumaxe = new ItemTitaniumAxe("TitaniumAxe", Registry.Titanium);
        	titaniumpearl = new ItemTitaniumPearl();
+       	//Projects
+       	universalitemclassone = new AlloycraftItem("TestOne", "TextureName");
+       	universalitemclasstwo = new AlloycraftItem("TestTwo", "TextureNameTwo");
+       	
        	}
 	}

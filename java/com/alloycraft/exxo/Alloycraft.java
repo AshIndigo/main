@@ -42,11 +42,12 @@ public class Alloycraft
     public void preinit(FMLPreInitializationEvent event)
     {
     	//Much Much Nicer
-    	//Steel or titanium slow you down when alloyed they dont slow you down
+    	//Possibly add more slots?
+    	//Use new Item System for 1.8 update
     	//Add Pure shard boss AI, Model, and fix bugs
-    	//Earth Gem Component Crop
-    	//Add Earth Gem and End Gem Items and Recipes.
-    	//Crystalized Plant's Textures are just for testing.
+    	//Add End Gem and Recipe.
+    	//Bug Fixes and finish crystal system.
+    	//Boss for each dimension thats drops it's own respective "Activation" Shard for that dimensions gem.
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "Addons", true, "Is the Thaumcraft 4 Addon Enabled?");
@@ -65,7 +66,6 @@ public class Alloycraft
     	ApiRegistry.registerMods();
     	proxy.registerItemRenderers();
     	System.out.println("Alloycraft Loaded");
-    	FMLLog.info("Hax", "Hax2");
     	
     }
     public void init(FMLInitializationEvent event){

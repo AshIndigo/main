@@ -4,9 +4,9 @@ import com.alloycraft.exxo.lib.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemEarth extends Item {
+public class ItemEarthGem extends Item {
 	
-	public ItemEarth()
+	public ItemEarthGem()
 	{
 		setUnlocalizedName(Refrences.MODID + "_" + "Earth");
 		setCreativeTab(CreativeTabs.tabMisc);

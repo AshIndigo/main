@@ -1,8 +1,10 @@
 package com.alloycraft.exxo.items;
 
-import com.alloycraft.exxo.lib.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import thaumcraft.api.IScribeTools;
+
+import com.alloycraft.exxo.lib.Refrences;
 
 public class ItemGoldIronIngot extends Item {
 	
