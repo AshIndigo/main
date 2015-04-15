@@ -97,9 +97,6 @@ public class AlloycraftItems {
     public static Item titaniumchestplate;
     public static Item titaniumleggings;
     public static Item titaniumboots;
-    //Projects
-    public static Item universalitemclassone;
-    public static Item universalitemclasstwo;
     
 	public static void registerItems() {
 
@@ -165,9 +162,6 @@ public class AlloycraftItems {
        	titaniumhoe = new ItemTitaniumHoe("TitaniumHoe", Registry.Titanium);
        	titaniumaxe = new ItemTitaniumAxe("TitaniumAxe", Registry.Titanium);
        	titaniumpearl = new ItemTitaniumPearl();
-       	//Projects
-       	universalitemclassone = new AlloycraftItem("TestOne", "TextureName");
-       	universalitemclasstwo = new AlloycraftItem("TestTwo", "TextureNameTwo");
        	
        	}
 	}

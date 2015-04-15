@@ -8,7 +8,7 @@ public class ItemTinIngot extends Item {
 	
 	public ItemTinIngot()
 	{
-		setUnlocalizedName(Refrences.MODID + "_" + "TinIngot");
+		setUnlocalizedName(Refrences.MODID + "_" + "Tiningot");
 		setCreativeTab(CreativeTabs.tabMisc);
 		setTextureName(Refrences.MODID + ":" + "Tiningot");
 	}
