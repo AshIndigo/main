@@ -2,6 +2,7 @@ package com.alloycraft.exxo.lib;
 
 import java.util.Random;
 
+import scala.reflect.api.Trees.ThrowApi;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;

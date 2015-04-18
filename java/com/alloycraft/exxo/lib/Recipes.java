@@ -304,6 +304,7 @@ public class Recipes {
         	new ItemStack(AlloycraftBlocks.copperblock, 1)
         			});
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.cookieblock, 1), new ItemStack(AlloycraftItems.cookieingot, 1), 0.1F);
+    	GameRegistry.addSmelting(new ItemStack(Blocks.iron_ore, 1), new ItemStack(AlloycraftItems.overridenironingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.yttriumore, 1), new ItemStack(AlloycraftItems.yttriumingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.copperore, 1), new ItemStack(AlloycraftItems.copperingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.tinore, 1), new ItemStack(AlloycraftItems.tiningot, 1), 0.1F);

@@ -2,6 +2,9 @@ package com.alloycraft.exxo;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityList;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 
 import com.alloycraft.exxo.lib.ApiRegistry;
@@ -43,9 +46,11 @@ public class Alloycraft
     {
     	//Much Much Nicer
     	//Possibly add more slots?
-    	//Use new Item System for 1.8 update
+    	//Use new Item System for future items
     	//Add Pure shard boss AI, Model, and fix bugs
     	//Add End Gem and Recipe.
+    	//Patina is extremly bad for tools if they get patina on them put it gived a durablility boost
+    	//Limonite is an ore you can with wood and is as good as iron but is destroyed easily.
     	//Bug Fixes and finish crystal system.
     	//Boss for each dimension thats drops it's own respective "Activation" Shard for that dimensions gem.
     	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
@@ -64,6 +69,7 @@ public class Alloycraft
        	Recipes.registerRecipes();
     	Registry.registerOreDictionary();
     	ApiRegistry.registerMods();
+    	Registry.RemoveRecipe(new ItemStack(Items.iron_ingot));
     	proxy.registerItemRenderers();
     	System.out.println("Alloycraft Loaded");
     	

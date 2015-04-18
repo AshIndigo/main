@@ -1,5 +1,22 @@
 package com.alloycraft.exxo.lib;
 
+import java.util.ArrayList;
+
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.stats.Achievement;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+
 import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.AlloycraftBlocks;
 import com.alloycraft.exxo.AlloycraftItems;
@@ -13,20 +30,9 @@ import com.alloycraft.exxo.tileenties.TileEntityAlloyFurnace;
 import com.alloycraft.exxo.tileenties.TileEntityCrystalizer;
 
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.stats.Achievement;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.AchievementPage;
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class Registry {
 	
@@ -42,6 +48,7 @@ public class Registry {
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Titanium = EnumHelper.addToolMaterial("Titanium", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Steel = EnumHelper.addToolMaterial("Steel", 2, 400, 5.5F, 2.5F, 30);
+    public static ToolMaterial Patina = EnumHelper.addToolMaterial("Patina", 2, 400, 5.5F, 2.5F, 30);
     public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
     //Balance
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
@@ -59,6 +66,7 @@ public class Registry {
     	OreDictionary.registerOre("ingotBronze", new ItemStack(AlloycraftItems.bronzeingot));
     	OreDictionary.registerOre("ingotTitanium", new ItemStack(AlloycraftItems.titaniumingot));
     	OreDictionary.registerOre("ingotSteel", new ItemStack(AlloycraftItems.steelingot));
+    	OreDictionary.registerOre("ingotIron", new ItemStack(AlloycraftItems.overridenironingot));
     	//Ore
     	OreDictionary.registerOre("oreCopper", new ItemStack(AlloycraftBlocks.copperore));
     	OreDictionary.registerOre("oreTin", new ItemStack(AlloycraftBlocks.tinore));
@@ -95,6 +103,8 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.plantgem, "PlantGem");
     	GameRegistry.registerItem(AlloycraftItems.metalgem, "MetalGem");
     	GameRegistry.registerItem(AlloycraftItems.earthgem, "EarthGem");
+    	GameRegistry.registerItem(AlloycraftItems.overridenironingot, "OverridenIronIngot");
+    	GameRegistry.registerItem(AlloycraftItems.patinaingot, "PatinaIngot");
     	//Objection!!!
     	if (Alloycraft.refrenceitemsenabled = true){
     		
@@ -158,6 +168,12 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.titaniumchestplate = new ItemTitaniumArmor("TitaniumChestplate", ARMORTITANIUM, "Titanium", 1), "TitaniumChestplate"); // 1 for chestplate
     	GameRegistry.registerItem(AlloycraftItems.titaniumleggings = new ItemTitaniumArmor("TitaniumLeggings", ARMORTITANIUM, "Titanium", 2), "TitaniumLeggings"); // 2 for leggings
     	GameRegistry.registerItem(AlloycraftItems.titaniumboots = new ItemTitaniumArmor("TitaniumBoots", ARMORTITANIUM, "Titanium", 3), "TitaniumBoots"); // 3 for boots
+    	//Patina Covered Tools
+    	GameRegistry.registerItem(AlloycraftItems.patinasword, "ItemPatinaSword");
+    	GameRegistry.registerItem(AlloycraftItems.patinapick, "ItemPatinaPick");
+    	GameRegistry.registerItem(AlloycraftItems.patinaaxe, "ItemPatinaAxe");
+    	GameRegistry.registerItem(AlloycraftItems.patinaspade, "ItemPatinaSpade");
+    	GameRegistry.registerItem(AlloycraftItems.patinahoe, "ItemPatinaHoe");
 	}
 	
 	public static void registerBlocks() {
@@ -203,5 +219,37 @@ public class Registry {
        	AlloycraftPage = new AchievementPage("\u00a7aAlloycraft Achivevements", yttriumachievement, alloyfurnaceachievement);
        	AchievementPage.registerAchievementPage(AlloycraftPage);
        	FMLCommonHandler.instance().bus().register(new AchievementHandler());
+	}
+	public static void RemoveRecipe(ItemStack resultItem) //Code by yope_fried inspired by pigalot, modified by jayperdu
+	{
+	    ItemStack recipeResult = null;
+	    ArrayList recipes = (ArrayList) CraftingManager.getInstance().getRecipeList();
+
+	    for (int i = 0; i < recipes.size(); i++)
+	    {
+	        IRecipe tmpRecipe = (IRecipe) recipes.get(i);
+	        if (tmpRecipe instanceof ShapedRecipes)
+	        {
+	            ShapedRecipes recipe = (ShapedRecipes)tmpRecipe;
+	            recipeResult = recipe.getRecipeOutput();
+	        }
+
+	        if (tmpRecipe instanceof ShapelessRecipes)
+	        {
+	            ShapelessRecipes recipe = (ShapelessRecipes)tmpRecipe;
+	            recipeResult = recipe.getRecipeOutput();
+	        }
+	        
+	        if (tmpRecipe instanceof ShapedOreRecipe)
+	        {
+	        	ShapedOreRecipe recipe = (ShapedOreRecipe)tmpRecipe;
+	            recipeResult = recipe.getRecipeOutput();
+	        }
+	        
+	        if (ItemStack.areItemStacksEqual(resultItem, recipeResult))
+	        {
+	            recipes.remove(i);
+	        }
+	    }
 	}
 }

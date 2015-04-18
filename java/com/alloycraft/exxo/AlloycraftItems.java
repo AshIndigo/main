@@ -3,6 +3,7 @@ package com.alloycraft.exxo;
 import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.lib.*;
 
+import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -11,6 +12,8 @@ import net.minecraft.item.Item;
 public class AlloycraftItems {
 	
     //Items
+	public static Item overridenironingot;
+	public static Item patinaingot;
     public static Item whatthehellingot;
     public static Item hellishingot;
     public static Item goldironingot;
@@ -97,6 +100,12 @@ public class AlloycraftItems {
     public static Item titaniumchestplate;
     public static Item titaniumleggings;
     public static Item titaniumboots;
+    //Patina Tools
+    public static Item patinasword;
+    public static Item patinapick;
+    public static Item patinaspade;
+    public static Item patinahoe;
+    public static Item patinaaxe;
     
 	public static void registerItems() {
 
@@ -125,6 +134,8 @@ public class AlloycraftItems {
     	earthgem = new ItemEarthGem();
     	plantgem = new ItemPlantGem();
     	metalgem = new ItemMetalGem();
+    	overridenironingot = new ItemOverridenIronIngot();
+    	patinaingot = new AlloycraftItem("patinaingot", "patinaingot");
     	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
     	//Objection!!!
@@ -162,6 +173,13 @@ public class AlloycraftItems {
        	titaniumhoe = new ItemTitaniumHoe("TitaniumHoe", Registry.Titanium);
        	titaniumaxe = new ItemTitaniumAxe("TitaniumAxe", Registry.Titanium);
        	titaniumpearl = new ItemTitaniumPearl();
+       	//Patina Covered Tools
+       	patinasword = new ItemPatinaSword("PatinaSword", Registry.Patina);
+       	patinapick = new ItemPatinaPick("PatinaPick", Registry.Patina);
+       	patinaspade = new ItemPatinaSpade("PatinaSpade", Registry.Patina);
+       	patinahoe = new ItemPatinaHoe("PatinaHoe", Registry.Patina);
+       	patinaaxe = new ItemPatinaAxe("PatinaAxe", Registry.Patina);
+
        	
        	}
 	}
