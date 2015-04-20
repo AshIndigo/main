@@ -48,7 +48,7 @@ public class Registry {
     public static ToolMaterial Hellish = EnumHelper.addToolMaterial("Hellish", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Titanium = EnumHelper.addToolMaterial("Titanium", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Steel = EnumHelper.addToolMaterial("Steel", 2, 400, 5.5F, 2.5F, 30);
-    public static ToolMaterial Patina = EnumHelper.addToolMaterial("Patina", 2, 400, 5.5F, 2.5F, 30);
+    public static ToolMaterial Patina = EnumHelper.addToolMaterial("Patina", 1, 150, 1.5F, 1.0F, 05);
     public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
     //Balance
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
