@@ -35,6 +35,9 @@ public class AlloyFurnaceRecipes {
 		if (item == Items.iron_ingot && item2 == Items.coal || item == Items.coal && item2 == Items.iron_ingot) {
 			return new ItemStack(AlloycraftItems.steelingot, 2);
 		}
+		if (item == AlloycraftItems.patinaingot && item2 == AlloycraftItems.limoniteingot || item == AlloycraftItems.limoniteingot && item2 == AlloycraftItems.patinaingot) {
+			return new ItemStack(AlloycraftItems.limonitaingot, 2);
+		}
 		return null;
 	}
 	

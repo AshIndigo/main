@@ -4,6 +4,7 @@ import com.alloycraft.exxo.items.*;
 import com.alloycraft.exxo.lib.*;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -40,6 +41,8 @@ public class AlloycraftItems {
 	public static Item plantgem;
 	public static Item earthgem;
 	public static Item metalgem;
+	public static Item limoniteingot;
+	public static Item limonitaingot;
     //Gold-Iron Set
     public static Item goldironsword;
     public static Item goldironpick;
@@ -106,6 +109,25 @@ public class AlloycraftItems {
     public static Item patinaspade;
     public static Item patinahoe;
     public static Item patinaaxe;
+    //Limonite Tools
+    public static Item limonitesword;
+    public static Item limonitepick;
+    public static Item limonitespade;
+    public static Item limonitehoe;
+    public static Item limoniteaxe;
+    //Limonita Tools
+    public static Item limonitasword;
+    public static Item limonitapick;
+    public static Item limonitaspade;
+    public static Item limonitahoe;
+    public static Item limonitaaxe;
+    //Aluminum Tools
+    public static Item aluminumsword;
+    public static Item aluminumpick;
+    public static Item aluminumspade;
+    public static Item aluminumhoe;
+    public static Item aluminumaxe;
+	public static Item aluminumtooltest;
     
 	public static void registerItems() {
 
@@ -138,6 +160,8 @@ public class AlloycraftItems {
     	patinaingot = new AlloycraftItem("patinaingot", "patinaingot");
     	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
+    	limoniteingot = new AlloycraftItem("LimoniteIngot", "LimoniteIngot".toLowerCase());
+    	limonitaingot = new AlloycraftItem("LimonitaIngot", "LimonitaIngot".toLowerCase());
     	//Objection!!!
     	objection = new ItemObjection();
     	holdit = new ItemHoldIt();
@@ -179,6 +203,26 @@ public class AlloycraftItems {
        	patinaspade = new ItemPatinaSpade("PatinaSpade", Registry.Patina);
        	patinahoe = new ItemPatinaHoe("PatinaHoe", Registry.Patina);
        	patinaaxe = new ItemPatinaAxe("PatinaAxe", Registry.Patina);
+       	//Limonite Tools
+    	limonitesword = new AlloycraftItem.AlloycraftSword(Registry.Limonite, "LimoniteSword", "LimoniteSword".toLowerCase());
+       	limonitepick = new AlloycraftItem.AlloycraftPick(Registry.Limonite, "LimonitePickaxe", "LimonitePickaxe".toLowerCase());
+       	limonitespade = new AlloycraftItem.AlloycraftSpade(Registry.Limonite, "LimoniteSpade", "LimoniteSpade".toLowerCase());
+       	limonitehoe = new AlloycraftItem.AlloycraftHoe(Registry.Limonite, "LimoniteHoe", "LimoniteHoe".toLowerCase());
+       	limoniteaxe = new AlloycraftItem.AlloycraftAxe(Registry.Limonite, "LimoniteAxe", "LimoniteAxe".toLowerCase());
+       	//Limonita Tools
+    	limonitasword = new AlloycraftItem.AlloycraftSword(Registry.Limonita, "LimonitaSword", "LimonitaSword".toLowerCase());
+       	limonitapick = new AlloycraftItem.AlloycraftPick(Registry.Limonita, "LimonitaPick", "LimonitaPick".toLowerCase());
+       	limonitaspade = new AlloycraftItem.AlloycraftSpade(Registry.Limonita, "LimonitaSpade", "LimonitaSpade".toLowerCase());
+       	limonitahoe = new AlloycraftItem.AlloycraftHoe(Registry.Limonita, "LimonitaHoe", "LimonitaHoe".toLowerCase());
+       	limonitaaxe = new AlloycraftItem.AlloycraftAxe(Registry.Limonita, "LimonitaAxe", "LimonitaAxe".toLowerCase());
+       	//Aluminum Tools
+       	aluminumsword = new AlloycraftItem.AlloycraftSword(Registry.Aluminum, "AluminumSword", "AluminumSword".toLowerCase());
+       	aluminumpick = new AlloycraftItem.AlloycraftPick(Registry.Aluminum, "AluminumPick", "AluminumPick".toLowerCase());
+       	aluminumspade = new AlloycraftItem.AlloycraftSpade(Registry.Aluminum, "AluminumSpade", "AluminumSpade".toLowerCase());
+       	aluminumhoe = new AlloycraftItem.AlloycraftHoe(Registry.Aluminum, "AluminumHoe", "AluminumHoe".toLowerCase());
+       	aluminumaxe = new AlloycraftItem.AlloycraftAxe(Registry.Aluminum, "AluminumAxe", "AluminumAxe".toLowerCase());
+       	aluminumtooltest = new AluminumToolTest("Test", "Test".toLowerCase(), Registry.GoldIron);
+       	ItemOverridenIronIngot.waterDetection();
 
        	
        	}

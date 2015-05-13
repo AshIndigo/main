@@ -49,6 +49,9 @@ public class Registry {
     public static ToolMaterial Titanium = EnumHelper.addToolMaterial("Titanium", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Steel = EnumHelper.addToolMaterial("Steel", 2, 400, 5.5F, 2.5F, 30);
     public static ToolMaterial Patina = EnumHelper.addToolMaterial("Patina", 1, 150, 1.5F, 1.0F, 05);
+    public static ToolMaterial Limonite = EnumHelper.addToolMaterial("Limonite", 1, 150, 1.5F, 1.0F, 05);
+    public static ToolMaterial Limonita = EnumHelper.addToolMaterial("Limonita", 1, 150, 1.5F, 1.0F, 05);
+    public static ToolMaterial Aluminum = EnumHelper.addToolMaterial("Aluminum", 1, 150, 1.5F, 1.0F, 05);
     public static ArmorMaterial ARMORGOLDIRON = EnumHelper.addArmorMaterial("GoldIron", 14, new int[] {2, 6, 4, 2}, 30);
     //Balance
     public static ArmorMaterial ARMORHELLISH = EnumHelper.addArmorMaterial("Hellish", 16, new int[] {2, 7, 5, 3}, 15);
@@ -72,6 +75,7 @@ public class Registry {
     	OreDictionary.registerOre("oreTin", new ItemStack(AlloycraftBlocks.tinore));
     	OreDictionary.registerOre("oreYtrrium", new ItemStack(AlloycraftBlocks.yttriumore));
     	OreDictionary.registerOre("oreTitanium", new ItemStack(AlloycraftBlocks.titaniumore));
+    	OreDictionary.registerOre("oreLimonite", new ItemStack(AlloycraftBlocks.limoniteore));
 		
 	}
 	
@@ -105,6 +109,8 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.earthgem, "EarthGem");
     	GameRegistry.registerItem(AlloycraftItems.overridenironingot, "OverridenIronIngot");
     	GameRegistry.registerItem(AlloycraftItems.patinaingot, "PatinaIngot");
+    	GameRegistry.registerItem(AlloycraftItems.limoniteingot, "LimoniteIngot");
+    	GameRegistry.registerItem(AlloycraftItems.limonitaingot, "LimonitaIngot");
     	//Objection!!!
     	if (Alloycraft.refrenceitemsenabled = true){
     		
@@ -174,6 +180,26 @@ public class Registry {
     	GameRegistry.registerItem(AlloycraftItems.patinaaxe, "ItemPatinaAxe");
     	GameRegistry.registerItem(AlloycraftItems.patinaspade, "ItemPatinaSpade");
     	GameRegistry.registerItem(AlloycraftItems.patinahoe, "ItemPatinaHoe");
+    	//Limonite Tools
+    	GameRegistry.registerItem(AlloycraftItems.limonitesword, "ItemLimoniteSword");
+    	GameRegistry.registerItem(AlloycraftItems.limonitepick, "ItemLimonitePick");
+    	GameRegistry.registerItem(AlloycraftItems.limoniteaxe, "ItemLimoniteAxe");
+    	GameRegistry.registerItem(AlloycraftItems.limonitespade, "ItemLimoniteSpade");
+    	GameRegistry.registerItem(AlloycraftItems.limonitehoe, "ItemLimoniteHoe");
+    	//Limonita Tools
+    	GameRegistry.registerItem(AlloycraftItems.limonitasword, "ItemLimonitaSword");
+    	GameRegistry.registerItem(AlloycraftItems.limonitapick, "ItemLimonitaPick");
+    	GameRegistry.registerItem(AlloycraftItems.limonitaaxe, "ItemLimonitaAxe");
+    	GameRegistry.registerItem(AlloycraftItems.limonitaspade, "ItemLimonitaSpade");
+    	GameRegistry.registerItem(AlloycraftItems.limonitahoe, "ItemLimonitaHoe");
+    	//Aluminum Tools
+    	GameRegistry.registerItem(AlloycraftItems.aluminumsword, "ItemAluminumSword");
+    	GameRegistry.registerItem(AlloycraftItems.aluminumpick, "ItemAluminumPick");
+    	GameRegistry.registerItem(AlloycraftItems.aluminumaxe, "ItemAluminumAxe");
+    	GameRegistry.registerItem(AlloycraftItems.aluminumspade, "ItemAluminumSpade");
+    	GameRegistry.registerItem(AlloycraftItems.aluminumhoe, "ItemAluminumHoe");
+    	GameRegistry.registerItem(AlloycraftItems.aluminumtooltest, "ItemAluminumToolTest");
+
 	}
 	
 	public static void registerBlocks() {
@@ -184,6 +210,7 @@ public class Registry {
     	GameRegistry.registerBlock(AlloycraftBlocks.yttriumore, "YttriumOre");
     	GameRegistry.registerBlock(AlloycraftBlocks.fireiteore, "FireiteOre");
     	GameRegistry.registerBlock(AlloycraftBlocks.titaniumore, "TitaniumOre");
+    	GameRegistry.registerBlock(AlloycraftBlocks.limoniteore, "LimoniteOre");
     	//Blocks
     	GameRegistry.registerBlock(AlloycraftBlocks.cookieblock, "BlockCookie");
     	GameRegistry.registerBlock(AlloycraftBlocks.copperblock, "BlockCopper");

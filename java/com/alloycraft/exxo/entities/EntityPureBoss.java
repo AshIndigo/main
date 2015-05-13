@@ -6,6 +6,7 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -13,7 +14,7 @@ import net.minecraft.world.World;
 
 import com.alloycraft.exxo.AlloycraftItems;
 
-public class EntityPureBoss extends EntityMob{
+public class EntityPureBoss extends EntityMob implements IBossDisplayData{
 
 	public EntityPureBoss(World par1World) {
 		super(par1World);

@@ -21,7 +21,7 @@ public class ClientProxy extends CommonProxy {
 		
 		if (Alloycraft.projectx3dmodelenabled = true){
 			
-			MinecraftForgeClient.registerItemRenderer(AlloycraftItems.projectx, new ProjectXRender());
+			//MinecraftForgeClient.registerItemRenderer(AlloycraftItems.projectx, new ProjectXRender());
 		}
 	}
 }

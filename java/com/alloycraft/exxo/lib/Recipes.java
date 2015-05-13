@@ -12,6 +12,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
 	
+	final int WILDCARD_VALUE = Short.MAX_VALUE;
+	
 	public static void registerRecipes(){
 		
 		//Recipes
@@ -56,6 +58,12 @@ public class Recipes {
         	"ABA",
         	"AAA",
         	'A', AlloycraftItems.yttriumingot, 'B', Blocks.furnace
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Items.cake, 1), new Object[]{
+        	"   ",
+        	"AAA",
+        	"AAA",
+        	'A', Items.cookie
     	});
     	//Gold-Iron Tools
     	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.goldironsword, 1), new Object[]{
@@ -285,6 +293,14 @@ public class Recipes {
         	"   ",
         	'B', Items.stick, 'A', AlloycraftItems.hypercoal
     	});
+    	/*
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.aluminumtooltest, 1, -1), new Object[]{
+        	" A ",
+        	" B ",
+        	"   ",
+        	'B', Items.dye, 'A', AlloycraftItems.aluminumtooltest
+    	});
+    	*/
     	GameRegistry.addShapelessRecipe(new ItemStack(AlloycraftItems.hellishingot, 9), new Object[]{
     		new ItemStack(AlloycraftBlocks.hellishblock, 1)
     				});

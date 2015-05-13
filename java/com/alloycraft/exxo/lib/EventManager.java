@@ -40,6 +40,7 @@ public class EventManager implements IWorldGenerator {
     	  //Balance
     	  this.addOreSpawn(AlloycraftBlocks.copperore, world, random, x, z, 10, 15, 10, 0, 128);
     	  this.addOreSpawn(AlloycraftBlocks.tinore, world, random, x, z, 10, 15, 10, 0, 128);
+    	  this.addOreSpawn(AlloycraftBlocks.limoniteore, world, random, x, z, 10, 15, 10, 0, 128);
     }
 
     private void GenerateNether(Random random, int x, int z, World world) {
