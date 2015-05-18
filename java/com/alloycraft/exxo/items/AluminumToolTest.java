@@ -1,14 +1,17 @@
 package com.alloycraft.exxo.items;
 
-import com.alloycraft.exxo.AlloycraftItem;
-import com.alloycraft.exxo.lib.Colors;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item.ToolMaterial;
 
-public class AluminumToolTest extends AlloycraftItem.AlloycraftSword {
+import com.ashindigo.api.Colors;
+import com.ashindigo.api.IndigoApiItem;
+
+public class AluminumToolTest extends IndigoApiItem.IndigoApiSword {
 	
 	Enum color = Colors.WHITE;
 
-	public AluminumToolTest(String unlocalizedname, String texturename, ToolMaterial toolmaterial) {
-		super(toolmaterial, unlocalizedname, texturename);
+	public AluminumToolTest(String unlocalizedname, String texturename, ToolMaterial toolmaterial, CreativeTabs creativetab) {
+		super(toolmaterial, unlocalizedname, texturename, creativetab);
 		
 	}
 }

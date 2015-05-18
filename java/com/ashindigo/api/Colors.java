@@ -1,4 +1,4 @@
-package com.alloycraft.exxo.lib;
+package com.ashindigo.api;
 
 public enum Colors {
 	

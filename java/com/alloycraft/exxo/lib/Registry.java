@@ -71,11 +71,11 @@ public class Registry {
     	OreDictionary.registerOre("ingotSteel", new ItemStack(AlloycraftItems.steelingot));
     	OreDictionary.registerOre("ingotIron", new ItemStack(AlloycraftItems.overridenironingot));
     	//Ore
-    	OreDictionary.registerOre("oreCopper", new ItemStack(AlloycraftBlocks.copperore));
+    	//OreDictionary.registerOre("oreCopper", new ItemStack(AlloycraftBlocks.copperore));
     	OreDictionary.registerOre("oreTin", new ItemStack(AlloycraftBlocks.tinore));
     	OreDictionary.registerOre("oreYtrrium", new ItemStack(AlloycraftBlocks.yttriumore));
     	OreDictionary.registerOre("oreTitanium", new ItemStack(AlloycraftBlocks.titaniumore));
-    	OreDictionary.registerOre("oreLimonite", new ItemStack(AlloycraftBlocks.limoniteore));
+    	//OreDictionary.registerOre("oreLimonite", new ItemStack(AlloycraftBlocks.limoniteore));
 		
 	}
 	

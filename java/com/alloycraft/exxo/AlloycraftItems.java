@@ -1,14 +1,72 @@
 package com.alloycraft.exxo;
 
-import com.alloycraft.exxo.items.*;
-import com.alloycraft.exxo.lib.*;
-
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+
+import com.alloycraft.exxo.items.AluminumToolTest;
+import com.alloycraft.exxo.items.ItemBronzeAxe;
+import com.alloycraft.exxo.items.ItemBronzeHoe;
+import com.alloycraft.exxo.items.ItemBronzeIngot;
+import com.alloycraft.exxo.items.ItemBronzePick;
+import com.alloycraft.exxo.items.ItemBronzeSpade;
+import com.alloycraft.exxo.items.ItemBronzeSword;
+import com.alloycraft.exxo.items.ItemCookieIngot;
+import com.alloycraft.exxo.items.ItemCopperIngot;
+import com.alloycraft.exxo.items.ItemCrystalizedSeed;
+import com.alloycraft.exxo.items.ItemEarthGem;
+import com.alloycraft.exxo.items.ItemFireiteGem;
+import com.alloycraft.exxo.items.ItemFireiteIngot;
+import com.alloycraft.exxo.items.ItemGoldIronAxe;
+import com.alloycraft.exxo.items.ItemGoldIronHoe;
+import com.alloycraft.exxo.items.ItemGoldIronIngot;
+import com.alloycraft.exxo.items.ItemGoldIronPick;
+import com.alloycraft.exxo.items.ItemGoldIronSpade;
+import com.alloycraft.exxo.items.ItemGoldIronSword;
+import com.alloycraft.exxo.items.ItemHellishAxe;
+import com.alloycraft.exxo.items.ItemHellishHoe;
+import com.alloycraft.exxo.items.ItemHellishIngot;
+import com.alloycraft.exxo.items.ItemHellishPick;
+import com.alloycraft.exxo.items.ItemHellishSpade;
+import com.alloycraft.exxo.items.ItemHellishSword;
+import com.alloycraft.exxo.items.ItemHoldIt;
+import com.alloycraft.exxo.items.ItemHyperCoal;
+import com.alloycraft.exxo.items.ItemLapisLavonium;
+import com.alloycraft.exxo.items.ItemMetalGem;
+import com.alloycraft.exxo.items.ItemObjection;
+import com.alloycraft.exxo.items.ItemOverridenIronIngot;
+import com.alloycraft.exxo.items.ItemPatinaAxe;
+import com.alloycraft.exxo.items.ItemPatinaHoe;
+import com.alloycraft.exxo.items.ItemPatinaPick;
+import com.alloycraft.exxo.items.ItemPatinaSpade;
+import com.alloycraft.exxo.items.ItemPatinaSword;
+import com.alloycraft.exxo.items.ItemPlantGem;
+import com.alloycraft.exxo.items.ItemProjectX;
+import com.alloycraft.exxo.items.ItemProjectXAmmo;
+import com.alloycraft.exxo.items.ItemPureBossSpawner;
+import com.alloycraft.exxo.items.ItemPureCrystal;
+import com.alloycraft.exxo.items.ItemPureShard;
+import com.alloycraft.exxo.items.ItemRainbowDye;
+import com.alloycraft.exxo.items.ItemSteelAxe;
+import com.alloycraft.exxo.items.ItemSteelHoe;
+import com.alloycraft.exxo.items.ItemSteelIngot;
+import com.alloycraft.exxo.items.ItemSteelPick;
+import com.alloycraft.exxo.items.ItemSteelSpade;
+import com.alloycraft.exxo.items.ItemSteelSword;
+import com.alloycraft.exxo.items.ItemTakeThat;
+import com.alloycraft.exxo.items.ItemTinIngot;
+import com.alloycraft.exxo.items.ItemTitaniumAxe;
+import com.alloycraft.exxo.items.ItemTitaniumHoe;
+import com.alloycraft.exxo.items.ItemTitaniumIngot;
+import com.alloycraft.exxo.items.ItemTitaniumPearl;
+import com.alloycraft.exxo.items.ItemTitaniumPick;
+import com.alloycraft.exxo.items.ItemTitaniumSpade;
+import com.alloycraft.exxo.items.ItemTitaniumSword;
+import com.alloycraft.exxo.items.ItemUnpureCrystal;
+import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
+import com.alloycraft.exxo.items.ItemYttriumIngot;
+import com.alloycraft.exxo.lib.MusicDisc;
+import com.alloycraft.exxo.lib.Registry;
+import com.ashindigo.api.IndigoApiItem;
 
 public class AlloycraftItems {
 	
@@ -157,11 +215,11 @@ public class AlloycraftItems {
     	plantgem = new ItemPlantGem();
     	metalgem = new ItemMetalGem();
     	overridenironingot = new ItemOverridenIronIngot();
-    	patinaingot = new AlloycraftItem("patinaingot", "patinaingot");
+    	patinaingot = new IndigoApiItem("patinaingot", "patinaingot", Alloycraft.taballoycraft);
     	crystalizedseed = new ItemCrystalizedSeed(AlloycraftBlocks.crystalizedplant, Blocks.dirt);
     	awesomemusic = new MusicDisc("Awesome").setUnlocalizedName("record_Awesome").setCreativeTab(Alloycraft.taballoycraft);
-    	limoniteingot = new AlloycraftItem("LimoniteIngot", "LimoniteIngot".toLowerCase());
-    	limonitaingot = new AlloycraftItem("LimonitaIngot", "LimonitaIngot".toLowerCase());
+    	limoniteingot = new IndigoApiItem("LimoniteIngot", "LimoniteIngot".toLowerCase(), Alloycraft.taballoycraft);
+    	limonitaingot = new IndigoApiItem("LimonitaIngot", "LimonitaIngot".toLowerCase(), Alloycraft.taballoycraft);
     	//Objection!!!
     	objection = new ItemObjection();
     	holdit = new ItemHoldIt();
@@ -204,24 +262,25 @@ public class AlloycraftItems {
        	patinahoe = new ItemPatinaHoe("PatinaHoe", Registry.Patina);
        	patinaaxe = new ItemPatinaAxe("PatinaAxe", Registry.Patina);
        	//Limonite Tools
-    	limonitesword = new AlloycraftItem.AlloycraftSword(Registry.Limonite, "LimoniteSword", "LimoniteSword".toLowerCase());
-       	limonitepick = new AlloycraftItem.AlloycraftPick(Registry.Limonite, "LimonitePickaxe", "LimonitePickaxe".toLowerCase());
-       	limonitespade = new AlloycraftItem.AlloycraftSpade(Registry.Limonite, "LimoniteSpade", "LimoniteSpade".toLowerCase());
-       	limonitehoe = new AlloycraftItem.AlloycraftHoe(Registry.Limonite, "LimoniteHoe", "LimoniteHoe".toLowerCase());
-       	limoniteaxe = new AlloycraftItem.AlloycraftAxe(Registry.Limonite, "LimoniteAxe", "LimoniteAxe".toLowerCase());
+       	limonitesword = new IndigoApiItem.IndigoApiSword(Registry.Limonite, "LimoniteSword", "LimoniteSword".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitepick = new IndigoApiItem.IndigoApiPick(Registry.Limonite, "LimonitePickaxe", "LimonitePickaxe".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitespade = new IndigoApiItem.IndigoApiSpade(Registry.Limonite, "LimoniteSpade", "LimoniteSpade".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitehoe = new IndigoApiItem.IndigoApiHoe(Registry.Limonite, "LimoniteHoe", "LimoniteHoe".toLowerCase(), Alloycraft.taballoycraft);
+       	limoniteaxe = new IndigoApiItem.IndigoApiAxe(Registry.Limonite, "LimoniteAxe", "LimoniteAxe".toLowerCase(), Alloycraft.taballoycraft);
        	//Limonita Tools
-    	limonitasword = new AlloycraftItem.AlloycraftSword(Registry.Limonita, "LimonitaSword", "LimonitaSword".toLowerCase());
-       	limonitapick = new AlloycraftItem.AlloycraftPick(Registry.Limonita, "LimonitaPick", "LimonitaPick".toLowerCase());
-       	limonitaspade = new AlloycraftItem.AlloycraftSpade(Registry.Limonita, "LimonitaSpade", "LimonitaSpade".toLowerCase());
-       	limonitahoe = new AlloycraftItem.AlloycraftHoe(Registry.Limonita, "LimonitaHoe", "LimonitaHoe".toLowerCase());
-       	limonitaaxe = new AlloycraftItem.AlloycraftAxe(Registry.Limonita, "LimonitaAxe", "LimonitaAxe".toLowerCase());
+    	limonitasword = new IndigoApiItem.IndigoApiSword(Registry.Limonita, "LimonitaSword", "LimonitaSword".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitapick = new IndigoApiItem.IndigoApiPick(Registry.Limonita, "LimonitaPick", "LimonitaPick".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitaspade = new IndigoApiItem.IndigoApiSpade(Registry.Limonita, "LimonitaSpade", "LimonitaSpade".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitahoe = new IndigoApiItem.IndigoApiHoe(Registry.Limonita, "LimonitaHoe", "LimonitaHoe".toLowerCase(), Alloycraft.taballoycraft);
+       	limonitaaxe = new IndigoApiItem.IndigoApiAxe(Registry.Limonita, "LimonitaAxe", "LimonitaAxe".toLowerCase(), Alloycraft.taballoycraft);
        	//Aluminum Tools
-       	aluminumsword = new AlloycraftItem.AlloycraftSword(Registry.Aluminum, "AluminumSword", "AluminumSword".toLowerCase());
-       	aluminumpick = new AlloycraftItem.AlloycraftPick(Registry.Aluminum, "AluminumPick", "AluminumPick".toLowerCase());
-       	aluminumspade = new AlloycraftItem.AlloycraftSpade(Registry.Aluminum, "AluminumSpade", "AluminumSpade".toLowerCase());
-       	aluminumhoe = new AlloycraftItem.AlloycraftHoe(Registry.Aluminum, "AluminumHoe", "AluminumHoe".toLowerCase());
-       	aluminumaxe = new AlloycraftItem.AlloycraftAxe(Registry.Aluminum, "AluminumAxe", "AluminumAxe".toLowerCase());
-       	aluminumtooltest = new AluminumToolTest("Test", "Test".toLowerCase(), Registry.GoldIron);
+       	aluminumsword = new IndigoApiItem.IndigoApiSword(Registry.Aluminum, "AluminumSword", "AluminumSword".toLowerCase(), Alloycraft.taballoycraft);
+       	aluminumpick = new IndigoApiItem.IndigoApiPick(Registry.Aluminum, "AluminumPick", "AluminumPick".toLowerCase(), Alloycraft.taballoycraft);
+       	aluminumspade = new IndigoApiItem.IndigoApiSpade(Registry.Aluminum, "AluminumSpade", "AluminumSpade".toLowerCase(), Alloycraft.taballoycraft);
+       	aluminumhoe = new IndigoApiItem.IndigoApiHoe(Registry.Aluminum, "AluminumHoe", "AluminumHoe".toLowerCase(), Alloycraft.taballoycraft);
+       	aluminumaxe = new IndigoApiItem.IndigoApiAxe(Registry.Aluminum, "AluminumAxe", "AluminumAxe".toLowerCase(), Alloycraft.taballoycraft);
+
+       	aluminumtooltest = new AluminumToolTest("Test", "Test".toLowerCase(), Registry.GoldIron, Alloycraft.taballoycraft);
        	ItemOverridenIronIngot.waterDetection();
 
        	

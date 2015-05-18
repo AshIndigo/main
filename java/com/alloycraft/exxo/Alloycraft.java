@@ -17,6 +17,7 @@ import com.alloycraft.exxo.lib.CreativeTabsAlloycraftTools;
 import com.alloycraft.exxo.lib.Recipes;
 import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.lib.Registry;
+import com.ashindigo.api.IndigoApiBlock;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -38,6 +39,7 @@ public class Alloycraft
     public static boolean thaumcraftenabled;
     public static boolean projectx3dmodelenabled;
     public static boolean refrenceitemsenabled;
+    public static boolean init;
     public static Configuration config;
     String months[] = {
     	      "Jan", "Feb", "Mar", "Apr",
@@ -59,7 +61,7 @@ public class Alloycraft
     	//Patina is extremly bad for tools if they get patina on them put it gived a durablility boost
     	//Limonite is an ore you can with wood and is as good as iron but is destroyed easily.
     	//Bug Fixes and finish crystal system.
-    	//Boss for each dimension thats drops it's own respective "Activation" Shard for that dimensions gem.
+    	//TC4 Addon: Add's new wand cores and wand caps that give certain abilties to the wand.
     	config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "general", true, "Is the Thaumcraft 4 Addon Enabled?");
@@ -67,10 +69,10 @@ public class Alloycraft
     	projectx3dmodelenabled = config.getBoolean("Project X's 3d Model Enabled?", "general", true, "Is Project X's 3d Model Enabled?");
     	refrenceitemsenabled = config.getBoolean("Are Easter Eggs Enabled", "general", true, "Are the Easter Egg Items Enabled?"); 
     	config.save();
-    	AlloycraftBlocks.registerBlocks();
     	AlloycraftItems.registerItems();
+    	AlloycraftBlocks.registerBlocks();
     	Registry.registerItems();
-    	Registry.registerBlocks();
+     	Registry.registerBlocks();
        	Registry.registerHooks();
        	Registry.registerAchievements();
        	Recipes.registerRecipes();
@@ -87,7 +89,8 @@ public class Alloycraft
     	
     }
     public void init(FMLInitializationEvent event){
-    	
+    
+    	//IndigoApiBlock.initpart();
     }
     public void postinit(FMLPostInitializationEvent event){
     	

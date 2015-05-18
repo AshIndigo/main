@@ -1,21 +1,7 @@
 package com.alloycraft.exxo;
 
-import com.alloycraft.exxo.blocks.AlloySmelter;
-import com.alloycraft.exxo.blocks.BlockCookie;
-import com.alloycraft.exxo.blocks.BlockCopper;
-import com.alloycraft.exxo.blocks.BlockCopperOre;
-import com.alloycraft.exxo.blocks.BlockCrystalizedPlant;
-import com.alloycraft.exxo.blocks.BlockFireiteOre;
-import com.alloycraft.exxo.blocks.BlockGoldIron;
-import com.alloycraft.exxo.blocks.BlockHellish;
-import com.alloycraft.exxo.blocks.BlockHyperTorch;
-import com.alloycraft.exxo.blocks.BlockRainbowWool;
-import com.alloycraft.exxo.blocks.BlockTin;
-import com.alloycraft.exxo.blocks.BlockTinOre;
-import com.alloycraft.exxo.blocks.BlockTitaniumOre;
-import com.alloycraft.exxo.blocks.BlockWhatTheHell;
-import com.alloycraft.exxo.blocks.BlockYttriumOre;
-import com.alloycraft.exxo.blocks.Crystalizer;
+import com.alloycraft.exxo.blocks.*;
+import com.ashindigo.api.IndigoApiBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -50,7 +36,8 @@ public class AlloycraftBlocks {
 		cookieblock = new BlockCookie().setHardness(3.0F);
     	whatthehellblock = new BlockWhatTheHell().setHardness(9000.1F);
     	tinblock = new BlockTin().setHardness(3.0F);
-    	copperblock = new BlockCopper().setHardness(3.0F);
+    	copperblock = new IndigoApiBlock.IndigoApiBlockOreStorage(Material.rock, "copperblock", "copperblock", AlloycraftItems.copperingot, AlloycraftBlocks.copperblock, Alloycraft.taballoycraft).setHardness(3.0F);
+    	//copperblock = new IndigoApiBlock(Material.rock, "copperblock", "copperblock", Alloycraft.taballoycraft).setHardness(3.0F);
     	goldironblock = new BlockGoldIron().setHardness(3.0F);
     	hellishblock = new BlockHellish().setHardness(3.0F);
     	alloysmelteridle = new AlloySmelter(false).setBlockName("AlloyFurnaceIdle").setHardness(3.5F).setLightLevel(0.02F);
@@ -62,11 +49,12 @@ public class AlloycraftBlocks {
     	crystalizedplant = new BlockCrystalizedPlant();
     	//Ore
     	yttriumore = new BlockYttriumOre().setHardness(3.0F);
-    	copperore = new BlockCopperOre().setHardness(3.0F);
+    	//copperore = new IndigoApiBlock.AlloycraftBlockOre(Material.rock, "CopperOre", "CopperOre", AlloycraftItems.copperingot, AlloycraftBlocks.copperore, Alloycraft.taballoycraft).setHardness(3.0F);
+    	copperore = new IndigoApiBlock(Material.rock, "CopperOre", "BlockCopperOre", Alloycraft.taballoycraft, AlloycraftBlocks.copperore).setHardness(3.0F);
     	tinore = new BlockTinOre().setHardness(3.0F);
     	titaniumore = new BlockTitaniumOre().setHardness(3.0F);
     	fireiteore = new BlockFireiteOre().setHardness(3.0F);
-    	limoniteore = new AlloycraftBlock(Material.rock, "LimoniteOre", "LimoniteOre".toLowerCase());
+    	limoniteore = new IndigoApiBlock(Material.rock, "LimoniteOre", "LimoniteOre".toLowerCase(), Alloycraft.taballoycraft, AlloycraftBlocks.limoniteore);
 	}
 	
 	//For use later

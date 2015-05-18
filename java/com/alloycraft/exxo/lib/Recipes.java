@@ -17,18 +17,20 @@ public class Recipes {
 	public static void registerRecipes(){
 		
 		//Recipes
+		/*
+		GameRegistry.addRecipe(new ItemStack(AlloycraftBlocks.copperblock, 1), new Object[]{
+        	"AAA",
+        	"AAA",
+        	"AAA",
+        	'A', AlloycraftItems.copperingot
+    	});
+    	*/
     	GameRegistry.addRecipe(new ItemStack(AlloycraftBlocks.cookieblock, 1), new Object[]{
         	"AAA",
         	"AAA",
         	"AAA",
         	'A', Items.cookie
     	});
-       	GameRegistry.addRecipe(new ItemStack(AlloycraftBlocks.copperblock, 1), new Object[]{
-        	"AAA",
-        	"AAA",
-        	"AAA",
-        	'A', AlloycraftItems.copperingot
-       	});
        	GameRegistry.addRecipe(new ItemStack(AlloycraftBlocks.tinblock, 1), new Object[]{
         	"AAA",
         	"AAA",
@@ -316,13 +318,15 @@ public class Recipes {
     	GameRegistry.addShapelessRecipe(new ItemStack(AlloycraftItems.tiningot, 9), new Object[]{
         	new ItemStack(AlloycraftBlocks.tinblock, 1)
         			});
+    	/*
     	GameRegistry.addShapelessRecipe(new ItemStack(AlloycraftItems.copperingot, 9), new Object[]{
         	new ItemStack(AlloycraftBlocks.copperblock, 1)
         			});
+        */	
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.cookieblock, 1), new ItemStack(AlloycraftItems.cookieingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(Blocks.iron_ore, 1), new ItemStack(AlloycraftItems.overridenironingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.yttriumore, 1), new ItemStack(AlloycraftItems.yttriumingot, 1), 0.1F);
-    	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.copperore, 1), new ItemStack(AlloycraftItems.copperingot, 1), 0.1F);
+    	//GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.copperore, 1), new ItemStack(AlloycraftItems.copperingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.tinore, 1), new ItemStack(AlloycraftItems.tiningot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.fireiteore, 1), new ItemStack(AlloycraftItems.fireiteingot, 1), 0.1F);
 	}
