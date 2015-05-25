@@ -3,11 +3,19 @@ package com.alloycraft.exxo;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.research.ResearchPage;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.server.command.ForgeCommand;
 
+import com.alloycraft.exxo.addons.items.test;
 import com.alloycraft.exxo.items.ItemOverridenIronIngot;
 import com.alloycraft.exxo.lib.ApiRegistry;
 import com.alloycraft.exxo.lib.CommonProxy;
@@ -19,6 +27,8 @@ import com.alloycraft.exxo.lib.Refrences;
 import com.alloycraft.exxo.lib.Registry;
 import com.ashindigo.api.IndigoApiBlock;
 
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -39,7 +49,7 @@ public class Alloycraft
     public static boolean thaumcraftenabled;
     public static boolean projectx3dmodelenabled;
     public static boolean refrenceitemsenabled;
-    public static boolean init;
+    public static boolean ic2addonenabled;
     public static Configuration config;
     String months[] = {
     	      "Jan", "Feb", "Mar", "Apr",
@@ -62,12 +72,14 @@ public class Alloycraft
     	//Limonite is an ore you can with wood and is as good as iron but is destroyed easily.
     	//Bug Fixes and finish crystal system.
     	//TC4 Addon: Add's new wand cores and wand caps that give certain abilties to the wand.
+    	//Friday See Grace During Lunch
     	config = new Configuration(event.getSuggestedConfigurationFile());
     	config.load();
     	thaumcraftenabled = config.getBoolean("Thaumraft Addon Enabled?", "general", true, "Is the Thaumcraft 4 Addon Enabled?");
     	baublesenabled = config.getBoolean("Baubles Enabled?", "general", true, "Are Baubles Enabled?");
     	projectx3dmodelenabled = config.getBoolean("Project X's 3d Model Enabled?", "general", true, "Is Project X's 3d Model Enabled?");
     	refrenceitemsenabled = config.getBoolean("Are Easter Eggs Enabled", "general", true, "Are the Easter Egg Items Enabled?"); 
+    	ic2addonenabled = config.getBoolean("IC2 Addon Enabled?", "general", true, "Is the Industrial Craft 2 Addon Enabled?"); 
     	config.save();
     	AlloycraftItems.registerItems();
     	AlloycraftBlocks.registerBlocks();
@@ -82,7 +94,10 @@ public class Alloycraft
     	proxy.registerItemRenderers();
     	GregorianCalendar gcalendar = new GregorianCalendar();
     	if (months[gcalendar.get(Calendar.MONTH)] == "April") {
-    		System.out.println("Its April!!!");
+    		
+    		System.out.println("April Fools!!!");
+    		System.exit(0);
+    		
     	}
     	
     	System.out.println("Alloycraft Loaded");
@@ -90,7 +105,6 @@ public class Alloycraft
     }
     public void init(FMLInitializationEvent event){
     
-    	//IndigoApiBlock.initpart();
     }
     public void postinit(FMLPostInitializationEvent event){
     	

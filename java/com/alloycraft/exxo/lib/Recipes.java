@@ -1,5 +1,6 @@
 package com.alloycraft.exxo.lib;
 
+import com.alloycraft.exxo.Alloycraft;
 import com.alloycraft.exxo.AlloycraftBlocks;
 import com.alloycraft.exxo.AlloycraftItems;
 
@@ -12,7 +13,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
 	
-	final int WILDCARD_VALUE = Short.MAX_VALUE;
+	final static int WILDCARD_VALUE = Short.MAX_VALUE;
 	
 	public static void registerRecipes(){
 		
@@ -295,14 +296,14 @@ public class Recipes {
         	"   ",
         	'B', Items.stick, 'A', AlloycraftItems.hypercoal
     	});
-    	/*
-    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.aluminumtooltest, 1, -1), new Object[]{
+    	
+    	GameRegistry.addRecipe(new ItemStack(AlloycraftItems.aluminumtooltest, 1 ,WILDCARD_VALUE), new Object[]{
         	" A ",
         	" B ",
         	"   ",
         	'B', Items.dye, 'A', AlloycraftItems.aluminumtooltest
     	});
-    	*/
+    	
     	GameRegistry.addShapelessRecipe(new ItemStack(AlloycraftItems.hellishingot, 9), new Object[]{
     		new ItemStack(AlloycraftBlocks.hellishblock, 1)
     				});
