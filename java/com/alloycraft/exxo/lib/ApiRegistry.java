@@ -102,7 +102,7 @@ public class ApiRegistry {
 	public static void registerIC2() {
 		
 		RecipeInputItemStack RecipeInputItemStac;
-		ic2.api.recipe.Recipes.macerator.addRecipe(RecipeInputItemStac.input(Items.apple), test, null);
+		//ic2.api.recipe.Recipes.macerator.addRecipe(Items.apple), test, test);
 	}
 	
 }

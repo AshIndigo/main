@@ -1,8 +1,10 @@
-package com.alloycraft.exxo.lib;
+package com.ashindigo.api;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.alloycraft.exxo.lib.Refrences;
 
 import net.minecraft.block.BlockJukebox;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -81,6 +83,6 @@ public class MusicDisc extends ItemRecord {
 
 	@Override
 	public ResourceLocation getRecordResource(String name) {
-		 return new ResourceLocation("Alloycraft:" + name);
+		 return new ResourceLocation(Refrences.MODID + ":" + name);
 	}
 }

@@ -8,7 +8,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import com.alloycraft.exxo.AlloycraftItems;
-import com.alloycraft.exxo.lib.BlockPlantBase;
+import com.ashindigo.api.BlockPlantBase;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

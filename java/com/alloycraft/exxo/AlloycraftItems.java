@@ -64,9 +64,9 @@ import com.alloycraft.exxo.items.ItemTitaniumSword;
 import com.alloycraft.exxo.items.ItemUnpureCrystal;
 import com.alloycraft.exxo.items.ItemWhatTheHellIngot;
 import com.alloycraft.exxo.items.ItemYttriumIngot;
-import com.alloycraft.exxo.lib.MusicDisc;
 import com.alloycraft.exxo.lib.Registry;
 import com.ashindigo.api.IndigoApiItem;
+import com.ashindigo.api.MusicDisc;
 
 public class AlloycraftItems {
 	

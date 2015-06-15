@@ -1,4 +1,4 @@
-package com.alloycraft.exxo.lib;
+package com.ashindigo.api;
 
 import java.util.Random;
 
@@ -25,7 +25,6 @@ public class BlockPlantBase extends BlockBush implements IGrowable
 
     public BlockPlantBase()
     {
-     // Basic block setup
         setTickRandomly(true);
         float f = 0.5F;
         setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
@@ -35,9 +34,6 @@ public class BlockPlantBase extends BlockBush implements IGrowable
         disableStats();
     }
 
-    /**
-     * is the block grass, dirt or farmland
-     */
     @Override
     protected boolean canPlaceBlockOn(Block parBlock)
     {
@@ -63,18 +59,13 @@ public class BlockPlantBase extends BlockBush implements IGrowable
         return Item.getItemFromBlock(this);
     }
 
-    /**
-     * The type of render function that is called for this block
-     */
     @Override
     public int getRenderType()
     {
-        return 1; // Cross like flowers
+        return 1;
     }
     
-    /**
-     * Gets the block's texture. Args: side, meta
-     */
+
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int parSide, int parGrowthStage)
@@ -83,7 +74,6 @@ public class BlockPlantBase extends BlockBush implements IGrowable
     }
    
     @Override
-    // checks if finished growing (a grow stage of 7 is final stage)
     public boolean func_149851_a(World parWorld, int parX, int parY, int parZ, 
           boolean p_149851_5_)
     {

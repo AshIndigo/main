@@ -1,16 +1,18 @@
-package com.alloycraft.exxo.lib;
+package com.alloycraft.exxo;
 
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
-public class YourRecipeClass implements IRecipe {
+public class Test implements IRecipe {
 
+	//var6 = ItemStack;
 	@Override
 	public boolean matches(InventoryCrafting p_77569_1_, World p_77569_2_) {
-		// TODO Auto-generated method stub
 		return false;
+
+		//if (ItemStack.)
 	}
 
 	@Override
