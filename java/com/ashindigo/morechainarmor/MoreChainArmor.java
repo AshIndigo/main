@@ -48,8 +48,8 @@ public class MoreChainArmor {
 	public static Item chainnetherstarleggings;
 	public static Item chainnetherstarboots;
     public static ArmorMaterial ARMORCHAINIRON = EnumHelper.addArmorMaterial("IronChain", 8, new int[] {2, 4, 2, 2}, 30);
-    public static ArmorMaterial ARMORCHAINGOLD = EnumHelper.addArmorMaterial("GoldChain", 16, new int[] {2, 7, 5, 3}, 15);
-    public static ArmorMaterial ARMORCHAINDIAMOND = EnumHelper.addArmorMaterial("DiamondChain", 20, new int[] {2, 8, 4, 3}, 20);
+    public static ArmorMaterial ARMORCHAINGOLD = EnumHelper.addArmorMaterial("GoldChain", 16, new int[] {2, 3, 2, 1}, 15);
+    public static ArmorMaterial ARMORCHAINDIAMOND = EnumHelper.addArmorMaterial("DiamondChain", 20, new int[] {2, 5, 3, 2}, 20);
     public static ArmorMaterial ARMORCHAINEMERALD = EnumHelper.addArmorMaterial("EmeraldChain", 16, new int[] {2, 4, 4, 1}, 15);
     public static ArmorMaterial ARMORCHAINQUARTZ = EnumHelper.addArmorMaterial("QuartzChain", 20, new int[] {2, 8, 4, 3}, 20);
     public static ArmorMaterial ARMORCHAINNETHERSTAR = EnumHelper.addArmorMaterial("NetherStarChain", 20, new int[] {2, 8, 4, 3}, 20);

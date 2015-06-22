@@ -328,7 +328,7 @@ public class Recipes {
     	//GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.copperore, 1), new ItemStack(AlloycraftItems.copperingot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.tinore, 1), new ItemStack(AlloycraftItems.tiningot, 1), 0.1F);
     	GameRegistry.addSmelting(new ItemStack(AlloycraftBlocks.fireiteore, 1), new ItemStack(AlloycraftItems.fireiteingot, 1), 0.1F);
-    	YourRecipeClass YourRecipeClass = new YourRecipeClass();
-    	GameRegistry.addRecipe(YourRecipeClass);
+    	//YourRecipeClass YourRecipeClass = new YourRecipeClass();
+    	//GameRegistry.addRecipe(YourRecipeClass);
 	}
 	}
